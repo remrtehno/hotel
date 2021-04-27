@@ -1,0 +1,152 @@
+.page-title h1 {
+	text-transform: uppercase;
+	font-size: 36px;
+	letter-spacing: 3px;
+}
+
+.has-error {
+	border: 1px solid red!important;
+}
+
+.search_title {
+	padding: 10px 10px 10px 16px;
+	background-color: #fff;
+}
+
+.search_title a {
+	color: #5e42fc;
+	border-bottom: 1px solid rgba(143, 11, 11, .2);
+	-webkit-transition: all .3s linear;
+	transition: all .3s linear;
+	font-size: 18px;
+	font-weight: 300;
+}
+
+.search_extract {
+	padding: 0px 10px 10px 16px;
+	background-color: #fff;
+}
+
+.evoSearch_info {
+	padding: 15px 10px 15px 16px;
+	background-color: #fff;
+	margin-bottom: 20px;
+	font-size: 20px;
+}
+
+.js-modal-show {
+	cursor: pointer;
+}
+
+.other-feedback {
+	margin-top: 20px;
+}
+
+.product__txt a {
+	color: #5e42fc;
+	border-bottom: 1px solid #5e42fc;
+	-webkit-transition: all .3s linear;
+	transition: all .3s linear;
+	font-size: 18px;
+	font-weight: 300;
+}
+
+.filter__hidden,
+.form__checkbox {
+	transition: all .3s linear;
+}
+
+.product__header-center {
+	box-sizing: border-box;
+	margin-left: 25px;
+	margin-right: 25px;
+	word-wrap: break-word;
+}
+
+.product__txt ul li {
+	list-style-type: disc;
+	list-style-position: outside;
+	margin-left: 20px;
+}
+
+.product__txt ol li {
+
+}
+
+.product__txt ol {    
+	padding-left: inherit;
+}
+.banner__caption {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding-top: initial;
+	top: -20px;
+}
+.banner__txt{
+	font-size: 35px;
+}
+
+.news__desc h3 {
+    min-height: 90px;
+}
+
+.social ul {
+    margin: 30px 0 0;
+    padding: 0;
+    list-style: none;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: start;
+}
+.social ul li:first-child {
+    margin-left: 0;
+}
+.social ul li {
+    margin-left: 25px;
+}
+.social ul li a {
+    display: block;
+    width: 26px;
+    height: 21px;
+}
+.social ul li a svg {
+    width: 100%;
+    height: 100%;
+    fill: #5e42fc;
+    -webkit-transition: .3s linear;
+    transition: .3s linear;
+}
+.social ul li a:hover svg {
+    fill: #5e42fc;
+		opacity: 0.7;
+}
+
+.contacts__map {
+    height: 270px;
+}
+
+@media screen and (max-width: 1199px){
+	.banner__txt {
+		font-size: 38px;
+
+	}
+	.social ul {
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+}
+
+@media screen and (max-width: 991px){
+	.banner__txt {
+
+		font-size: 32px;
+	}
+}
