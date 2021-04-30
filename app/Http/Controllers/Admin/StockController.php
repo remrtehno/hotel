@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
 use App\Stock;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class StockController extends Controller
 {
@@ -18,8 +18,6 @@ class StockController extends Controller
         $sl = Stock::find(1);
         return view('admin.stocks.index', compact('sl'));
     }
-
-    
 
     /**
      * Show the form for creating a new resource.
@@ -40,6 +38,10 @@ class StockController extends Controller
     public function store(Request $request)
     {
         //
+
+        $prod = Stock::add($request->all());
+        $prod->uploadImage($request->file('img'));
+        return redirect()->route('stock.index');
     }
 
     /**
@@ -87,6 +89,13 @@ class StockController extends Controller
      */
     public function destroy($id)
     {
+        $product = Stock::find($id);
+
+        if ($product->img != null) {
+            Storage::delete('/uploads/stocks/' . $product->img);
+        }
+        $product->delete();
+        return redirect()->route('stock.index');
         //
     }
 }

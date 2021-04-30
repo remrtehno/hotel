@@ -42,11 +42,13 @@
                 href="http://steepcoder.uz/site"><u>steepcoder.uz</u></a>
         </div>
 
-        <script src="js/jquery.3.2.1.min.js"></script>
-        <script src="js/svg4everybody.min.js"></script>
-        <script src="js/slick.min.js"></script>
-        <script src="js/jquery.slicknav.js"></script>
-        <script src="js/scripts.js"></script>
+        <script src="/js/jquery.3.2.1.min.js"></script>
+        <script src="/js/svg4everybody.min.js"></script>
+        <script src="/js/slick.min.js"></script>
+        <script src="/js/jquery.slicknav.js"></script>
+        <script src="/js/bloodhound.min.js"></script>
+        <script src="/js/typeahead.bundle.js"></script>
+        <script src="/js/scripts.js"></script>
 
     </body>
 </html>

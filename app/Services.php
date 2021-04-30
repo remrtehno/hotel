@@ -50,10 +50,10 @@ class Services extends Model
         ini_set('memory_limit', '256M');
         $img = Image::make($image);
         $img->backup();
-        $img->fit(850, 550)->save($pat2, 100);
+        $img->save($pat2, 100);
         $img->reset();
         $img->backup();
-        $img->fit(419, 287)->save($pat, 100);
+        $img->save($pat, 100);
         $img->reset();
         //$image->storeAs('/uploads', $filename);
         $this->img = $filename;

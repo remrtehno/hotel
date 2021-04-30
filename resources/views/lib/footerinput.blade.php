@@ -5,7 +5,7 @@
             <div class="footerbar__row">
                 <div class="footerbar__logo">
                     <a href="">
-                        <img src="img/logo.jpg" alt="">
+                        <img src="/img/logo.jpg" alt="">
                         <p> Симуляционные центры «под ключ»</p>
                     </a>
 
@@ -62,44 +62,15 @@
         <div class="form__group">
             <input type="email" name="Почта" placeholder="Эл. почта" required="">
         </div>
-        <div class="form__group">
-            <input type="text" name="Город и место работы" placeholder="Город и место работы">
-        </div>
-        <div class="form__group">
-            <input type="text" name="Тема сообщения" placeholder="Тема">
-        </div>
+
         <div class="form__group">
             <textarea name="Текст сообщения" placeholder="Текст"></textarea>
         </div>
-        <div class="form__file">
-            <label>
-                <input type="file" name="attachment">
-                <span>
-                    <svg>
-                        <use xlink:href="img/sprite.svg#file"></use>
-                    </svg>
-                    Прикрепить файл
-                </span>
-            </label>
-            <input type="text" id="filename" class="filename" disabled="">
-            <button class="file-remove">
-                <svg>
-                    <use xlink:href="img/sprite.svg#close"></use>
-                </svg>
-            </button>
-        </div>
-        <div class="form__checkbox">
-            <input type="checkbox" name="agree" id="agree" checked="" required="">
-            <label for="agree">
-                <span>Нажимая кнопку «Отправить», я соглашаюсь на <a
-                        href="soglashenie-ob-obrabotke-personalnyh-dannyh.html">обработку персональных данных</a></span>
-                <svg>
-                    <use xlink:href="img/sprite.svg#check"></use>
-                </svg>
-            </label>
-        </div>
+
+
         <input type="hidden" name="formid" value="basic" data-fl-name="Форма">
-        <button class="form__submit FLajax" type="submit" data-fl-theme="Сообщение с сайта U-robotics"><span>Отправить
+        <button class="form__submit FLajax  js-modal-close" type="submit"
+            data-fl-theme="Сообщение с сайта U-robotics"><span>Отправить
                 сообщение</span></button>
     </form>
     <!-- END FORM -->

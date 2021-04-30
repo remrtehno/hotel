@@ -5,23 +5,20 @@ namespace App\Http\Controllers;
 use App\About;
 use App\Contact;
 use App\Gallery;
-use App\Services;
-use App\Logo;
 use App\News;
 use App\ProdCat;
 use App\Product;
+use App\Services;
 use App\Slider;
-use App\Userwrap;
-use App\Video;
 use App\Stock;
-use Illuminate\Http\Request;
+use App\Video;
 
 class MainController extends Controller
 {
     public $title = "OOO alan-tailor";
     public $meta_desc = "Купить одежду онлайн";
     public $meta_key = "Желетка куртка ...";
- 
+
     public function index()
     {
         $slider = Slider::getSlider();
@@ -33,13 +30,14 @@ class MainController extends Controller
         $video = Video::limit(8)->get();
         $cats = ProdCat::limit(9)->get();
 
+        $services = Services::all();
 
         $title = $this->title;
         $meta_desc = $this->meta_desc;
         $meta_key = $this->meta_key;
 
-
         return view("index.index", compact(
+            'services',
             'cats',
             'slider',
             'userwrap',
@@ -54,12 +52,11 @@ class MainController extends Controller
         ));
     }
 
-
     public function products()
     {
-        $products = Product::getProducts();
-        $cat = ProdCat::getCategory();
+        $products = Product::all();
 
+        $cat = ProdCat::getCategory();
 
         $title = $this->title;
         $meta_desc = $this->meta_desc;
@@ -70,7 +67,6 @@ class MainController extends Controller
     public function catalog()
     {
         $products = Product::all();
-
 
         $cat = ProdCat::getCategory();
         $title = "Все товары";
@@ -85,12 +81,25 @@ class MainController extends Controller
 
         $products = Product::where('cat_id', $id->id)->get();
 
+
         $cat = ProdCat::getCategory();
         $title = "$id->title";
         $meta_desc = "$id->meta_desc";
         $meta_key = "$id->meta_key";
 
         return view("products.category", compact('products', 'cat', 'title', 'meta_key', 'meta_desc'));
+    }
+
+    public function ProductByName($slug)
+    {
+        $product = Product::where('title', $slug)->firstOrFail();
+
+        $cat = ProdCat::getCategory();
+        $title = "$product->title";
+        $meta_desc = "$product->meta_desc";
+        $meta_key = "$product->meta_key";
+
+        return view("products.detail", compact('product', 'cat', 'title', 'meta_key', 'meta_desc'));
     }
 
     public function detail($slug)
@@ -105,8 +114,6 @@ class MainController extends Controller
         return view("products.detail", compact('product', 'cat', 'title', 'meta_key', 'meta_desc'));
     }
 
-
-
     public function newsdetail($slug)
     {
         $news = News::where('slug', $slug)->firstOrFail();
@@ -118,8 +125,6 @@ class MainController extends Controller
         $meta_desc = "$news->meta_desc";
         $meta_key = "$news->meta_key";
 
-
-
         return view("news.detail", compact('news', 'order', 'gallery', 'title', 'meta_key', 'meta_desc'));
     }
 
@@ -127,7 +132,6 @@ class MainController extends Controller
     {
         $gall = Gallery::all();
         $cat = ProdCat::getCategory();
-
 
         $title = $this->title;
         $meta_desc = $this->meta_desc;
@@ -149,7 +153,6 @@ class MainController extends Controller
     public function servicesdetail($id)
     {
         $product = Services::where('id', $id)->firstOrFail();
-
 
         return view("products.detail", compact('product'));
     }
