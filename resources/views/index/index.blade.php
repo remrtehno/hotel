@@ -18,21 +18,21 @@
                     <span>Ищите оборудование по любому из трёх критериев:</span>
                 </div>
                 <div class="criteria__row">
-                    <a class="criteria__item  js-anchor" href="#type">
-                        <p class="criteria__title">По типу изделия</p>
+                    <a class="criteria__item  " href="/category/trenazhery/">
+                        <p class="criteria__title">Тренажеры</p>
                         <svg>
                             <use xlink:href="img/sprite.svg#production"></use>
                         </svg>
                         <p class="criteria__txt">Например: модели органов или тренажёры</p>
                     </a>
-                    <a class="criteria__item  js-anchor" href="#spec">
+                    <a class="criteria__item  " href="/category/akusherstvo-i-ginekologiya/">
                         <p class="criteria__title">По специальности</p>
                         <svg>
                             <use xlink:href="img/sprite.svg#speciality"></use>
                         </svg>
                         <p class="criteria__txt">Например: акушерство или эндоскопия</p>
                     </a>
-                    <a class="criteria__item  js-anchor" href="#skill">
+                    <a class="criteria__item  " href="/category/rody/">
                         <p class="criteria__title">По навыку</p>
                         <svg>
                             <use xlink:href="img/sprite.svg#skill"></use>
@@ -77,7 +77,7 @@
                         <svg>
                             <use xlink:href="img/sprite.svg#production"></use>
                         </svg>
-                        <span>По типу изделия</span>
+                        <span>Категории</span>
                     </div>
                 </div>
                 <div class="search-type__row">
@@ -140,83 +140,14 @@
     <div class="partners">
         <div class="container">
             <p class="partners__title">Методики для нашей продукции разрабатывали эти организации:</p>
-            <div class="partners__row">
-                <div class="partners__item">
-                    <div class="partners__img">
-                        <img src="img/rosomed-text.jpg"
-                            alt="Узбекское общество симуляционного обучения в медицине (РОСОМЕД)">
+            <div class="partners__row slick-partners slider">
+                @foreach ($services as $item )
+                    <div class="partners__item">
+                        <div class="partners__img">
+                            <img src="{{$item->getImage()}}">
+                        </div>
                     </div>
-                    <div class="partners__desc">
-                        <span>Узбекское общество симуляционного обучения в медицине (РОСОМЕД)</span>
-                    </div>
-                </div>
-                <div class="partners__item">
-                    <div class="partners__img">
-                        <img src="img/roh-big.jpg" alt="Узбекское общество хирургов (РОХ)">
-                    </div>
-                    <div class="partners__desc">
-                        <span>Узбекское общество хирургов (РОХ)</span>
-                    </div>
-                </div>
-                <div class="partners__item">
-                    <div class="partners__img">
-                        <img src="img/roeh-color.jpg" alt="Узбекское общество эндоскопических хирургов (РОЭХ)">
-                    </div>
-                    <div class="partners__desc">
-                        <span>Узбекское общество эндоскопических хирургов (РОЭХ)</span>
-                    </div>
-                </div>
-                <div class="partners__item">
-                    <div class="partners__img">
-                        <img src="img/AAMS-logo.jpg"
-                            alt="Международная ассоциация воздушной медицинской помощи (санавиации — AAMS)">
-                    </div>
-                    <div class="partners__desc">
-                        <span>Международная ассоциация воздушной медицинской помощи (санавиации — AAMS)</span>
-                    </div>
-                </div>
-                <div class="partners__item">
-                    <div class="partners__img">
-                        <img src="img/AHA-logo.jpg" alt="Американская кардиологическая ассоциация (AHA)">
-                    </div>
-                    <div class="partners__desc">
-                        <span>Американская кардиологическая ассоциация (AHA)</span>
-                    </div>
-                </div>
-                <div class="partners__item">
-                    <div class="partners__img">
-                        <img src="img/NASA-logo.jpg"
-                            alt="Национальное управление по аэронавтике и исследованию космического пространства (NASA)">
-                    </div>
-                    <div class="partners__desc">
-                        <span>Национальное управление по аэронавтике и исследованию космического пространства (NASA)</span>
-                    </div>
-                </div>
-                <div class="partners__item">
-                    <div class="partners__img">
-                        <img src="img/NSC-logo.jpg" alt="Национальный совет по безопасности (NSC)">
-                    </div>
-                    <div class="partners__desc">
-                        <span>Национальный совет по безопасности (NSC)</span>
-                    </div>
-                </div>
-                <div class="partners__item">
-                    <div class="partners__img">
-                        <img src="img/ESSKA-logo.jpg"
-                            alt="Европейское общество спортивной травматологии, хирургии колена и артроскопии (ESSKA)">
-                    </div>
-                    <div class="partners__desc">
-                        <span>Европейское общество спортивной травматологии, хирургии колена и артроскопии (ESSKA)</span>
-                    </div>
-                </div>
-                <div class="partners__item">
-                    <div class="partners__img">
-                        <img src="img/ASGE-logo.jpg" alt="Американское общество гастро-интестинальной эндоскопии (ASGE)">
-                    </div>
-                    <div class="partners__desc">
-                        <span>Американское общество гастро-интестинальной эндоскопии (ASGE)</span>
-                    </div>
-                </div>
+                @endforeach
             </div>
         </div>
     </div>

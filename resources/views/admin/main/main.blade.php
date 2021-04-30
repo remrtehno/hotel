@@ -261,6 +261,7 @@
     <!-- AdminLTE for demo purposes -->
     <script src="/assets/assets/dist/js/demo.js"></script>
     <script src="/assets/assets/plugins/ckeditor/ckeditor.js"></script>
+    <script src="/assets/assets/plugins/ckeditor/ckfinder.js"></script>
     <script>
         $(document).ready(function() {
             //Initialize Select2 Elements

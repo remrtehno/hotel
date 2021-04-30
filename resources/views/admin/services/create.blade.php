@@ -52,7 +52,7 @@
 <div class="col-md-12">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Описание</label>
-                                <textarea name="anonce" id="editor" cols="30" rows="10" class="form-control" >{{ $sl->anonce }}</textarea>
+                                <textarea name="anonce" id="editor" cols="30" rows="10" class="form-control" ></textarea>
                             </div>
                         </div>
 
