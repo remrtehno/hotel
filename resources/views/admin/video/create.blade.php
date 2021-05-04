@@ -17,7 +17,7 @@
         <section class="content">
 
             @include('admin.errors')
-<form method="post" action="{{route('video.store')}}">
+<form method="post" action="{{route('video.store')}}"  enctype="multipart/form-data">
     @csrf
             <!-- Default box -->
             <div class="box">
@@ -31,20 +31,17 @@
 
                             <div class="box-body">
                                 <div class="col-md-6">
-
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Фрагмент для видео</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="link">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Для показа видео</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="showlink">
-                                    </div>
-
-                                    <div class="form-group">
+ 						<div class="form-group">
                                         <label for="exampleInputEmail1">Название</label>
                                         <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="title">
                                     </div>
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">выберите видео</label>
+                                        <input type="file" class="form-control" id="exampleInputEmail1" placeholder="" name="file">
+                                    </div>
+                                    
+
+                                   
                                 </div>
 
 

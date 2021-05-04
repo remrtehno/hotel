@@ -10,6 +10,7 @@
 
     <li><a href="{{ route('about.index') }}"><i class="fa fa-users"></i> <span>О нас</span></a></li>
     <li><a href="{{ route('contact.index') }}"><i class="fa fa-users"></i> <span>Контакты</span></a></li>
+     <li><a href="{{ route('video.index') }}"><i class="fa fa-users"></i> <span>Видео</span></a></li>
     <li>
         <a href="/public/adminfaz/#">
             <i class="fa fa-commenting"></i> <span>Комментарии</span>

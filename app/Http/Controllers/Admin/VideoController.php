@@ -41,13 +41,40 @@ class VideoController extends Controller
 
 
             'title' =>'required',
-            'link' =>  'required',
-            'showlink' =>  'required'
+           
+           
         ]);
+        
+        
+        
+        
+//$file = $request->file('file')->getClientOriginalName();
+$ext = $request->file('file')->extension();
+      
+        
+
+ $filename = str_random(10) . '.' .$ext;
+       // $pat = public_path().'/uploads/article/'.$filename;
+    //   $file->move($pat,$filename);
+       
+
+$path = $request->file('file')->storeAs('/uploads/video/',$filename);
 
 
-        $prod = Video::add($request->all());
+       
+   
 
+
+  $prod = Video::create([
+   'title'=>$request->get("title"),
+   'file'=>$filename,
+
+
+		]); 
+$prod->save();
+      
+         // $prod->uploadVideo($request->file('file'));
+       
         return redirect()->route('video.index');
     }
 
@@ -104,6 +131,7 @@ class VideoController extends Controller
     public function destroy($id)
     {
         $gallery = Video::find($id);
+unlink(public_path()."/uploads/video/".$gallery->file);
 
 
 

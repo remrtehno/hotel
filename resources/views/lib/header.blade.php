@@ -56,6 +56,8 @@
                     <li><a href="/" class="js-anchor">Главная</a></li>
                     <li><a href="{{ route('products') }}" role="menuitem" tabindex="-1">Продукция</a></li>
                     <li><a href="#skill" class="js-anchor">Навыки</a></li>
+                      <li><a href="#skill" class="js-anchor">Скачать</a></li>
+                <li><a href="{{ route('video') }}" class="js-anchor">Видео</a></li>
                     <li><a href="{{ route('about') }}">О компании</a></li>
                     <li><a href="{{ route('news') }}">Новости</a></li>
                     <li><a href="{{ route('contact') }}">Контакты</a></li>
@@ -65,6 +67,10 @@
                 <li><a href="/" class="js-anchor">Главная</a></li>
                 <li><a href="{{ route('products') }}">Продукция</a></li>
                 <li><a href="#skill" class="js-anchor">Навыки</a></li>
+                <li><a href="#skill" class="js-anchor">Скачать</a></li>
+                <li><a href="{{ route('video') }}" class="js-anchor">Видео</a></li>
+                
+                
                 <li><a href="{{ route('about') }}">О компании</a></li>
                 <li><a href="{{ route('news') }}">Новости</a></li>
                 <li><a href="{{ route('contact') }}">Контакты</a></li>

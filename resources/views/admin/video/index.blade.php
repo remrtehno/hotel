@@ -41,7 +41,7 @@
 
 
                             <th>Название</th>
-                            <th>Ссылка видео</th>
+                            <th> видео</th>
                             <th>Действия</th>
                         </tr>
                         </thead>
@@ -51,10 +51,15 @@
                         <tr>
                             <td>{{ $item->id }}</td>
                             <td>
-                               {!! $item->link !!}
+                               {!! $item->title !!}
 
                                </td>
-                            <td>{{ $item->title }}</td>
+                            <td>  
+<video width="300"  controls="controls">
+ <source src="/uploads/video/{{ $item->file }}">
+</video>
+
+ </td>
 
 
 
