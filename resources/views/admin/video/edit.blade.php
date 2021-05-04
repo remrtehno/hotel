@@ -32,14 +32,14 @@
 
                                     <div class="form-group">
                                         <label for="exampleInputEmail1">Фрагмент для видео</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" value="{{ $sl->link }}" name="link">
+<video width="300"  controls="controls">
+ <source src="/uploads/video/{{ $sl->file }}">
+</video>
+
+                                        <input type="file" class="form-control" id="exampleInputEmail1" placeholder="" name="file">
                                     </div>
 
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Для показа видео</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" value="{{ $sl->showlink }}" name="showlink">
-                                    </div>
-                                    <div class="form-group">
+                                                                       <div class="form-group">
                                         <label for="exampleInputEmail1">Название</label>
                                         <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" value="{{ $sl->title }}" name="title">
                                     </div>

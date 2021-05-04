@@ -112,12 +112,23 @@ $prod->save();
     {
         $this->validate($request, [
             'title' =>'required',
-            'link' =>  'required',
-            'showlink' =>  'required'
-        ]);
+                    ]);
 
         $post = Video::find($id);
-        $post->edit($request->all());
+$ext = $request->file('file')->extension();
+
+         $filename = str_random(10) . '.' .$ext;
+
+
+        if($request->file('file') != null){ unlink(public_path().'/uploads/video/' . $post->file);}
+
+
+        $path = $request->file('file')->storeAs('/uploads/video/',$filename);
+
+$post->title = $request->get("title");
+ $post->file = $filename;     
+$post->save(); 
+   
 
         return redirect()->route('video.index');
     }
