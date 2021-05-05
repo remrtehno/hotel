@@ -15,6 +15,8 @@ Route::get('/', "MainController@index")->name("index");
 Route::get('/catalog', "MainController@catalog")->name("catalog");
 Route::get('/products', "MainController@products")->name("products");
 Route::get('/category/{slug}', "MainController@category")->name("category");
+Route::get('/skill/{slug}', "MainController@skill")->name("skill");
+Route::get('/spec/{slug}', "MainController@spec")->name("spec");
 Route::get('/detail/{slug}', "MainController@detail")->name("detail");
 Route::get('/detail/{slug}', "MainController@detail")->name("detail");
 Route::get('/product/{name}', "MainController@ProductByName")->name("search");
@@ -33,6 +35,8 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
     Route::get('/', 'MainController@index');
     Route::resource('/download-files', 'DownloadedFilesController');
     Route::resource('/post', 'ProductController');
+    Route::resource('/skills', 'SkillsController');
+    Route::resource('/spec', 'SpecializationsController');
     Route::resource('/category', 'CategoryController');
     Route::resource('/slider', 'SliderController');
     Route::resource('/services', 'ServicesController');

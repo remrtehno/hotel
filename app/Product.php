@@ -11,11 +11,38 @@ class Product extends Model
 {
     use Sluggable;
     protected $table = "products";
-    protected $fillable =['title','anonce','text','created_at','meta_desc','meta_key'];
+    protected $fillable = [
+        'title',
+        'spec_id',
+        'skill_id',
+        'anonce',
+        'text',
+        'created_at',
+        'meta_desc',
+        'meta_key',
+    ];
 
     public function category()
     {
         return $this->belongsTo("App\ProdCat", 'cat_id', 'id');
+    }
+
+    public function setSkill($id)
+    {
+        if ($id == null) {
+            return;
+        }
+        $this->skill_id = $id;
+        $this->save();
+    }
+
+    public function setSpec($id)
+    {
+        if ($id == null) {
+            return;
+        }
+        $this->spec_id = $id;
+        $this->save();
     }
 
     public function setCategory($id)
@@ -62,7 +89,7 @@ class Product extends Model
 
         $this->removeImage();
         $filename = str_random(10) . '.' . $image->extension();
-        $pat = public_path().'/uploads/products/small/'.$filename;
+        $pat = public_path() . '/uploads/products/small/' . $filename;
         // $pat2 = public_path().'/uploads/products/prev/'.$filename;
         // $pat3 = public_path().'/uploads/products/home/'.$filename;
         ini_set('memory_limit', '256M');
@@ -73,7 +100,6 @@ class Product extends Model
         $img->reset();
         $img->backup();
 
-
         $img->fit(860, 860)->save($pat2, 100);
         $img->reset();
         $img->backup();
@@ -83,14 +109,13 @@ class Product extends Model
 
         $img->height() > $img->width() ? $width=null : $height=null;
         $img->resize($width, $height, function ($constraint) {
-            $constraint->aspectRatio();
+        $constraint->aspectRatio();
         });
-
 
         $img->save($pat3, 100);
         $img->reset();
         $image->storeAs(public_path().'/uploads/products/', $filename);
-*/
+         */
 
         $this->img = $filename;
         $this->save();
@@ -124,15 +149,15 @@ class Product extends Model
 
     public static function getProducts()
     {
-        $products =  self::all();
+        $products = self::all();
         return $products;
     }
     public function sluggable(): array
     {
         return [
             'slug' => [
-                'source' => 'title'
-            ]
+                'source' => 'title',
+            ],
         ];
     }
 }

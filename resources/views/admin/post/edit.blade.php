@@ -35,6 +35,32 @@
                             </div>
 
                             <div class="form-group">
+                                <label>Навыки</label>
+                                <select class="form-control select2" style="width: 100%;"  name="skill">
+                                    @foreach($skill as $item)
+                                        <option
+                                                @if($item->id == $sl->skill_id) selected="selected"
+
+                                                @endif
+                                                value="{{$item->id}}">{{ $item->title }}</option>
+
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Специализация</label>
+                                <select class="form-control select2" style="width: 100%;"  name="spec">
+                                    @foreach($spec as $item)
+                                        <option
+                                                @if($item->id == $sl->spec_id) selected="selected"
+
+                                                @endif
+                                                value="{{$item->id}}">{{ $item->title }}</option>
+
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="form-group">
                                 <label>Категория</label>
                                 <select class="form-control select2" style="width: 100%;" size="{{count($cat)}}" name="category_id">
                                     @foreach($cat as $item)

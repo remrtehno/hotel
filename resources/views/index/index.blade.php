@@ -18,21 +18,21 @@
                     <span>Ищите оборудование по трём критериям:</span>
                 </div>
                 <div class="criteria__row">
-                    <a class="criteria__item  " href="/category/trenazhery/">
+                    <a class="criteria__item  js-anchor" href="#type">
                         <p class="criteria__title">Тренажеры</p>
                         <svg>
                             <use xlink:href="img/sprite.svg#production"></use>
                         </svg>
                         <p class="criteria__txt">Например: модели органов или тренажёры</p>
                     </a>
-                    <a class="criteria__item  " href="/category/akusherstvo-i-ginekologiya/">
+                    <a class="criteria__item  js-anchor" href="#spec">
                         <p class="criteria__title">По специальности</p>
                         <svg>
                             <use xlink:href="img/sprite.svg#speciality"></use>
                         </svg>
                         <p class="criteria__txt">Например: акушерство или эндоскопия</p>
                     </a>
-                    <a class="criteria__item  " href="/category/rody/">
+                    <a class="criteria__item  js-anchor" href="#skill">
                         <p class="criteria__title">По навыку</p>
                         <svg>
                             <use xlink:href="img/sprite.svg#skill"></use>
@@ -101,7 +101,63 @@
                 </div>
             </div>
             <!-- END SEARCH-TYPE -->
-   
+
+            <div class="search__row">
+                <!-- BEGIN SEARCH-SPECIALTY -->
+                <div class="search-specialty" id="spec">
+                    <div class="search-specialty__header">
+                        <div>
+                            <svg>
+                                <use xlink:href="img/sprite.svg#nursing"></use>
+                            </svg>
+                            <span>По специальности</span>
+                        </div>
+                    </div>
+                    <div class="search-specialty__list">
+                        <div class="search-specialty__col">
+                            <ul>
+                                @foreach ($skill as $val)
+                                    <li class="search-specialty__item">
+                                        <a href="{{ route('skill', ['slug' => $val->slug]) }}">
+                                            <img src="{{ $val->getImage() }}" alt="" width="20"
+                                                style="max-height: 50px; margin-right: 10px;">
+                                            <div><span>{{ $val->title }}</span></div>
+                                        </a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- END SEARCH-SPECIALTY -->
+                <!-- BEGIN SEARCH-SKILL -->
+                <div class="search-skill" id="skill">
+                    <div class="search-skill__header">
+                        <div>
+                            <svg>
+                                <use xlink:href="img/sprite.svg#injections"></use>
+                            </svg>
+                            <span>По навыку</span>
+                        </div>
+                    </div>
+                    <div class="search-skill__list">
+                        <ul>
+                            @foreach ($spec as $val)
+                                <li class="search-specialty__item">
+                                    <a href="{{ route('spec', ['slug' => $val->slug]) }}">
+                                        <img src="{{ $val->getImage() }}" alt="" width="20"
+                                            style="max-height: 50px; margin-right: 10px;">
+                                        <div><span>{{ $val->title }}</span></div>
+                                    </a>
+                                </li>
+                            @endforeach
+                        </ul>
+                    </div>
+                </div>
+                <!-- END SEARCH-SKILL -->
+            </div>
+
         </div>
     </div>
     <!-- END SEARCH -->
@@ -141,10 +197,10 @@
         <div class="container">
             <p class="partners__title">Наши партнёры</p>
             <div class="partners__row slick-partners slider">
-                @foreach ($services as $item )
+                @foreach ($services as $item)
                     <div class="partners__item">
                         <div class="partners__img">
-                            <img src="{{$item->getImage()}}">
+                            <img src="{{ $item->getImage() }}">
                         </div>
                     </div>
                 @endforeach

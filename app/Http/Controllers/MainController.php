@@ -7,6 +7,8 @@ use App\Contact;
 use App\Gallery;
 use App\News;
 use App\ProdCat;
+use App\ProdCatSkill;
+use App\ProdCatSpec;
 use App\Product;
 use App\Services;
 use App\Slider;
@@ -31,6 +33,10 @@ class MainController extends Controller
         $video = Video::limit(8)->get();
         $cats = ProdCat::limit(9)->get();
 
+        $spec = ProdCatSpec::all();
+        $skill = ProdCatSkill::all();
+
+
         $services = Services::all();
 
         $title = $this->title;
@@ -48,6 +54,8 @@ class MainController extends Controller
             'order',
             'video',
             'title',
+            'skill',
+            'spec',
             'meta_key',
             'meta_desc'
         ));
@@ -86,6 +94,36 @@ class MainController extends Controller
 
         return view("products.category", compact('products', 'cat', 'title', 'meta_key', 'meta_desc'));
     }
+    public function skill($slug)
+    {
+        $id = ProdCatSkill::where('slug', $slug)->firstOrFail();
+
+        $products = Product::where('skill_id', $id->id)->get();
+
+
+        $cat = ProdCatSkill::getCategory();
+        $title = "$id->title";
+        $meta_desc = "$id->meta_desc";
+        $meta_key = "$id->meta_key";
+
+        return view("products.category", compact('products', 'cat', 'title', 'meta_key', 'meta_desc'));
+    }
+
+    public function spec($slug)
+    {
+        $id = ProdCatSpec::where('slug', $slug)->firstOrFail();
+
+        $products = Product::where('spec_id', $id->id)->get();
+
+
+        $cat = ProdCatSpec::getCategory();
+        $title = "$id->title";
+        $meta_desc = "$id->meta_desc";
+        $meta_key = "$id->meta_key";
+
+        return view("products.category", compact('products', 'cat', 'title', 'meta_key', 'meta_desc'));
+    }
+
     public function category($slug)
     {
         $id = ProdCat::where('slug', $slug)->firstOrFail();

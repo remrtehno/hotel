@@ -39,11 +39,11 @@ class ProdCatSpec extends Model
 
         $this->removeImage();
         $filename = str_random(10) . '.' . $image->extension();
-        $pat = public_path('/uploads/categories/'.$filename);
+        $pat = public_path('/uploads/categoriesSpec/'.$filename);
         ini_set('memory_limit', '256M');
         $img = Image::make($image);
         $img->backup();
-        $img->fit(150, 300)->save($pat, 90);
+        $img->save($pat, 90);
         $img->reset();
         $img->backup();
         $this->img = $filename;
@@ -54,16 +54,16 @@ class ProdCatSpec extends Model
     public function getImage()
     {
         if ($this->img == null) {
-            return '/uploads/categories/no-image.jpg';
+            return '/uploads/categoriesSpec/no-image.jpg';
         }
-        return '/uploads/categories/' . $this->img;
+        return '/uploads/categoriesSpec/' . $this->img;
     }
 
 
     public function removeImage()
     {
         if ($this->img != "") {
-            Storage::delete('/uploads/categories/' . $this->img);
+            Storage::delete('/uploads/categoriesSpec/' . $this->img);
         }
     }
 
