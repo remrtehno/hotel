@@ -19,7 +19,7 @@
                 </div>
                 <div class="criteria__row">
                     <a class="criteria__item  js-anchor" href="#type">
-                        <p class="criteria__title">Тренажеры</p>
+                        <p class="criteria__title">Категории</p>
                         <svg>
                             <use xlink:href="img/sprite.svg#production"></use>
                         </svg>
@@ -119,8 +119,14 @@
                                 @foreach ($skill as $val)
                                     <li class="search-specialty__item">
                                         <a href="{{ route('skill', ['slug' => $val->slug]) }}">
-                                            <img src="{{ $val->getImage() }}" alt="" width="20"
-                                                style="max-height: 50px; margin-right: 10px;">
+                                            <img src="{{ $val->getImage() }}" alt="" width="20" style="
+                                                    max-height: 50px;
+                                                    margin-right: 10px;
+                                                    border-radius: 100%;
+                                                    height: 30px;
+                                                    width: 30px;
+                                                    object-fit: cover;
+                                                    ">
                                             <div><span>{{ $val->title }}</span></div>
                                         </a>
                                     </li>
@@ -146,8 +152,15 @@
                             @foreach ($spec as $val)
                                 <li class="search-specialty__item">
                                     <a href="{{ route('spec', ['slug' => $val->slug]) }}">
-                                        <img src="{{ $val->getImage() }}" alt="" width="20"
-                                            style="max-height: 50px; margin-right: 10px;">
+                                        <img src="{{ $val->getImage() }}" alt="" width="20" style=" 
+                                                      max-height: 50px;
+                                                    margin-right: 10px;
+                                                    border-radius: 100%;
+                                                    height: 30px;
+                                                    width: 30px;
+                                                    object-fit: cover;
+                                                    
+                                                    ">
                                         <div><span>{{ $val->title }}</span></div>
                                     </a>
                                 </li>

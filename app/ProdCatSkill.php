@@ -53,7 +53,7 @@ class ProdCatSkill extends Model
     public function getImage()
     {
         if ($this->img == null) {
-            return '/uploads/categoriesSkills/no-image.jpg';
+            return '/uploads/no-image.png';
         }
         return '/uploads/categoriesSkills/' . $this->img;
     }

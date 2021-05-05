@@ -18,5 +18,32 @@
             @endforeach
         </div>
     </form>
+
+
+    <form class="filter" action="">
+        <div class="filter__section">
+            <p class="filter__title">Навыки</p>
+            @foreach ($skill as $item)
+                <a href="{{ route('skill', ['slug' => $item->slug]) }}" class="form__checkbox">
+                    <label for="check32">
+                        <span>{{ $item->title }}</span>
+                    </label>
+                </a>
+            @endforeach
+        </div>
+    </form>
+
+    <form class="filter" action="">
+        <div class="filter__section">
+            <p class="filter__title">Специализация</p>
+            @foreach ($spec as $item)
+                <a href="{{ route('spec', ['slug' => $item->slug]) }}" class="form__checkbox">
+                    <label for="check32">
+                        <span>{{ $item->title }}</span>
+                    </label>
+                </a>
+            @endforeach
+        </div>
+    </form>
     <!-- END FILTER -->
 </aside>

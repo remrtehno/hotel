@@ -3,8 +3,8 @@
 
     <li><a href="{{ route('post.index') }}"><i class="fa fa-sticky-note-o"></i> <span>Продукция</span></a></li>
     <li><a href="{{ route('category.index') }}"><i class="fa fa-list-ul"></i> <span>Категории</span></a></li>
-    <li><a href="{{ route('skills.index') }}"><i class="fa fa-list-ul"></i> <span>Навыки</span></a></li>
-    <li><a href="{{ route('spec.index') }}"><i class="fa fa-list-ul"></i> <span>Специализация</span></a></li>
+    <li><a href="{{ route('spec.index') }}"><i class="fa fa-list-ul"></i> <span>Навыки</span></a></li>
+    <li><a href="{{ route('skills.index') }}"><i class="fa fa-list-ul"></i> <span>Специализация</span></a></li>
     <li><a href="{{ route('slider.index') }}"><i class="fa fa-tags"></i> <span>Слайдер</span></a></li>
     <li><a href="{{ route('news.index') }}"><i class="fa fa-tags"></i> <span>Новости</span></a></li>
     <li><a href="{{ route('logo.index') }}"><i class="fa fa-tags"></i> <span>Логотип</span></a></li>

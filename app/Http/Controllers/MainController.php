@@ -101,12 +101,15 @@ class MainController extends Controller
         $products = Product::where('skill_id', $id->id)->get();
 
 
-        $cat = ProdCatSkill::getCategory();
+        $cat = ProdCat::getCategory();
+        $spec = ProdCatSpec::getCategory();
+        $skill = ProdCatSkill::getCategory();
+
         $title = "$id->title";
         $meta_desc = "$id->meta_desc";
         $meta_key = "$id->meta_key";
 
-        return view("products.category", compact('products', 'cat', 'title', 'meta_key', 'meta_desc'));
+        return view("products.category", compact('products', 'cat', 'skill', 'spec', 'title', 'meta_key', 'meta_desc'));
     }
 
     public function spec($slug)
@@ -116,12 +119,14 @@ class MainController extends Controller
         $products = Product::where('spec_id', $id->id)->get();
 
 
-        $cat = ProdCatSpec::getCategory();
+        $cat = ProdCat::getCategory();
+        $spec = ProdCatSpec::getCategory();
+        $skill = ProdCatSkill::getCategory();
         $title = "$id->title";
         $meta_desc = "$id->meta_desc";
         $meta_key = "$id->meta_key";
 
-        return view("products.category", compact('products', 'cat', 'title', 'meta_key', 'meta_desc'));
+        return view("products.category", compact('products', 'cat', 'skill', 'spec', 'title', 'meta_key', 'meta_desc'));
     }
 
     public function category($slug)
@@ -132,11 +137,14 @@ class MainController extends Controller
 
 
         $cat = ProdCat::getCategory();
+        $spec = ProdCatSpec::getCategory();
+        $skill = ProdCatSkill::getCategory();
+
         $title = "$id->title";
         $meta_desc = "$id->meta_desc";
         $meta_key = "$id->meta_key";
 
-        return view("products.category", compact('products', 'cat', 'title', 'meta_key', 'meta_desc'));
+        return view("products.category", compact('products', 'cat', 'skill', 'spec', 'title', 'meta_key', 'meta_desc'));
     }
 
     public function ProductByName($slug)
