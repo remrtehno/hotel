@@ -23,6 +23,7 @@ Route::get('/gallery', "MainController@gallery")->name("gallery");
 Route::get('/news', "MainController@news")->name("news");
 Route::get('/about', "MainController@about")->name("about");
 Route::get('/video', "MainController@video")->name("video");
+Route::get('/download', "MainController@downloadFiles")->name("download");
 Route::get('/contact', "MainController@contact")->name("contact");
 Route::get('/stocks', "MainController@stocks")->name("stocks");
 Route::get('/services', "MainController@services")->name("services");
@@ -30,6 +31,7 @@ Route::get('/servicesdetail/{id}', "MainController@servicesdetail")->name("servi
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth'], function () {
     Route::get('/', 'MainController@index');
+    Route::resource('/download-files', 'DownloadedFilesController');
     Route::resource('/post', 'ProductController');
     Route::resource('/category', 'CategoryController');
     Route::resource('/slider', 'SliderController');

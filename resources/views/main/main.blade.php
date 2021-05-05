@@ -14,7 +14,8 @@
         <link rel="icon" type="image/png" href="">
         <link href="/css/slick.css" rel="stylesheet">
         <link href="/css/slicknav.css" rel="stylesheet">
-        <link href="/css/jquery.fancybox.min.css" rel="stylesheet">
+        {{-- <link href="/css/jquery.fancybox.min.css" rel="stylesheet"> --}}
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
         <link href="/css/styles.min.css" rel="stylesheet">
         <link href="/css/template170321.css" rel="stylesheet">
         <link rel="stylesheet" href="/css/style-new.css">
@@ -45,6 +46,8 @@
         <script src="/js/jquery.3.2.1.min.js"></script>
         <script src="/js/svg4everybody.min.js"></script>
         <script src="/js/slick.min.js"></script>
+        {{-- <script src="/js/jquery.fancybox.min.js"></script> --}}
+        <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
         <script src="/js/jquery.slicknav.js"></script>
         <script src="/js/bloodhound.min.js"></script>
         <script src="/js/typeahead.bundle.js"></script>

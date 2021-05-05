@@ -34,7 +34,7 @@
         <div class="bottom">
             <div class="bottom__row">
                 <div class="bottom__copyright">
-                    <span>© 2009—2021, ООО «U-Robotics»</span>
+                    <span>© 2021, ООО «U-Robotics»</span>
                     <br>
                     <span>Предложение не является публичной офертой. Производитель оставляет за собой право вносить
                         изменения в конструкцию без предварительного уведомления.</span>

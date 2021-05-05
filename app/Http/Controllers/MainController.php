@@ -12,6 +12,7 @@ use App\Services;
 use App\Slider;
 use App\Stock;
 use App\Video;
+use App\DownloadedFiles;
 
 class MainController extends Controller
 {
@@ -50,6 +51,16 @@ class MainController extends Controller
             'meta_key',
             'meta_desc'
         ));
+    }
+
+    public function downloadFiles()
+    {
+        $sl = DownloadedFiles::all();
+        $title = $this->title;
+        $meta_desc = $this->meta_desc;
+        $meta_key = $this->meta_key;
+
+        return view("downloaded-files.index", compact('sl', 'meta_key', 'meta_desc'));
     }
 
     public function products()

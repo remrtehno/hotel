@@ -7,7 +7,8 @@
     <li><a href="{{ route('news.index') }}"><i class="fa fa-tags"></i> <span>Новости</span></a></li>
     <li><a href="{{ route('logo.index') }}"><i class="fa fa-tags"></i> <span>Логотип</span></a></li>
     <li><a href="{{ route('services.index') }}"><i class="fa fa-tags"></i> <span>Партнеры</span></a></li>
-
+    <li><a href="{{ route('download-files.index') }}"><i class="fa fa-tags"></i> <span>Загруженные файлы</span></a></li>
+   
     <li><a href="{{ route('about.index') }}"><i class="fa fa-users"></i> <span>О нас</span></a></li>
     <li><a href="{{ route('contact.index') }}"><i class="fa fa-users"></i> <span>Контакты</span></a></li>
      <li><a href="{{ route('video.index') }}"><i class="fa fa-users"></i> <span>Видео</span></a></li>

@@ -5,16 +5,16 @@
     <br>
     <div class="container">
         <div class="page-title">
-            <h1>Видео</h1>
+            <h1>Скачать</h1>
         </div>
         <div class="video">
             <div class="video__row">
-                @foreach ($video as $val)
+                @foreach ($sl as $val)
                     <div class="video__item">
-                        <a data-fancybox="" href="/uploads/video/{{ $val->file }}"></a>
+                        <a href="{{ $val->getFile() }}"></a>
                         <div class="video__block">
-                            <video style="width: 100%;" src="/uploads/video/{{ $val->file }}" frameborder="0"
-                                allowfullscreen=""></video>
+                            <video style="width: 100%;" poster="{{ $val->getImage() }}" src="{{ $val->getImage() }}"
+                                frameborder="0" allowfullscreen=""></video>
                         </div>
                         <p class="video__name">{{ $val->title }}</p>
                     </div>

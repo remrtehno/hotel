@@ -15,7 +15,7 @@
                     <svg>
                         <use xlink:href="img/sprite.svg#search-big"></use>
                     </svg>
-                    <span>Ищите оборудование по любому из трёх критериев:</span>
+                    <span>Ищите оборудование по трём критериям:</span>
                 </div>
                 <div class="criteria__row">
                     <a class="criteria__item  " href="/category/trenazhery/">
@@ -139,7 +139,7 @@
     <!-- BEGIN PARTNERS -->
     <div class="partners">
         <div class="container">
-            <p class="partners__title">Методики для нашей продукции разрабатывали эти организации:</p>
+            <p class="partners__title">Наши партнёры</p>
             <div class="partners__row slick-partners slider">
                 @foreach ($services as $item )
                     <div class="partners__item">

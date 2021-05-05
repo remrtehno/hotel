@@ -6,7 +6,8 @@
                 <div class="headerbar__logo">
                     <a href="/">
                         <img src="/uploads/logo/logo.png" alt="">
-                        <p>«U-Robotics» <br> Симуляционные центры «под ключ»</p>
+                        <p>OOO "U-Robotics" <br> Симуляционные центры "под ключ" в Узбекистане.
+                        </p>
                     </a>
                 </div>
                 <div class="headerbar__info">
@@ -56,8 +57,8 @@
                     <li><a href="/" class="js-anchor">Главная</a></li>
                     <li><a href="{{ route('products') }}" role="menuitem" tabindex="-1">Продукция</a></li>
                     <li><a href="#skill" class="js-anchor">Навыки</a></li>
-                      <li><a href="#skill" class="js-anchor">Скачать</a></li>
-                <li><a href="{{ route('video') }}" class="js-anchor">Видео</a></li>
+                    <li><a href="#skill" class="js-anchor">Скачать</a></li>
+                    <li><a href="{{ route('video') }}" class="js-anchor">Видео</a></li>
                     <li><a href="{{ route('about') }}">О компании</a></li>
                     <li><a href="{{ route('news') }}">Новости</a></li>
                     <li><a href="{{ route('contact') }}">Контакты</a></li>
@@ -67,10 +68,10 @@
                 <li><a href="/" class="js-anchor">Главная</a></li>
                 <li><a href="{{ route('products') }}">Продукция</a></li>
                 <li><a href="#skill" class="js-anchor">Навыки</a></li>
-                <li><a href="#skill" class="js-anchor">Скачать</a></li>
+                <li><a href="{{ route('download') }}" class="js-anchor">Скачать</a></li>
                 <li><a href="{{ route('video') }}" class="js-anchor">Видео</a></li>
-                
-                
+
+
                 <li><a href="{{ route('about') }}">О компании</a></li>
                 <li><a href="{{ route('news') }}">Новости</a></li>
                 <li><a href="{{ route('contact') }}">Контакты</a></li>
