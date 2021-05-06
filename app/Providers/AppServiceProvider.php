@@ -3,6 +3,8 @@
 namespace App\Providers;
 
 use App\Contact;
+use App\ProdCatSkill;
+use App\ProdCatSpec;
 use App\Product;
 use Illuminate\Support\ServiceProvider;
 
@@ -33,6 +35,9 @@ class AppServiceProvider extends ServiceProvider
                 'phone' => $contacts->phone,
                 'email' => $contacts->email,
             ]);
+
+            $view->with('spec', ProdCatSpec::all());
+            $view->with('skill', ProdCatSkill::all());
 
             $new_array = array_map(function ($obj) {
                 return $obj['title'];
