@@ -1,8 +1,23 @@
 // Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+@import url("https://fonts.googleapis.com/css?family=Nunito");
 
 // Variables
-@import 'variables';
+// @import 'variables';
 
 // Bootstrap
-@import '~bootstrap/scss/bootstrap';
+@import "~bootstrap/scss/bootstrap";
+
+@import "include/style.scss";
+@import "layouts/general.scss";
+
+@import "_first-screen.scss";
+@import "_events.scss";
+@import "_main-page-form.scss";
+@import "slider-main-page";
+@import "_footer.scss";
+@import "_main-page.scss";
+@import "_modal.scss";
+@import "sidebar.scss";
+@import "inner-page.scss";
+@import "hotel-page.scss";
+@import "responsive.scss";

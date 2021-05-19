@@ -4,23 +4,27 @@ namespace App\Http\Controllers;
 
 use App\About;
 use App\Contact;
+use App\DownloadedFiles;
 use App\Gallery;
+use App\Hotels;
 use App\News;
 use App\ProdCat;
 use App\ProdCatSkill;
 use App\ProdCatSpec;
 use App\Product;
+use App\Reviews;
 use App\Services;
 use App\Slider;
+use App\SpecSuggestions;
 use App\Stock;
 use App\Video;
-use App\DownloadedFiles;
+use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
-    public $title = "OOO alan-tailor";
-    public $meta_desc = "Купить одежду онлайн";
-    public $meta_key = "Желетка куртка ...";
+    public $title = "";
+    public $meta_desc = "";
+    public $meta_key = "";
 
     public function index()
     {
@@ -28,27 +32,35 @@ class MainController extends Controller
         $userwrap = ProdCat::all();
         $about = About::getAbout();
         $gallery = Gallery::limit(8)->get();
-        $news = News::limit(3)->get();
+        $news = News::limit(8)->get();
         $order = Product::limit(4)->get();
         $video = Video::limit(8)->get();
         $cats = ProdCat::limit(9)->get();
+        $hotels = Hotels::all();
+        $contact = Contact::all();
 
         $spec = ProdCatSpec::all();
         $skill = ProdCatSkill::all();
 
-
         $services = Services::all();
+        $reviews = Reviews::all();
+
+        $suggestions = SpecSuggestions::all();
 
         $title = $this->title;
         $meta_desc = $this->meta_desc;
         $meta_key = $this->meta_key;
 
         return view("index.index", compact(
+            'suggestions',
+            'reviews',
+            'contact',
             'services',
             'cats',
             'slider',
             'userwrap',
             'about',
+            'hotels',
             'gallery',
             'news',
             'order',
@@ -61,6 +73,26 @@ class MainController extends Controller
         ));
     }
 
+    public function send_email(Request $request)
+    {
+        $name = $request->get('name');
+        $tel = $request->get('tel');
+        $message = $request->get('msg');
+
+        $msg = "Имя: $name; Телефон: $tel";
+        if ($message) {
+            $msg .= " Сообщение: $message";
+        }
+
+        // use wordwrap() if lines are longer than 70 characters
+        $msg = wordwrap($msg, 70);
+
+        // send email
+        mail("someone@example.com", "Звонок с сайта", $msg);
+
+        return back()->with(['message' => 'Email успешно отправлен.']);
+    }
+
     public function downloadFiles()
     {
         $sl = DownloadedFiles::all();
@@ -69,6 +101,14 @@ class MainController extends Controller
         $meta_key = $this->meta_key;
 
         return view("downloaded-files.index", compact('sl', 'meta_key', 'meta_desc'));
+    }
+
+    public function extra_services()
+    {
+        $meta_desc = $this->meta_desc;
+        $meta_key = $this->meta_key;
+
+        return view("extra-services.index", compact('meta_key', 'meta_desc'));
     }
 
     public function products()
@@ -94,12 +134,23 @@ class MainController extends Controller
 
         return view("products.category", compact('products', 'cat', 'title', 'meta_key', 'meta_desc'));
     }
+
+    public function suggestions()
+    {
+        $items = SpecSuggestions::all();
+
+        $title = "$id->title";
+        $meta_desc = "$id->meta_desc";
+        $meta_key = "$id->meta_key";
+
+        return view("products.category", compact('items', 'title', 'meta_key', 'meta_desc'));
+    }
+
     public function skill($slug)
     {
         $id = ProdCatSkill::where('slug', $slug)->firstOrFail();
 
         $products = Product::where('skill_id', $id->id)->get();
-
 
         $cat = ProdCat::getCategory();
         $spec = ProdCatSpec::getCategory();
@@ -118,7 +169,6 @@ class MainController extends Controller
 
         $products = Product::where('spec_id', $id->id)->get();
 
-
         $cat = ProdCat::getCategory();
         $spec = ProdCatSpec::getCategory();
         $skill = ProdCatSkill::getCategory();
@@ -134,7 +184,6 @@ class MainController extends Controller
         $id = ProdCat::where('slug', $slug)->firstOrFail();
 
         $products = Product::where('cat_id', $id->id)->get();
-
 
         $cat = ProdCat::getCategory();
         $spec = ProdCatSpec::getCategory();
@@ -157,6 +206,38 @@ class MainController extends Controller
         $meta_key = "$product->meta_key";
 
         return view("products.detail", compact('product', 'cat', 'title', 'meta_key', 'meta_desc'));
+    }
+
+    public function bars_detail($slug)
+    {
+        $product = News::where('slug', $slug)->firstOrFail();
+
+        $title = "$product->title";
+        $meta_desc = "$product->meta_desc";
+        $meta_key = "$product->meta_key";
+
+        return view("news.detail", compact('product', 'title', 'meta_key', 'meta_desc'));
+    }
+
+    public function hotels()
+    {
+        $items = Hotels::all();
+
+        $title = "Все отели";
+        $meta_desc = "$this->meta_desc";
+        $meta_key = "$this->meta_key";
+
+        return view("hotels.index", compact('items', 'title', 'meta_key', 'meta_desc'));
+    }
+    public function hotel_detail($slug)
+    {
+        $product = Hotels::where('slug', $slug)->firstOrFail();
+
+        $title = "$product->title";
+        $meta_desc = "$product->meta_desc";
+        $meta_key = "$product->meta_key";
+
+        return view("hotels.detail", compact('product', 'title', 'meta_key', 'meta_desc'));
     }
 
     public function detail($slug)

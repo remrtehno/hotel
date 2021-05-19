@@ -1,0 +1,46 @@
+.events {
+  background: url(../../public/img/events.png) no-repeat;
+  background-position: left center;
+  background-size: 96%;
+  img {
+    width: 100%;
+  }
+  .slick,
+  .slick-arrow-container {
+    // max-width: 535px;
+    // margin: auto;
+    // margin-right: 0;
+  }
+  .slick-arrow-container {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    top: 0;
+    bottom: 0;
+    left: 15px;
+    right: 15px;
+    button {
+      position: relative;
+      z-index: 999;
+    }
+  }
+  &-dots {
+    margin-bottom: 19px;
+    li {
+      margin-bottom: 15px;
+    }
+    .slick-active {
+      .slide-text-title {
+        color: #d09870;
+      }
+    }
+
+    .slide-text-title {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 22px;
+      line-height: 160%;
+    }
+  }
+}

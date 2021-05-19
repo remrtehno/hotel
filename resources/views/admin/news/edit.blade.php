@@ -54,12 +54,12 @@
 
                         </div>
 
-                        {{-- <div class="col-md-12">
+                        <div class="col-md-12">
                             <div class="form-group">
-                                <label for="exampleInputEmail1">Описание</label>
+                                <label for="exampleInputEmail1">Анонс</label>
                                 <textarea name="anonce" id="editor" cols="30" rows="10" class="form-control" >{{ $sl->anonce }}</textarea>
                             </div>
-                        </div> --}}
+                        </div>
 
                         <div class="col-md-12">
                             <div class="form-group">

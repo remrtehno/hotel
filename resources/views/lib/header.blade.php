@@ -1,82 +1,87 @@
-<header>
-    <div class="container">
-        <!-- BEGIN HEADERBAR-->
-        <div class="headerbar">
-            <div class="headerbar__row">
-                <div class="headerbar__logo">
-                    <a href="/">
-                        <img src="/uploads/logo/logo.png" alt="">
-                        <p>OOO "U-Robotics" <br> Симуляционные центры "под ключ" в Узбекистане.
-                        </p>
-                    </a>
+<div id="mySidebar" class="sidebar">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    @include('lib.nav-links')
+    <script>
+        // https://www.w3schools.com/howto/tryit.asp?filename=tryhow_js_collapse_sidebar
+        function openNav() {
+            document.getElementById("mySidebar").style.width = "250px";
+            document.querySelector("main").style.marginLeft = "250px";
+
+        }
+
+        function closeNav() {
+            document.getElementById("mySidebar").style.width = "0";
+            document.querySelector("main").style.marginLeft = "0";
+        }
+
+    </script>
+</div>
+
+<section class="first-screen">
+    <header class="header">
+        <div class="_container header-container">
+            <div class="mobile-menu">
+                <button onclick="openNav()" type="button" class="btn-burger">
+                    <svg width="21" height="16" viewBox="0 0 21 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M0.254453 1.734V0.0959995H20.3005V1.734H0.254453ZM0.254453 8.734V7.096H20.3005V8.734H0.254453ZM0.254453 15.734V14.096H20.3005V15.734H0.254453Z"
+                            fill="white" />
+                    </svg>
+                    Меню
+                </button>
+
+            </div>
+
+            <div class="header-logo">
+                <a href="/">
+                    <img src="/uploads/logo/logo.png" alt="">
+                </a>
+            </div>
+
+            <div class="header-contacts">
+                {!! $contact_info['phone'] !!}
+                <div class="address">
+                    {!! $contact_info['address'] !!}
                 </div>
-                <div class="headerbar__info">
-                    <style>
-                        .headerbar__info p {
-                            font-size: 17px;
-                        }
+            </div>
 
-                    </style>
-                    {!! $contact_info['phone'] !!}
-                    <p style="margin-bottom: 15px;"></p>
+        </div>
+    </header>
 
-                    <p>Работаем по будням с 9:00 до 17:00</p>
-                </div>
-                <div class="headerbar__request">
-                    <a><span>Оставьте заявку</span></a>
-
-                    <p>Заявки принимаем круглосуточно</p>
-                </div>
-                <script>
-                    window.products = '{{ $products_service }}';
-
-                </script>
-                <form class="headerbar__search" onsubmit="
-                   
-                    var query = this.elements.search.value;
-                    window.location.href = '{{ route('search', ['slug' => '']) }}/' + query ;
-                    return false;
-                ">
-                    <input class="typeahead" type="text" placeholder="Поиск" name="search" required="">
-                    <button type="submit">
-                        <svg>
-                            <use xlink:href="/img/sprite.svg#search"></use>
+    <div class="_container book__container">
+        <div class="book">
+            <h3>Забронировать номер</h3>
+            <form class="order-form">
+                <label>
+                    Дата заезда
+                    <button class="input" type="button">
+                        <input type="hidden">
+                        Не выбрано
+                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M15.5833 2.74984H19.2499C19.493 2.74984 19.7262 2.84641 19.8981 3.01832C20.07 3.19023 20.1666 3.42339 20.1666 3.6665V18.3332C20.1666 18.5763 20.07 18.8094 19.8981 18.9814C19.7262 19.1533 19.493 19.2498 19.2499 19.2498H2.74992C2.5068 19.2498 2.27365 19.1533 2.10174 18.9814C1.92983 18.8094 1.83325 18.5763 1.83325 18.3332V3.6665C1.83325 3.42339 1.92983 3.19023 2.10174 3.01832C2.27365 2.84641 2.5068 2.74984 2.74992 2.74984H6.41659V0.916504H8.24992V2.74984H13.7499V0.916504H15.5833V2.74984ZM3.66659 8.24984V17.4165H18.3333V8.24984H3.66659ZM5.49992 11.9165H10.0833V15.5832H5.49992V11.9165Z"
+                                fill="white" />
                         </svg>
                     </button>
-                </form>
-            </div>
+
+                </label>
+                <label>
+                    Дата выезда
+                    <button class="input" type="button">
+                        <input type="hidden">
+                        Не выбрано
+                        <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M15.5833 2.74984H19.2499C19.493 2.74984 19.7262 2.84641 19.8981 3.01832C20.07 3.19023 20.1666 3.42339 20.1666 3.6665V18.3332C20.1666 18.5763 20.07 18.8094 19.8981 18.9814C19.7262 19.1533 19.493 19.2498 19.2499 19.2498H2.74992C2.5068 19.2498 2.27365 19.1533 2.10174 18.9814C1.92983 18.8094 1.83325 18.5763 1.83325 18.3332V3.6665C1.83325 3.42339 1.92983 3.19023 2.10174 3.01832C2.27365 2.84641 2.5068 2.74984 2.74992 2.74984H6.41659V0.916504H8.24992V2.74984H13.7499V0.916504H15.5833V2.74984ZM3.66659 8.24984V17.4165H18.3333V8.24984H3.66659ZM5.49992 11.9165H10.0833V15.5832H5.49992V11.9165Z"
+                                fill="white" />
+                        </svg>
+                    </button>
+                </label>
+                <button type="submit" class="btn find-hotel">
+                    Найти номер
+                </button>
+            </form>
+            <h5>Визовая поддержка</h5>
         </div>
-        <!-- END HEADERBAR -->
-        <!-- BEGIN NAVBAR -->
-        <nav class="navbar wr">
-            <div class="slicknav_menu"><a href="#" aria-haspopup="true" role="button" tabindex="0"
-                    class="slicknav_btn slicknav_collapsed"><span class="slicknav_menutxt"></span><span
-                        class="slicknav_icon slicknav_no-text"><span class="slicknav_icon-bar"></span><span
-                            class="slicknav_icon-bar"></span><span class="slicknav_icon-bar"></span></span></a>
-                <ul class="slicknav_nav slicknav_hidden" aria-hidden="true" role="menu" style="display: none;">
-                    <li><a href="/" class="js-anchor">Главная</a></li>
-                    <li><a href="{{ route('products') }}" role="menuitem" tabindex="-1">Продукция</a></li>
-                    <li><a href="#skill" class="js-anchor">Навыки</a></li>
-                    <li><a href="#skill" class="js-anchor">Скачать</a></li>
-                    <li><a href="{{ route('video') }}" class="js-anchor">Видео</a></li>
-                    <li><a href="{{ route('about') }}">О компании</a></li>
-                    <li><a href="{{ route('news') }}">Новости</a></li>
-                    <li><a href="{{ route('contact') }}">Контакты</a></li>
-                </ul>
-            </div>
-            <ul class="navbar__menu">
-                <li><a href="/" class="js-anchor">Главная</a></li>
-                <li><a href="{{ route('products') }}">Продукция</a></li>
-                <li><a href="#skill" class="js-anchor">Навыки</a></li>
-                <li><a href="{{ route('download') }}" class="js-anchor">Скачать</a></li>
-                <li><a href="{{ route('video') }}" class="js-anchor">Видео</a></li>
-
-
-                <li><a href="{{ route('about') }}">О компании</a></li>
-                <li><a href="{{ route('news') }}">Новости</a></li>
-                <li><a href="{{ route('contact') }}">Контакты</a></li>
-            </ul>
-        </nav>
-        <!-- END NAVBAR  -->
     </div>
-</header>
+</section>

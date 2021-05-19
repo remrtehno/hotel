@@ -6,9 +6,11 @@ use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
+use Illuminate\Support\Facades\File;
 
 class News extends Model
 {
+    use Sluggable;
     protected $table = "news";
     protected $fillable = ['title', 'anonce', 'text', 'slug', 'meta_desc', 'meta_key'];
 
@@ -47,13 +49,16 @@ class News extends Model
         $pat2 = public_path() . '/uploads/news/big/' . $filename;
         $img = Image::make($image);
         $img->backup();
-
-        $img->fit(357, 180)->save($pat, 100);
+        
+        // mkdir(public_path() . '/uploads/news/small/');
+        File::exists(public_path() . '/uploads/news/small/') or File::makeDirectory(public_path() . '/uploads/news/small/',0777,true);
+        $img->fit(281, 390)->save($pat, 100);
 
         $img->reset();
         $img->backup();
 
-        $img->fit(750, 422)->save($pat2, 100);
+        File::exists(public_path() . '/uploads/news/big/') or File::makeDirectory(public_path() . '/uploads/news/big/', 0777, true);
+        $img->fit(517, 469)->save($pat2, 100);
         $img->reset();
         //$image->storeAs('/uploads', $filename);
         $this->img = $filename;
@@ -63,7 +68,7 @@ class News extends Model
     public function getImage()
     {
         if ($this->img == null) {
-            return '/img/no-image.png';
+            return '/uploads/no-image.png';
         }
 
         return '/uploads/news/small/' . $this->img;

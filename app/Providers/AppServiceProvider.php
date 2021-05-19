@@ -34,6 +34,7 @@ class AppServiceProvider extends ServiceProvider
                 'products' => Product::all(),
                 'phone' => $contacts->phone,
                 'email' => $contacts->email,
+                'address' => $contacts->address,
             ]);
 
             $view->with('spec', ProdCatSpec::all());

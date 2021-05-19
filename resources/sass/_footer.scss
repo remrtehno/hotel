@@ -1,0 +1,48 @@
+.footer {
+  background: url(../../public/img/footer.png) center center/cover;
+  padding: 65px 0;
+  color: white;
+
+  .copyright {
+    max-width: 276px;
+    font-style: normal;
+    font-weight: 300;
+    font-size: 14px;
+    line-height: 160%;
+    /* or 22px */
+
+    color: #ffffff;
+
+    opacity: 0.7;
+  }
+  &-logo {
+    margin-bottom: 10px;
+  }
+  &-nav {
+    a {
+      opacity: 0.7;
+      display: block;
+      font-style: normal;
+      font-weight: 300;
+      font-size: 16px;
+      line-height: 19px;
+      margin-bottom: 20px;
+    }
+    @media (max-width: 992px) {
+      margin-bottom: 25px;
+    }
+  }
+
+  .social {
+    rect {
+      fill: none;
+    }
+    svg {
+      border: 1px solid #ffffff26;
+      border-radius: 6px;
+    }
+    path {
+      fill: white;
+    }
+  }
+}

@@ -1,0 +1,65 @@
+.modal {
+  .close {
+    padding: 5px 15px;
+    font-size: 32px;
+    display: flex;
+    align-items: center;
+    color: white;
+  }
+}
+.modal-body {
+  padding: 2rem;
+  padding-top: 1rem;
+}
+.modal-header {
+  border: 0;
+  padding: 2rem 2rem 0 2rem;
+}
+.modal-content {
+  color: white;
+  background: url(../../public/img/footer.png) center center/cover;
+}
+.modal-title {
+  font-weight: 700;
+  font-size: 22px;
+}
+.form {
+  max-width: 585px;
+  margin: auto;
+  .politics {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 11px;
+    line-height: 150%;
+    /* or 16px */
+
+    color: #adadad;
+    max-width: 350px;
+    margin: auto;
+    margin-right: 0;
+  }
+  input,
+  textarea {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 19px;
+    line-height: 160%;
+    /* or 30px */
+
+    color: #ffffff;
+    width: 100%;
+    min-height: 47px;
+    background: none;
+    outline: none;
+    border-bottom: 2px solid #d09870;
+    margin-bottom: 15px;
+    padding: 15px 0;
+    &::placeholder {
+      opacity: 0.6;
+    }
+  }
+  textarea {
+    resize: none;
+    min-height: 130px;
+  }
+}
