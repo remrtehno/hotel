@@ -90,7 +90,7 @@ class MainController extends Controller
         // send email
         mail("someone@example.com", "Звонок с сайта", $msg);
 
-        return back()->with(['message' => 'Email успешно отправлен.']);
+        return back()->with(['message' => 'Сообщение успешно отправлено.']);
     }
 
     public function downloadFiles()
@@ -219,6 +219,17 @@ class MainController extends Controller
         return view("news.detail", compact('product', 'title', 'meta_key', 'meta_desc'));
     }
 
+    public function events()
+    {
+        $items = Services::all();
+
+        $title = "Все мероприятия";
+        $meta_desc = "$this->meta_desc";
+        $meta_key = "$this->meta_key";
+
+        return view("events.index", compact('items', 'title', 'meta_key', 'meta_desc'));
+    }
+
     public function hotels()
     {
         $items = Hotels::all();
@@ -288,11 +299,13 @@ class MainController extends Controller
         return view("services.index", compact('services', 'cat', 'title', 'meta_key', 'meta_desc'));
     }
 
-    public function servicesdetail($id)
+    public function servicesdetail($slug)
     {
-        $product = Services::where('id', $id)->firstOrFail();
-
-        return view("products.detail", compact('product'));
+        $product = Services::where('slug', $slug)->firstOrFail();
+        $title = $this->title;
+        $meta_desc = $this->meta_desc;
+        $meta_key = $this->meta_key;
+        return view("products.detail", compact('product', 'title', 'meta_key', 'meta_desc'));
     }
 
     public function news()

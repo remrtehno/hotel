@@ -17,54 +17,60 @@
         <section class="content">
 
             @include('admin.errors')
-<form method="post" action="{{route('services.store')}}" enctype="multipart/form-data">
-    @csrf
-            <!-- Default box -->
-            <div class="box">
-                <div class="box-header with-border">
-                    <h3 class="box-title">Добавляем галерею</h3>
-                </div>
+            <form method="post" action="{{ route('services.store') }}" enctype="multipart/form-data">
+                @csrf
+                <!-- Default box -->
+                <div class="box">
+                    <div class="box-header with-border">
+                        <h3 class="box-title">Добавляем галерею</h3>
+                    </div>
 
 
-                <div class="bs-example bs-example-tabs">
+                    <div class="bs-example bs-example-tabs">
 
 
-                            <div class="box-body">
-                                <div class="col-md-6">
+                        <div class="box-body">
+                            <div class="col-md-6">
 
-                                    <div class="form-group">
-                                        <label for="exampleInputEmail1">Название</label>
-                                        <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="title">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="exampleInputFile">Картинка</label>
-                                        <input type="file" id="exampleInputFile" name="img">
-
-                                        <p class="help-block">jpeg,png,jpeg</p>
-                                        <p class="help-block">размер 419х287</p>
-                                    </div>
-
-
-
-
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Название</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder=""
+                                        name="title">
                                 </div>
+                                <div class="form-group">
+                                    <label for="exampleInputFile">Картинка</label>
+                                    <input type="file" id="exampleInputFile" name="img">
+
+                                    <p class="help-block">jpeg,png,jpeg</p>
+                                    <p class="help-block">размер 419х287</p>
                                 </div>
-<div class="col-md-12">
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1"> Анонс</label>
+                                <textarea name="anonce" id="editor" cols="30" rows="10"
+                                    class="form-control">Анонс</textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Описание</label>
-                                <textarea name="anonce" id="editor" cols="30" rows="10" class="form-control" ></textarea>
+                                <textarea name="text" id="editor" cols="30" rows="10"
+                                    class="form-control">Описание</textarea>
                             </div>
                         </div>
 
-
-
-                            </div>
-
-
-
-
-
-
+                        <div class="col-md-12">
+                            <label for="exampleInputFile">Галерея</label>
+                            <p class="help-block">jpeg,png,jpeg</p>
+                            <p class="help-block">размер 419х287</p>
+                            <a onclick=' 
+                                        this.parentNode.innerHTML += ("<input type=\"file\" name=\"file[]\"> ")
+                                    '>+</a>
+                            <input type="file" id="exampleInputFile" name="file[]">
+                        </div>
+                    </div>
                 </div>
 
 
@@ -75,13 +81,13 @@
                     <button class="btn btn-success pull-right" type="submit">Добавить</button>
                 </div>
                 <!-- /.box-footer-->
-            </div>
+    </div>
 
-</form>
-            <!-- /.box -->
+    </form>
+    <!-- /.box -->
 
-        </section>
-        <!-- /.content -->
+    </section>
+    <!-- /.content -->
     </div>
     <!-- /.content-wrapper -->
 

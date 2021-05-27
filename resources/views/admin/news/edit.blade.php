@@ -14,10 +14,10 @@
 
         <!-- Main content -->
         <section class="content">
-        @include('admin.errors')
-        <!-- Default box -->
+            @include('admin.errors')
+            <!-- Default box -->
 
-            <form action="{{route('news.update',['id'=>$sl->id])}}" method="post" enctype="multipart/form-data">
+            <form action="{{ route('news.update', ['id' => $sl->id]) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="box">
                     <div class="box-header with-border">
@@ -31,7 +31,8 @@
                         <div class="col-md-6">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Имя</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" value="{{ $sl->title }}" name="title">
+                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder=""
+                                    value="{{ $sl->title }}" name="title">
                             </div>
 
 
@@ -45,26 +46,38 @@
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Мета-ключевые слова, через запятую</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="meta_key" value="{{ $sl->meta_key }}" >
+                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder=""
+                                    name="meta_key" value="{{ $sl->meta_key }}">
                             </div>
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Мета-описание</label>
-                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="meta_desc" value="{{ $sl->meta_desc }}" >
+                                <input type="text" class="form-control" id="exampleInputEmail1" placeholder=""
+                                    name="meta_desc" value="{{ $sl->meta_desc }}">
                             </div>
 
                         </div>
 
                         <div class="col-md-12">
                             <div class="form-group">
+                                <label for="exampleInputEmail1">Доп услуги</label>
+                                <textarea name="meta_info" id="meta_info" cols="30" rows="10"
+                                    class="form-control">{{ $sl->meta_info }}</textarea>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group">
                                 <label for="exampleInputEmail1">Анонс</label>
-                                <textarea name="anonce" id="editor" cols="30" rows="10" class="form-control" >{{ $sl->anonce }}</textarea>
+                                <textarea name="anonce" id="editor" cols="30" rows="10"
+                                    class="form-control">{{ $sl->anonce }}</textarea>
                             </div>
                         </div>
 
                         <div class="col-md-12">
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Полный текст</label>
-                                <textarea  id="" cols="30" rows="10" class="form-control" name="text">{{ $sl->text }}</textarea>
+                                <textarea id="" cols="30" rows="10" class="form-control"
+                                    name="text">{{ $sl->text }}</textarea>
                             </div>
                         </div>
                     </div>

@@ -199,7 +199,7 @@
                                 <img style="max-width: 100%; margin: auto; display: block;"
                                     data-lazy="{{ $val->getImage('smaller') }}" alt="">
                                 <div class="slider-bars-overlay">
-                                    <div class="slide-text-description">{!! $val->anonce !!}</div>
+                                    {{-- <div class="slide-text-description">{!! $val->anonce !!}</div> --}}
                                     <a class="link" href="{{ route('newsdetail', $val->slug) }}"></a>
                                 </div>
                             </div>
@@ -260,8 +260,11 @@
                 <div class="d-xl-flex">
                     <button class="orange-btn" type="submit">Отправить</button>
                     <div class="politics">Нажимая кнопку «Отправить» я подтверждаю, что ознакомился полностью согласен с
-                        Политикой
-                        конфиденциальности и Согласием на обработку персональных данных</div>
+                        <span data-toggle="modal" data-target="#politics">Политикой конфиденциальности</span>
+                        и
+                        <span data-toggle="modal" data-target="#user-cond">
+                            Согласием на обработку персональных данных</span>
+                    </div>
                 </div>
 
             </form>

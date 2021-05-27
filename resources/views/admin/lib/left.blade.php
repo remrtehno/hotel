@@ -6,7 +6,7 @@
     <li><a href="{{ route('services.index') }}"><i class="fa fa-tags"></i> <span>Мероприятия </span></a></li>
     <li><a href="{{ route('reviews.index') }}"><i class="fa fa-tags"></i> <span>Отзывы </span></a></li>
     <li><a href="{{ route('logo.index') }}"><i class="fa fa-tags"></i> <span>Логотип</span></a></li>
-    
+    <li><a href="{{ route('extra-services') }}"><i class="fa fa-tags"></i>Внутренние страницы</a></li>
     <li><a href="{{ route('suggestions.index') }}"><i class="fa fa-tags"></i> <span>Специальные предложения</span></a>
     </li>
 

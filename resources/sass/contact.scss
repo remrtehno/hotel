@@ -1,0 +1,55 @@
+.contact-general-data {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, auto));
+  column-gap: 40px;
+  & > div {
+    display: inline-block;
+    vertical-align: top;
+  }
+  .address {
+    strong {
+      @extend .links;
+      display: block;
+    }
+  }
+  .btn-call {
+    /* Заказать звонок */
+
+    font-family: Raleway;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 160%;
+    /* identical to box height, or 42px */
+    font-feature-settings: "pnum" on, "lnum" on;
+
+    color: #d09870;
+  }
+}
+
+.dotted-line {
+  @media (min-width: 992px) {
+    display: flex;
+  }
+  margin-bottom: 10px;
+  font-feature-settings: "pnum" on, "lnum" on;
+
+  @media (max-width: 992px) {
+    font-size: 14px;
+  }
+
+  .dots {
+    @media (min-width: 992px) {
+      flex: auto;
+      background: url("../../public/img/dot.png") repeat-x 14px 18px;
+      opacity: 0.3;
+    }
+    @media (max-width: 992px) {
+      border-top: 1px solid;
+      width: 5px;
+      display: inline-block;
+      vertical-align: middle;
+      margin: 0 5px;
+    }
+  }
+}

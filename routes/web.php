@@ -23,7 +23,8 @@ Route::get('/hotels/{slug}', "MainController@hotel_detail")->name("hotel-detail"
 Route::get('/product/{name}', "MainController@ProductByName")->name("search");
 Route::get('/barssdetail/{slug}', "MainController@newsdetail")->name("newsdetail");
 Route::get('/gallery', "MainController@gallery")->name("gallery");
-Route::get('/events', "MainController@news")->name("events");
+Route::get('/events', "MainController@events")->name("events");
+Route::get('/eventsdetail/{id}', "MainController@servicesdetail")->name("eventsdetail");
 Route::get('/bars', "MainController@news")->name("news");
 Route::get('/about', "MainController@about")->name("about");
 Route::get('/video', "MainController@video")->name("video");
@@ -31,12 +32,13 @@ Route::get('/download', "MainController@downloadFiles")->name("download");
 Route::get('/contact', "MainController@contact")->name("contact");
 Route::get('/stocks', "MainController@stocks")->name("stocks");
 Route::get('/services', "MainController@services")->name("services");
-Route::get('/extra-services', "MainController@extra_services")->name("extra-services");
+Route::get('/extra-services', "MainController@extra_services")->name("extra_services");
 Route::get('/servicesdetail/{id}', "MainController@servicesdetail")->name("servicesdetail");
 Route::post('/send-email', "MainController@send_email")->name("email");
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth'], function () {
     Route::get('/', 'MainController@index');
+    Route::post('/save-file', 'MainController@save_file')->name('save_file');
     Route::resource('/download-files', 'DownloadedFilesController');
     Route::resource('/post', 'ProductController');
     Route::resource('/suggestions', 'SpecSuggestionsController');
@@ -53,6 +55,7 @@ Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth
     Route::resource('/contact', 'ContactController');
     Route::resource('/logo', 'LogoController');
     Route::resource('/stock', 'StockController');
+    Route::get('/extra-services', 'MainController@extra_services')->name('extra-services');
 });
 
 Auth::routes();

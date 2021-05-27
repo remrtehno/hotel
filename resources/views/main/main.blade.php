@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="keywords" content="{{ $meta_key }}">
     <meta name="description" content="{{ $meta_desc }}">
-
+    <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
 
 
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
@@ -24,7 +24,7 @@
 <body>
     @include("lib.header-inner")
 
-    <main class="inner-pages">
+    <main>
         @yield("slider")
         @yield("userwrap")
         @yield("content")

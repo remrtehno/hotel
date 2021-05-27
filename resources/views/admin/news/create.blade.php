@@ -15,7 +15,7 @@
         <section class="content">
 
             @include('admin.errors')
-            <form method="post" action="{{route('news.store')}}" enctype="multipart/form-data">
+            <form method="post" action="{{ route('news.store') }}" enctype="multipart/form-data">
                 @csrf
                 <!-- Default box -->
                 <div class="box">
@@ -31,7 +31,8 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Название</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="title">
+                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder=""
+                                        name="title">
                                 </div>
 
 
@@ -46,11 +47,13 @@
 
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Мета-ключевые слова, через запятую</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="meta_key">
+                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder=""
+                                        name="meta_key">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Мета-описание</label>
-                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder="" name="meta_desc">
+                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder=""
+                                        name="meta_desc">
                                 </div>
 
                             </div>
@@ -58,14 +61,22 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Анонс</label>
-                                    <textarea name="anonce" id="editor" cols="30" rows="10" class="form-control" ></textarea>
+                                    <textarea name="anonce" id="editor" cols="30" rows="10" class="form-control"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="col-md-12">
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Доп услуги</label>
+                                    <textarea name="meta_info" id="meta_info" cols="30" rows="10"
+                                        class="form-control"></textarea>
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Полный текст</label>
-                                    <textarea  id="" cols="30" rows="10" class="form-control" name="text"></textarea>
+                                    <textarea id="" cols="30" rows="10" class="form-control" name="text"></textarea>
                                 </div>
                             </div>
                         </div>

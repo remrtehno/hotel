@@ -16,9 +16,9 @@
                     <a href="{{ route('hotels') }}">Номера</a>
                     <a href="{{ route('news') }}">Рестораны и бары</a>
                     <a href="{{ route('events') }}">Мероприятия</a>
-                    <a href="{{ route('extra-services') }}">Дополнительные услуги</a>
+                    <a href="{{ route('extra_services') }}">Дополнительные услуги</a>
                     <a class="js-anchor" href="#suggestions">Спец предложения</a>
-                    <a class="js-anchor" href="#contacts">Контакты</a>
+                    <a class="js-anchor" href="/contact">Контакты</a>
                 </nav>
             </div>
             <div class="col-auto">
@@ -35,6 +35,38 @@
     </div>
 </footer>
 
+
+<!-- Modal -->
+<div class="modal fade" id="politics" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @include('inner-pages.politics')
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="user-cond" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                @include('inner-pages.user-cond')
+            </div>
+        </div>
+    </div>
+</div>
 
 
 <!-- Modal -->

@@ -18,7 +18,7 @@
     font-weight: normal;
     font-size: 16px;
     line-height: 180%;
-    li:not(:first-child) {
+    li:last-child {
       opacity: 0.4;
     }
     li:not(:last-child)::after {
@@ -47,12 +47,104 @@
   .container::before {
     background: white;
     content: " ";
-    transform: scale(1.16);
+
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: -30px;
-    top: -30px;
+    left: -90px;
+    right: -90px;
+    bottom: -70px;
+    top: -70px;
     z-index: -1;
+    @media (max-width: 992px) {
+      margin: -20px;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+    }
   }
+}
+
+.rules-of-life {
+  /* Rectangle 36 */
+
+  min-height: 260px;
+  border: 1px solid #1e1e1e35;
+  box-sizing: border-box;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 15px;
+
+  margin-top: 5px;
+  margin-bottom: 80px;
+  .title {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 130%;
+    /* or 49px */
+    text-align: center;
+
+    color: #1e1e1e;
+
+    margin-bottom: 5px;
+  }
+  a {
+    font-style: normal;
+    font-weight: bold;
+    font-size: 22px;
+    line-height: 170%;
+    /* or 37px */
+    text-align: center;
+
+    color: #d09870;
+  }
+}
+
+.inner-pages-form {
+  .title-section,
+  .title-description {
+    text-align: center;
+  }
+  .form {
+    max-width: 992px;
+    margin-bottom: 100px;
+    .politics {
+      max-width: 100%;
+      margin-left: 24px;
+    }
+    input,
+    textarea {
+      color: #1e1e1e;
+      &::placeholder {
+        opacity: 0.6;
+      }
+    }
+  }
+}
+
+.inner-pages-title {
+  font-family: Playfair Display;
+  font-style: normal;
+  font-weight: bold;
+  font-size: 30px;
+  line-height: 130%;
+  /* identical to box height, or 39px */
+
+  color: #1e1e1e;
+  margin-bottom: 18px;
+}
+
+.links {
+  font-family: Raleway;
+  font-style: normal;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 160%;
+  /* identical to box height, or 42px */
+  font-feature-settings: "pnum" on, "lnum" on;
+
+  color: #1e1e1e;
 }
