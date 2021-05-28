@@ -207,7 +207,6 @@
       margin: auto;
     }
     a {
-      font-family: Arial;
       font-size: 18px;
       font-style: normal;
       font-weight: 700;
@@ -215,6 +214,7 @@
       letter-spacing: 0em;
       text-align: right;
       margin-left: 40px;
+      font-feature-settings: "pnum" on, "lnum" on;
       @media (max-width: 992px) {
         margin-left: 10px;
       }
@@ -236,7 +236,17 @@
   background-position: center;
   background-size: cover;
   min-height: 478px;
+  .header-logo {
+    margin-top: 25px;
+  }
 }
 .inner-tel {
-  font-family: Aria;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 31px;
+  /* identical to box height */
+
+  text-align: right;
+  font-feature-settings: "pnum" on, "lnum" on;
 }

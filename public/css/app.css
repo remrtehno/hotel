@@ -6314,7 +6314,6 @@ button {
 }
 
 .header-contacts table a {
-  font-family: Arial;
   font-size: 18px;
   font-style: normal;
   font-weight: 700;
@@ -6322,6 +6321,7 @@ button {
   letter-spacing: 0em;
   text-align: right;
   margin-left: 40px;
+  font-feature-settings: "pnum" on, "lnum" on;
 }
 
 @media (max-width: 992px) {
@@ -6347,8 +6347,18 @@ button {
   min-height: 478px;
 }
 
+.inner-header .header-logo {
+  margin-top: 25px;
+}
+
 .inner-tel {
-  font-family: Aria;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 26px;
+  line-height: 31px;
+  /* identical to box height */
+  text-align: right;
+  font-feature-settings: "pnum" on, "lnum" on;
 }
 
 .events {
@@ -6477,6 +6487,32 @@ button {
     display: flex;
     align-items: flex-end;
     padding: 59px 68px;
+  }
+}
+
+.event-detail-page .img-container {
+  margin-bottom: 30px;
+  margin-top: 26px;
+  display: grid;
+  gap: 9px;
+}
+
+@media (min-width: 992px) {
+  .event-detail-page .img-container {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (max-width: 992px) {
+  .event-detail-page .img-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (min-width: 992px) {
+  .event-detail-page .img-container img:first-child {
+    grid-column: 2 span;
+    grid-row: 2 span;
   }
 }
 

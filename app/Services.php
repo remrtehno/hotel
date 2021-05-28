@@ -2,11 +2,12 @@
 
 namespace App;
 
+use App\MediaLibrary;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
-use Illuminate\Support\Facades\File;
 
 class Services extends Model
 {
@@ -46,10 +47,10 @@ class Services extends Model
 
         $this->removeImage();
         $filename = str_random(10) . '.' . $image->extension();
-        $pat3 = public_path().'/uploads/services/smaller/'.$filename;
-        $pat = public_path().'/uploads/services/small/'.$filename;
-        $pat2 = public_path().'/uploads/services/big/'.$filename;
-        
+        $pat3 = public_path() . '/uploads/services/smaller/' . $filename;
+        $pat = public_path() . '/uploads/services/small/' . $filename;
+        $pat2 = public_path() . '/uploads/services/big/' . $filename;
+
         ini_set('memory_limit', '256M');
         $img = Image::make($image);
         $img->backup();
@@ -87,10 +88,16 @@ class Services extends Model
         return '/uploads/services/big/' . $this->img;
     }
 
+    public function getMediaLibrary()
+    {
+        $whereArray = array('id_content' => $this->id, 'id_category' => 0);
+        $media_library = MediaLibrary::where($whereArray)->get();
+        return $media_library;
+    }
 
     public static function getServices()
     {
-        $gallery =  self::all();
+        $gallery = self::all();
         return $gallery;
     }
 

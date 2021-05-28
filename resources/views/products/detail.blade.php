@@ -20,7 +20,9 @@
                         {!! $product->anonce !!}
                     </div>
                     <div class="img-container">
-                        <img src="{{ $product->getImage() }}" loading="lazy" style="margin:0; max-width: 100%;" alt="">
+                        @foreach ($product->getMediaLibrary() as $item)
+                            <img src="{{ $item->getImage('medium') }}" loading="lazy" style="margin:0; max-width: 100%;" alt="">
+                        @endforeach
                     </div>
                     <div class="description">
                         {!! $product->text !!}

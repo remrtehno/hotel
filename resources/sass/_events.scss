@@ -121,6 +121,24 @@
 }
 
 .event-detail-page {
+  .img-container {
+    margin-bottom: 30px;
+    margin-top: 26px;
+    display: grid;
+    @media (min-width: 992px) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    @media (max-width: 992px) {
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    gap: 9px;
+    @media (min-width: 992px) {
+      img:first-child {
+        grid-column: 2 span;
+        grid-row: 2 span;
+      }
+    }
+  }
   .description {
     h2 {
       font-family: Playfair Display;

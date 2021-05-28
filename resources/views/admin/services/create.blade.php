@@ -65,10 +65,14 @@
                             <label for="exampleInputFile">Галерея</label>
                             <p class="help-block">jpeg,png,jpeg</p>
                             <p class="help-block">размер 419х287</p>
-                            <a onclick=' 
-                                        this.parentNode.innerHTML += ("<input type=\"file\" name=\"file[]\"> ")
-                                    '>+</a>
+                            <button type="button"
+                                onclick=' 
+                                                                            this.insertAdjacentHTML( "afterEnd", "<input type=\"file\" name=\"file[]\">") '>+
+                                добавить изображение</button>
+
+                            
                             <input type="file" id="exampleInputFile" name="file[]">
+
                         </div>
                     </div>
                 </div>
