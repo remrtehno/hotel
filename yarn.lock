@@ -2042,6 +2042,10 @@ cyclist@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/cyclist/-/cyclist-1.0.1.tgz#596e9698fd0c80e12038c2b82d6eb1b35b6224d9"
 
+de-indent@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/de-indent/-/de-indent-1.0.2.tgz#b2038e846dc33baa5796128d0804b455b8c1e21d"
+
 debug@2.6.9, debug@^2.2.0, debug@^2.3.3:
   version "2.6.9"
   resolved "https://registry.yarnpkg.com/debug/-/debug-2.6.9.tgz#5d128515df134ff327e90a4c93f4e077a536341f"
@@ -2914,7 +2918,7 @@ hash.js@^1.0.0, hash.js@^1.0.3:
     inherits "^2.0.3"
     minimalistic-assert "^1.0.1"
 
-he@1.2.x:
+he@1.2.x, he@^1.1.0:
   version "1.2.0"
   resolved "https://registry.yarnpkg.com/he/-/he-1.2.0.tgz#84ae65fa7eafb165fddb61566ae14baf05664f0f"
 
@@ -3428,7 +3432,13 @@ isobject@^3.0.0, isobject@^3.0.1:
   version "3.0.1"
   resolved "https://registry.yarnpkg.com/isobject/-/isobject-3.0.1.tgz#4e431e92b11a9731636aa1f9c8d1ccbcfdab78df"
 
-jquery@^3.2:
+jquery-parallax.js@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/jquery-parallax.js/-/jquery-parallax.js-1.5.0.tgz#4d57f669db2374526bbb6fd595830cecadd3c71f"
+  dependencies:
+    jquery ">=1.7"
+
+jquery@>=1.7, jquery@^3.2:
   version "3.6.0"
   resolved "https://registry.yarnpkg.com/jquery/-/jquery-3.6.0.tgz#c72a09f15c1bdce142f49dbf1170bdf8adac2470"
 
@@ -4241,6 +4251,10 @@ p-try@^2.0.0:
 pako@~1.0.5:
   version "1.0.11"
   resolved "https://registry.yarnpkg.com/pako/-/pako-1.0.11.tgz#6c9599d340d54dfd3946380252a35705a6b992bf"
+
+parallax@^0.0.0:
+  version "0.0.0"
+  resolved "https://registry.yarnpkg.com/parallax/-/parallax-0.0.0.tgz#d549dd241d79f124f8b022f399064cc5dfd2a858"
 
 parallel-transform@^1.1.0:
   version "1.2.0"
@@ -5839,6 +5853,13 @@ vue-style-loader@^4.1.0:
   dependencies:
     hash-sum "^1.0.2"
     loader-utils "^1.0.2"
+
+vue-template-compiler@^2.6.12:
+  version "2.6.13"
+  resolved "https://registry.yarnpkg.com/vue-template-compiler/-/vue-template-compiler-2.6.13.tgz#a735b8974e013ce829e7f77e08e4ee5aecbd3005"
+  dependencies:
+    de-indent "^1.0.2"
+    he "^1.1.0"
 
 vue-template-es2015-compiler@^1.9.0:
   version "1.9.1"

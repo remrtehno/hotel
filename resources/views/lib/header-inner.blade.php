@@ -34,13 +34,15 @@
 
             <div class="header-logo">
                 <a href="/">
-                    <img src="/img/ft-logo.png" alt="">
+                    <img src="/uploads/logo/logo.png" alt="">
                 </a>
             </div>
 
             <div class="header-contacts">
-                <a class="inner-tel" href="tel:+7 (3463) 25-00-00">+7 (3463) 25-00-00</a>
-                <a class="btn-call" data-toggle="modal" data-target="#exampleModal" href="">Заказать звонок</a>
+                {!! $contact_info['phone'] !!}
+                <div class="address">
+                    {!! $contact_info['address'] !!}
+                </div>
             </div>
 
         </div>

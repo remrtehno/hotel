@@ -1,4 +1,5 @@
 <nav class="menu">
+    <a href="/">Главная</a>
     <a href="{{ route('about') }}">Об отеле</a>
     <a href="{{ route('hotels') }}">Номера</a>
     <a href="{{ route('news') }}">Рестораны и бары</a>

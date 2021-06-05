@@ -40,10 +40,11 @@
             href="http://steepcoder.uz/site"><u>steepcoder.uz</u></a> 
     </div> --}}
 
-    <script src="/js/jquery.3.2.1.min.js"></script>
+    <script src="/js/jquery.min.js"></script>
     <script src="/js/svg4everybody.min.js"></script>
     <script src="/js/app.js"></script>
     <script src="/js/slick.min.js"></script>
+    <script src="/js/parallax.min.js"></script>
     {{-- <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
     <script src="/js/jquery.slicknav.js"></script>
     <script src="/js/bloodhound.min.js"></script>

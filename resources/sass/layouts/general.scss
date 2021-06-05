@@ -4,6 +4,15 @@
 .slick-list {
   overflow: hidden;
 }
+a:hover {
+  color: inherit;
+  opacity: 0.85;
+}
+
+.parallax-container {
+  height: 500px;
+  width: 100%;
+}
 
 body {
   font-style: normal;

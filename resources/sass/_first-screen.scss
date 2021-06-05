@@ -223,12 +223,28 @@
       font-family: Raleway;
       font-size: 15px;
       font-style: normal;
-      font-weight: 100;
+      font-weight: 500;
       line-height: 18px;
       letter-spacing: 0em;
       text-align: right;
     }
   }
+}
+
+.parallax-window {
+  min-height: 400px;
+  background: transparent;
+}
+input.datepicker {
+  position: absolute;
+  opacity: 0;
+  z-index: 99;
+  cursor: pointer;
+  margin-bottom: -23px;
+}
+
+.book__container span {
+  font-feature-settings: "pnum" on, "lnum" on;
 }
 
 .inner-header {

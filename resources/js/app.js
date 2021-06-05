@@ -4,7 +4,14 @@
  * building robust, powerful web applications using Vue and Laravel.
  */
 
+require('./test.js');
 require('./bootstrap');
+require('./bootstrap-datepicker.min.js');
+
+
+
+!function (a) { a.fn.datepicker.dates.ru = { days: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"], daysShort: ["Вск", "Пнд", "Втр", "Срд", "Чтв", "Птн", "Суб"], daysMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"], months: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"], monthsShort: ["Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"], today: "Сегодня", clear: "Очистить", format: "dd.mm.yyyy", weekStart: 1, monthsTitle: "Месяцы" } }(jQuery);
+
 
 // window.Vue = require('vue');
 
@@ -35,9 +42,18 @@ require('./bootstrap');
 
 
 $(function () {
-  // $('.btn-burger').on('click', function () {
-  //   $('.menu').toggle();
-  // });
+
+  $(".datepicker").datepicker({
+    language: 'ru'
+  }).on("changeDate", function (e) {
+
+    $(this).next().find('span').html(this.value);
+
+
+  });;
+
+
+
 
   $('.js-anchor').click(function () {
 
@@ -104,7 +120,7 @@ $(function () {
 /* lazyload.js (c) Lorenzo Giuliani
  * MIT License (http://www.opensource.org/licenses/mit-license.html)
  *
- * expects a list of:  
+ * expects a list of:
  * `<img src="blank.gif" data-src="my_image.png" width="600" height="400" class="lazy">`
  */
 /*
@@ -172,7 +188,7 @@ $(function () {
       };
     }
     ;
-  // Array.prototype.slice.call is not callable under our lovely IE8 
+  // Array.prototype.slice.call is not callable under our lovely IE8
   for (var i = 0; i < query.length; i++) {
     images.push(query[i]);
   };
