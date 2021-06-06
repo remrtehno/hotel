@@ -7,6 +7,7 @@ use App\Contact;
 use App\DownloadedFiles;
 use App\Gallery;
 use App\Hotels;
+use App\MediaLibrary;
 use App\News;
 use App\ProdCat;
 use App\ProdCatSkill;
@@ -73,6 +74,14 @@ class MainController extends Controller
         ));
     }
 
+    public function thanks()
+    {
+        $title = $this->title;
+        $meta_desc = $this->meta_desc;
+        $meta_key = $this->meta_key;
+        return view("thanks.index", compact('meta_key', 'meta_desc'));
+    }
+
     public function send_email(Request $request)
     {
         $name = $request->get('name');
@@ -90,7 +99,8 @@ class MainController extends Controller
         // send email
         mail("someone@example.com", "Звонок с сайта", $msg);
 
-        return back()->with(['message' => 'Сообщение успешно отправлено.']);
+        // return back()->with(['message' => 'Сообщение успешно отправлено.']);
+        return $this->thanks();
     }
 
     public function downloadFiles()
@@ -267,14 +277,16 @@ class MainController extends Controller
     {
         $news = News::where('slug', $slug)->firstOrFail();
 
-        $order = News::orderBy('created_at', 'desc')->take(3)->get();
-        $gallery = Gallery::limit(9)->get();
+        $whereArray = array('id_content' => $news->id, 'id_category' => 2); // 2 menu restaurant
+        $media_library_menu = MediaLibrary::where($whereArray)->get();
+        $whereArray = array('id_content' => $news->id, 'id_category' => 3); // 3 map restaurant
+        $media_library_map = MediaLibrary::where($whereArray)->get();
 
         $title = "$news->title";
         $meta_desc = "$news->meta_desc";
         $meta_key = "$news->meta_key";
 
-        return view("news.detail", compact('news', 'order', 'gallery', 'title', 'meta_key', 'meta_desc'));
+        return view("news.detail", compact('news', 'media_library_map', 'media_library_menu', 'title', 'meta_key', 'meta_desc'));
     }
 
     public function gallery()

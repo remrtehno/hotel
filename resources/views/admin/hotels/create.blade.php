@@ -78,7 +78,19 @@
 
 
 
+                        <div class="col-md-12">
+                            <label for="exampleInputFile">Галерея</label>
+                            <p class="help-block">jpeg,png,jpeg</p>
+                            <p class="help-block">размер 419х287</p>
+                            <button type="button"
+                                onclick=' 
+                                                                                this.insertAdjacentHTML( "afterEnd", "<input type=\"file\" name=\"file[]\">") '>+
+                                добавить изображение</button>
 
+
+                            <input type="file" id="exampleInputFile" name="file[]">
+
+                        </div>
 
                     </div>
 

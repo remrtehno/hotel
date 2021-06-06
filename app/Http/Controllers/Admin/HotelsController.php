@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Hotels;
 use App\Http\Controllers\Controller;
+use App\MediaLibrary;
 use App\ProdCat;
 use App\ProdCatSkill;
 use App\ProdCatSpec;
@@ -49,6 +50,17 @@ class HotelsController extends Controller
 
         $prod = Hotels::add($request->all());
         $prod->uploadImage($request->file('img'));
+
+        if ($request->file('file') !== null) {
+            foreach ($request->file('file') as $file) {
+                $instance = new MediaLibrary;
+                $instance->uploadImage($file);
+                $instance->id_content = $prod->id;
+                $instance->id_category = 1;
+                $instance->save();
+            };
+        }
+
         return redirect()->route('hotels.index');
     }
 
@@ -71,11 +83,14 @@ class HotelsController extends Controller
      */
     public function edit($id)
     {
+        $whereArray = array('id_content' => $id, 'id_category' => 1);
+        $media_library = MediaLibrary::where($whereArray)->get();
+
         $cat = ProdCat::all();
         $skill = ProdCatSkill::getCategory();
         $spec = ProdCatSpec::getCategory();
         $sl = Hotels::find($id);
-        return view("admin.hotels.edit", compact('cat', 'sl', 'skill', 'spec'));
+        return view("admin.hotels.edit", compact('cat', 'sl', 'skill', 'spec', 'media_library'));
     }
 
     /**
@@ -96,6 +111,24 @@ class HotelsController extends Controller
         $hotels->edit($request->all());
         $hotels->uploadImage($request->file('img'));
 
+        if ($request->get('file_del') !== null) {
+            foreach ($request->get('file_del') as $file_del_id) {
+                $item = MediaLibrary::find($file_del_id);
+                $item->removeImage();
+                $item->delete();
+            };
+        }
+
+        if ($request->file('file') !== null) {
+            foreach ($request->file('file') as $file) {
+                $instance = new MediaLibrary;
+                $instance->uploadImage($file);
+                $instance->id_content = $hotels->id;
+                $instance->id_category = 1;
+                $instance->save();
+            };
+        }
+
         return redirect()->route('hotels.index');
     }
 
@@ -108,6 +141,15 @@ class HotelsController extends Controller
     public function destroy($id)
     {
         $hotels = Hotels::find($id);
+
+        $whereArray = array('id_content' => $id, 'id_category' => 1);
+        $media_library = MediaLibrary::where($whereArray)->get();
+
+        foreach ($media_library as $file) {
+            $file->removeImage();
+            $file->delete();
+        };
+
 
         if ($hotels->img != null) {
             Storage::delete('/uploads/hotels/' . $hotels->img);

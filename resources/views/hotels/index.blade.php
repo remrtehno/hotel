@@ -33,8 +33,23 @@
                 @foreach ($items as $item)
                     <div class="hotel-wrapper">
                         <div class="img-container">
-                            <img class="lozad" style="max-width: 100%; margin: 0; width: 100%;" loading="lazy"
-                                src="{!! $item->getImage() !!}" alt="">
+                            <div class="flexslider {{ count($item->getMediaLibrary()) === 0 ? 'hide-nav' : '' }}">
+                                <ul class="slides">
+                                    <li>
+                                        <img style="width: 100%; margin: auto; display: block;"
+                                            src="{{ $item->getImage() }}" alt="" loading="lazy">
+                                    </li>
+
+                                    @foreach ($item->getMediaLibrary() as $val)
+                                        <li>
+                                            <img loading="lazy" style="width: 100%; margin: auto; display: block;"
+                                                src="{{ $val->getImage() }}" alt="">
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+                           
+
                         </div>
                         <div class="description-section">
                             <br>

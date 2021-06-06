@@ -18,7 +18,7 @@
     {{-- <link href="/css/jquery.fancybox.min.css" rel="stylesheet"> --}}
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" /> --}}
     <link rel="stylesheet" href="/css/app.css">
-    <link rel="stylesheet" href="/css/style.css">
+
 </head>
 
 <body>

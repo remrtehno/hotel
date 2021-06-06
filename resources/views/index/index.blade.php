@@ -124,8 +124,24 @@
                             <a href="{{ route('hotel-detail', $val->slug) }}" class="orange-btn">Подробнее</a>
                         </div>
                         <div class="col-xl-6">
-                            <img style="max-width: 100%; margin: auto; display: block;" data-lazy="{{ $val->getImage() }}"
-                                alt="">
+                            <div class="flexslider {{ count($val->getMediaLibrary()) === 0 ? 'hide-nav' : '' }}" >
+                                <ul class="slides">
+                                    <li>
+                                        <img style="width: 100%; margin: auto; display: block;"
+                                            src="{{ $val->getImage() }}" alt="" loading="lazy">
+                                    </li>
+                                    
+                                    @foreach ($val->getMediaLibrary() as $val)
+                                        <li>
+                                            <img loading="lazy" style="width: 100%; margin: auto; display: block;"
+                                                src="{{ $val->getImage() }}" alt="">
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
+
+
+
                         </div>
                     </div>
                 @endforeach

@@ -2,9 +2,10 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\Http\Controllers\Controller;
+use App\MediaLibrary;
 use App\News;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
 
 class NewsController extends Controller
@@ -39,14 +40,34 @@ class NewsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'title' =>'required',
-            'text'   =>  'required',
-            'img' =>  'nullable|image'
+            'title' => 'required',
+            'img' => 'nullable|image',
+            'text' => 'required',
         ]);
-
 
         $prod = News::add($request->all());
         $prod->uploadImage($request->file('img'));
+
+        if ($request->file('file') !== null) {
+            foreach ($request->file('file') as $file) {
+                $instance = new MediaLibrary;
+                $instance->uploadImage($file);
+                $instance->id_content = $prod->id;
+                $instance->id_category = 2;
+                $instance->save();
+            };
+        }
+
+        if ($request->file('file2') !== null) {
+            foreach ($request->file('file2') as $file) {
+                $instance = new MediaLibrary;
+                $instance->uploadImage($file);
+                $instance->id_content = $prod->id;
+                $instance->id_category = 3;
+                $instance->save();
+            };
+        }
+
         return redirect()->route('news.index');
     }
 
@@ -70,7 +91,12 @@ class NewsController extends Controller
     public function edit($id)
     {
         $sl = News::find($id);
-        return view('admin.news.edit', compact('sl'));
+        $whereArray = array('id_content' => $id, 'id_category' => 2); // 2 menu restaurant
+        $media_library_menu = MediaLibrary::where($whereArray)->get();
+        $whereArray = array('id_content' => $id, 'id_category' => 3); // 3 map restaurant
+        $media_library_map = MediaLibrary::where($whereArray)->get();
+
+        return view('admin.news.edit', compact('sl', 'media_library_menu', 'media_library_map'));
     }
 
     /**
@@ -83,10 +109,9 @@ class NewsController extends Controller
     public function update(Request $request, $id)
     {
         $this->validate($request, [
-            'title' =>'required',
-            'text'   =>  'required',
-            'text'   =>  'required',
-            'img' =>  'nullable|image'
+            'title' => 'required',
+            'text' => 'required',
+            'img' => 'nullable|image',
         ]);
 
         $post = News::find($id);
@@ -94,7 +119,33 @@ class NewsController extends Controller
         $post->edit($request->all());
         $post->uploadImage($request->file('img'));
 
+        if ($request->get('file_del') !== null) {
+            foreach ($request->get('file_del') as $file_del_id) {
+                $item = MediaLibrary::find($file_del_id);
+                $item->removeImage();
+                $item->delete();
+            };
+        }
 
+        if ($request->file('file') !== null) {
+            foreach ($request->file('file') as $file) {
+                $instance = new MediaLibrary;
+                $instance->uploadImage($file);
+                $instance->id_content = $post->id;
+                $instance->id_category = 2; // menu
+                $instance->save();
+            };
+        }
+
+        if ($request->file('file2') !== null) {
+            foreach ($request->file('file2') as $file) {
+                $instance = new MediaLibrary;
+                $instance->uploadImage($file);
+                $instance->id_content = $post->id;
+                $instance->id_category = 3; // map
+                $instance->save();
+            };
+        }
 
         return redirect()->route('news.index');
     }
@@ -108,11 +159,27 @@ class NewsController extends Controller
     public function destroy($id)
     {
         $news = News::find($id);
-        if ($news->img !='') {
+        if ($news->img != '') {
             Storage::delete('/uploads/news/small/' . $news->img);
             Storage::delete('/uploads/news/big/' . $news->img);
         }
         $news->delete();
+
+        $whereArray = array('id_content' => $id, 'id_category' => 3);
+        $media_library = MediaLibrary::where($whereArray)->get();
+
+        foreach ($media_library as $file) {
+            $file->removeImage();
+            $file->delete();
+        };
+
+        $whereArray = array('id_content' => $id, 'id_category' => 2);
+        $media_library = MediaLibrary::where($whereArray)->get();
+
+        foreach ($media_library as $file) {
+            $file->removeImage();
+            $file->delete();
+        };
 
         return redirect()->route('news.index');
     }

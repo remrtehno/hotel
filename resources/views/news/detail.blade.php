@@ -34,8 +34,13 @@
                             <p>Вт-Вс: с 12:00 до 24:00, Пн: выходной <br> Первый этаж</p>
                             <br>
 
-                            <a class="meta-info" href="#">Меню</a>
-                            <a class="meta-info" href="#">Винная карта</a>
+                            @if (count($media_library_menu))
+                                <a class="start-menu meta-info">Меню</a>
+                            @endif
+                            @if (count($media_library_map))
+                                <a class="start-map meta-info">Винная карта</a>
+                            @endif
+
                             <br>
 
                             <div style="border: 1px solid #F1F1F1; margin-bottom: 12px;"></div>
@@ -50,6 +55,17 @@
                     </div>
                 </div>
 
+                <div style="display: none;">
+                    @foreach ($media_library_map as $val)
+                        <img data-fancybox="map" class="restaurant-map" loading="lazy" src="{{ $val->getImage('big') }}"
+                            alt="">
+                    @endforeach
+
+                    @foreach ($media_library_menu as $val)
+                        <img data-fancybox="menu" class="restaurant-menu" loading="lazy" src="{{ $val->getImage('big') }}"
+                            alt="">
+                    @endforeach
+                </div>
 
 
             </div>

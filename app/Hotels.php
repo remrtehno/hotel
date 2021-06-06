@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\MediaLibrary;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
@@ -26,7 +27,6 @@ class Hotels extends Model
     {
         return $this->belongsTo("App\ProdCat", 'cat_id', 'id');
     }
-
 
     public static function add($fields)
     {
@@ -86,6 +86,13 @@ class Hotels extends Model
     {
         $hotels = self::all();
         return $hotels;
+    }
+
+    public function getMediaLibrary()
+    {
+        $whereArray = array('id_content' => $this->id, 'id_category' => 0);
+        $media_library = MediaLibrary::where($whereArray)->get();
+        return $media_library;
     }
 
     public function sluggable(): array

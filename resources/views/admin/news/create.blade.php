@@ -61,7 +61,7 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Анонс</label>
-                                    <textarea name="anonce" id="editor" cols="30" rows="10" class="form-control"></textarea>
+                                    <textarea name="anonce" id="editor" cols="30" rows="10" class="form-control">Анонс</textarea>
                                 </div>
                             </div>
 
@@ -69,19 +69,46 @@
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Доп услуги</label>
                                     <textarea name="meta_info" id="meta_info" cols="30" rows="10"
-                                        class="form-control"></textarea>
+                                        class="form-control">Доп услуги</textarea>
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Полный текст</label>
-                                    <textarea id="" cols="30" rows="10" class="form-control" name="text"></textarea>
+                                    <textarea id="" cols="30" rows="10" class="form-control" name="text">Полный текст</textarea>
                                 </div>
                             </div>
                         </div>
 
+                        <div class="col-md-12">
+                            <label for="exampleInputFile">Винная карта</label>
+                            <p class="help-block">jpeg,png,jpeg</p>
+                            <p class="help-block">размер 419х287</p>
+                            <button type="button"
+                                onclick=' 
+                                                                                    this.insertAdjacentHTML( "afterEnd", "<input type=\"file\" name=\"file2[]\">") '>+
+                                добавить изображение</button>
 
+
+                            <input type="file" id="exampleInputFile" name="file2[]">
+
+                        </div>
+
+
+                        <div class="col-md-12">
+                            <label for="exampleInputFile">Меню</label>
+                            <p class="help-block">jpeg,png,jpeg</p>
+                            <p class="help-block">размер 419х287</p>
+                            <button type="button"
+                                onclick=' 
+                                                                                    this.insertAdjacentHTML( "afterEnd", "<input type=\"file\" name=\"file[]\">") '>+
+                                добавить изображение</button>
+
+
+                            <input type="file" id="exampleInputFile" name="file[]">
+
+                        </div>
 
 
 

@@ -74,6 +74,28 @@
             </div>
             <!-- /.box -->
 
+            <h3>Страница спасибо</h3>
+            <!-- Default box -->
+            <div class="box">
+                <?php
+                // configuration
+                $url = 'http://example.com/backend/editor.php';
+                $file = resource_path('views') . '/thanks/content.blade.php';
+
+                // read the textfile
+                $text = file_get_contents($file);
+                ?>
+                <!-- HTML form -->
+                <form action="{{ route('save_file') }}" method="post" enctype="multipart/form-data">
+                    @csrf
+                    <input type="hidden" name="file-to-save" value="{{ $file }}">
+                    <textarea name="text"><?php echo htmlspecialchars($text); ?></textarea>
+                    <input type="submit" />
+                    <input type="reset" />
+                </form>
+            </div>
+            <!-- /.box -->
+
         </section>
         <!-- /.content -->
     </div>

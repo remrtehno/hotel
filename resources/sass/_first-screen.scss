@@ -243,6 +243,40 @@ input.datepicker {
   margin-bottom: -23px;
 }
 
+.flex-control-nav {
+  display: none;
+}
+.flexslider {
+  max-height: 463px;
+  overflow: hidden;
+  position: relative;
+  &.hide-nav {
+    .flex-direction-nav {
+      display: none;
+    }
+  }
+}
+.flex-prev {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0;
+  width: 40px;
+  height: 40px;
+  background: url(../../public/img/arrow-left-black.png);
+}
+.flex-next {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  font-size: 0;
+  transform: translateY(-50%);
+  width: 40px;
+  height: 40px;
+  background: url(../../public/img/arrow-right-black.png);
+}
+
 .book__container span {
   font-feature-settings: "pnum" on, "lnum" on;
 }

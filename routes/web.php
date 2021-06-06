@@ -35,6 +35,7 @@ Route::get('/services', "MainController@services")->name("services");
 Route::get('/extra-services', "MainController@extra_services")->name("extra_services");
 Route::get('/servicesdetail/{id}', "MainController@servicesdetail")->name("servicesdetail");
 Route::post('/send-email', "MainController@send_email")->name("email");
+Route::get('/thanks', "MainController@thanks");
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth'], function () {
     Route::get('/', 'MainController@index');

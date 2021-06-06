@@ -27,7 +27,8 @@
                     @foreach ($items as $item)
                         <div class="events-wrapper">
                             <div class="img-container">
-                                <img class="lozad" style="max-width: 100%; margin: 0; width: 100%;" loading="lazy"
+                                <img class="lozad" style="object-fit: cover;
+                                    height: 400px; max-width: 100%; margin: 0; width: 100%;" loading="lazy"
                                     src="{!! $item->getImage('big') !!}" alt="">
                             </div>
                             <div class="description-section">
@@ -51,6 +52,13 @@
                                             Подробнее
                                         </a>
                                     </div>
+                                    <a style="
+                                                position: absolute;
+                                                left: 0;
+                                                right: 0;
+                                                top: 0;
+                                                bottom: 0;
+                                              " href="{{ route('eventsdetail', $item->slug) }}"></a>
                                 </div>
                             </div>
                         </div>

@@ -7,6 +7,8 @@
 require('./test.js');
 require('./bootstrap');
 require('./bootstrap-datepicker.min.js');
+require('./jquery.flexslider.js');
+require('./fancybox/jquery.fancybox.min.js');
 
 
 
@@ -42,6 +44,19 @@ require('./bootstrap-datepicker.min.js');
 
 
 $(function () {
+
+  $('.start-menu').on('click', function () {
+    $.fancybox.open($('.restaurant-menu'))
+  })
+
+  $('.start-map').on('click', function () {
+    $.fancybox.open($('.restaurant-map'))
+  })
+
+
+  $('.flexslider').flexslider({
+    animation: "slide",
+  });
 
   $(".datepicker").datepicker({
     language: 'ru'
