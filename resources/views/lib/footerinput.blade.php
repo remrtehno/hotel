@@ -94,6 +94,32 @@
     </div>
 </div>
 
+<!-- Modal -->
+<div class="modal fade" id="wait-callback" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Заказать звонок</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form" action="{{ route('email') }}" method="POST">
+                    @csrf
+                    <input name="name" type="text" placeholder="Ваше имя">
+                    <input name="tel" type="text" placeholder="Ваш номер">
+                    <br>
+                    <textarea name="msg" placeholder="Сообщение"></textarea>
+                    <p></p>
+                    <br>
+                    <button class="orange-btn" type="submit">Жду звонка</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 @if (session()->has('message'))
     <div class="modal fade" onclick="this.remove()" style="display: block;">

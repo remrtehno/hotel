@@ -37667,6 +37667,8 @@ __webpack_require__(/*! ./fancybox/jquery.fancybox.min.js */ "./resources/js/fan
 // });
 
 $(function () {
+  $.fancybox.defaults.thumbs.autoStart = true;
+  $.fancybox.defaults.backFocus = false;
   $('.start-menu').on('click', function () {
     $.fancybox.open($('.restaurant-menu'));
   });
@@ -37674,7 +37676,8 @@ $(function () {
     $.fancybox.open($('.restaurant-map'));
   });
   $('.flexslider').flexslider({
-    animation: "slide"
+    animation: "slide",
+    animationLoop: false
   });
   $(".datepicker").datepicker({
     language: 'ru'
@@ -37694,11 +37697,13 @@ $(function () {
   $.each($('.slick'), function (_, value) {
     $(value).slick({
       lazyLoad: 'ondemand',
-      infinite: true,
+      infinite: false,
+      // draggable: false,
+      swipe: false,
       speed: 800,
       slidesToShow: $(value).data('per-slide') || 1,
       slidesToScroll: 1,
-      autoplay: true,
+      autoplay: false,
       autoplaySpeed: 5000,
       arrows: true,
       dots: true,
@@ -37712,8 +37717,8 @@ $(function () {
         breakpoint: 992,
         settings: {
           slidesToShow: 1,
-          slidesToScroll: 3,
-          infinite: true,
+          slidesToScroll: 1,
+          // infinite: true,
           dots: true
         }
       }]

@@ -65,7 +65,14 @@ class MediaLibrary extends Model
         $img->backup();
 
         File::exists($this->path1) or File::makeDirectory($this->path1, 0777, true);
-        $img->fit(1199, 586)->save($this->path1 . $filename, 100);
+        $width = 1920; // your max width
+        $height = 1480; // your max height
+
+        $img->height() > $img->width() ? $width = null : $height = null;
+        $img->resize($width, $height, function ($constraint) {
+            $constraint->aspectRatio();
+        });
+        $img->save($this->path1 . $filename, 100);
         $img->reset();
         $img->backup();
 

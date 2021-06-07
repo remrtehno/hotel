@@ -83,10 +83,10 @@
   }
   margin-bottom: 18px;
   li {
-    margin-bottom: 7px;
+    margin-bottom: 5px;
     font-style: normal;
     font-weight: normal;
-    font-size: 15px;
+    font-size: 14px;
     line-height: 150%;
     /* or 24px */
 
@@ -111,7 +111,7 @@
     vertical-align: middle;
     margin-right: 7px;
   }
-  margin-bottom: 30px;
+  margin-bottom: 10px;
 }
 
 .bottom {
@@ -119,6 +119,13 @@
   align-items: center;
   flex-wrap: wrap;
   @media (max-width: 992px) {
+    flex-direction: column;
+    align-items: flex-start;
+    table + p {
+    }
+    pre {
+      display: none;
+    }
     .orange-btn {
       margin-top: 15px;
     }
@@ -154,11 +161,22 @@
 }
 
 .hotel-detail-page {
+  @media (max-width: 992px) {
+    .send-email {
+      max-width: 300px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
   .product {
     @media (min-width: 992px) {
       display: grid;
       grid-template-columns: auto 528px;
       grid-gap: 0 40px;
+    }
+    @media (max-width: 992px) {
+      display: flex;
+      flex-direction: column-reverse;
     }
     .bottom p {
       color: #1e1e1e;
@@ -208,7 +226,9 @@
     margin-bottom: 100px;
     .politics {
       max-width: 100%;
-      margin-left: 24px;
+      @media (min-width: 993px) {
+        margin-left: 24px;
+      }
     }
     input,
     textarea {

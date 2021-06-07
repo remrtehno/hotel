@@ -58,6 +58,9 @@
   text-transform: uppercase;
 
   color: #d09870;
+  @media (max-width: 992px) {
+    // text-align: center;
+  }
 }
 
 .prev-btn svg {

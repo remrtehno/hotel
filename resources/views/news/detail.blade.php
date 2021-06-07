@@ -57,13 +57,16 @@
 
                 <div style="display: none;">
                     @foreach ($media_library_map as $val)
-                        <img data-fancybox="map" class="restaurant-map" loading="lazy" src="{{ $val->getImage('big') }}"
-                            alt="">
+                        <a data-fancybox="map"> <img data-fancybox="map" class="restaurant-map" loading="lazy"
+                                src="{{ $val->getImage('big') }}" alt="">
+                        </a>
                     @endforeach
 
                     @foreach ($media_library_menu as $val)
-                        <img data-fancybox="menu" class="restaurant-menu" loading="lazy" src="{{ $val->getImage('big') }}"
-                            alt="">
+                        <a data-fancybox="menu">
+                            <img data-fancybox="menu" class="restaurant-menu" loading="lazy"
+                                src="{{ $val->getImage('big') }}" alt="">
+                        </a>
                     @endforeach
                 </div>
 

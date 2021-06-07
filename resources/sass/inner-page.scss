@@ -4,6 +4,9 @@
   margin-top: calc(var(--offset-y) * -1);
   margin-bottom: calc(var(--offset-y) / 2);
   z-index: 9;
+  @media (max-width: 992px) {
+    --offset-y: 277px;
+  }
   img {
     margin: 15px 0;
   }
@@ -18,6 +21,9 @@
     font-weight: normal;
     font-size: 16px;
     line-height: 180%;
+    @media (max-width: 992px) {
+      margin-bottom: 10px;
+    }
     li:last-child {
       opacity: 0.4;
     }
@@ -40,6 +46,9 @@
     text-align: center;
 
     color: #ffffff;
+    @media (max-width: 992px) {
+      font-size: 33px;
+    }
   }
   .container {
     position: relative;

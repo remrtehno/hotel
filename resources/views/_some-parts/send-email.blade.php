@@ -1,4 +1,4 @@
-<h2 class="title-section">
+<h2 class="title-section send-email">
     Остались вопросы? Напишите нам
 </h2>
 <p class="title-description">Мы свяжемся с вами в ближайшее время</p>
