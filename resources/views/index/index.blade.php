@@ -35,7 +35,7 @@
             </div>
         </div>
     </section>
-    <section>
+    <section class="services-main-page-wrapper">
         <div class="container">
             <div class="under-title">
                 С теплом о вас
@@ -124,17 +124,22 @@
                             <a href="{{ route('hotel-detail', $val->slug) }}" class="orange-btn">Подробнее</a>
                         </div>
                         <div class="col-xl-6">
-                            <div class="flexslider {{ count($val->getMediaLibrary()) === 0 ? 'hide-nav' : '' }}" >
+                            <div class="flexslider {{ count($val->getMediaLibrary()) === 0 ? 'hide-nav' : '' }}">
                                 <ul class="slides">
                                     <li>
-                                        <img style="width: 100%; margin: auto; display: block;"
-                                            src="{{ $val->getImage() }}" alt="" loading="lazy">
+                                        <a data-fancybox="hotel-{{ $val->slug }}" href="{{ $val->getImage('big') }}">
+                                            <img style="width: 100%; margin: auto; display: block;"
+                                                src="{{ $val->getImage() }}" alt="" loading="lazy">
+                                        </a>
                                     </li>
-                                    
-                                    @foreach ($val->getMediaLibrary() as $val)
+
+                                    @foreach ($val->getMediaLibrary() as $val2)
                                         <li>
-                                            <img loading="lazy" style="width: 100%; margin: auto; display: block;"
-                                                src="{{ $val->getImage() }}" alt="">
+                                            <a data-fancybox="hotel-{{ $val->slug }}"
+                                                href="{{ $val2->getImage('big') }}">
+                                                <img loading="lazy" style="width: 100%; margin: auto; display: block;"
+                                                    src="{{ $val2->getImage() }}" alt="">
+                                            </a>
                                         </li>
                                     @endforeach
                                 </ul>
@@ -177,8 +182,10 @@
                 @foreach ($news as $val)
                     <div class="slide">
                         <div class="borders"></div>
-                        <img style="max-width: 100%; margin: auto; display: block;" data-lazy="{{ $val->getImage() }}"
-                            alt="">
+                        <a data-fancybox="bars" href="{{ $val->getImage('big') }}">
+                            <img style="max-width: 100%; margin: auto; display: block;"
+                                data-lazy="{{ $val->getImage() }}" alt="">
+                        </a>
                         <div class="slider-bars-overlay">
                             <h5 class="title">{{ $val->title }}</h5>
                             <div class="slide-text-description">{!! $val->anonce !!}</div>
@@ -212,8 +219,9 @@
                         @foreach ($services as $val)
                             <div class="slide" data-title="{{ $val->title }}">
                                 <div class="borders"></div>
-                                <img style="max-width: 100%; margin: auto; display: block;"
-                                    data-lazy="{{ $val->getImage('smaller') }}" alt="">
+                                <a data-fancybox="events" href="{{ $val->getImage('big') }}"><img
+                                        style="max-width: 100%; margin: auto; display: block;"
+                                        data-lazy="{{ $val->getImage('smaller') }}" alt=""></a>
                                 <div class="slider-bars-overlay">
                                     {{-- <div class="slide-text-description">{!! $val->anonce !!}</div> --}}
                                     <a class="link" href="{{ route('newsdetail', $val->slug) }}"></a>
@@ -235,8 +243,10 @@
                     <div class="slide" data-title="{{ $val->title }}">
                         <div class="row">
                             <div class="col-xl-7">
-                                <img style="max-width: 100%; margin: auto; display: block;"
-                                    data-lazy="{{ $val->getImage('smaller') }}" alt="">
+                                <a data-fancybox="SPEC" href="{{ $val->getImage('big') }}">
+                                    <img style="max-width: 100%; margin: auto; display: block;"
+                                        data-lazy="{{ $val->getImage('smaller') }}" alt="">
+                                </a>
                                 <div class="slick-arrow-container">
                                     <button class="prev-btn"><img src="\img\arrow-left-black.png" alt=""></button>
                                     <button class="next-btn"><img src="\img\arrow-right-black.png" alt=""></button>

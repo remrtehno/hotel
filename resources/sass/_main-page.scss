@@ -43,6 +43,14 @@
   }
 }
 
+.services-main-page-wrapper {
+  .under-title {
+    @media (max-width: 992px) {
+      text-align: center;
+    }
+  }
+}
+
 .services-main-page {
   font-size: 19px;
   font-style: normal;
@@ -84,8 +92,8 @@
     right: 15px;
     display: flex;
     justify-content: space-between;
-    top: 0;
-    bottom: 0;
+    top: 50%;
+    transform: translateY(-50%);
   }
 }
 

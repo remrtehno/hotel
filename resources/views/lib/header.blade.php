@@ -86,7 +86,7 @@
                     Найти номер
                 </button>
             </form>
-            <a href="https://hotels-pro.ru/order/royal_plaza">
+            <a target="_blank" href="https://hotels-pro.ru/order/royal_plaza">
                 <h5>Визовая поддержка</h5>
             </a>
         </div>

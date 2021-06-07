@@ -21,7 +21,8 @@
                     </div>
                     <div class="img-container">
                         @foreach ($product->getMediaLibrary() as $item)
-                            <img src="{{ $item->getImage('medium') }}" loading="lazy" style="margin:0; max-width: 100%;" alt="">
+                            <img src="{{ $item->getImage('medium') }}" loading="lazy" style="margin:0; max-width: 100%;"
+                                alt="">
                         @endforeach
                     </div>
                     <div class="description">
@@ -30,7 +31,8 @@
 
                     <br>
                     <br>
-                    <a href="#" class="orange-btn big">Получить консультацию</a>
+                    <a href="#" data-toggle="modal" data-target="#wait-callback" class="orange-btn big">Получить
+                        консультацию</a>
                 </div>
 
 
