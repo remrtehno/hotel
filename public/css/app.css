@@ -10445,7 +10445,7 @@ button {
 }
 .header-contacts {
   text-align: right;
-  font-weight: 100;
+  font-weight: 300;
 }
 .header-contacts .address {
   padding-top: 8px;
@@ -10505,7 +10505,7 @@ button {
   font-family: Raleway;
   font-size: 15px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 300;
   line-height: 18px;
   letter-spacing: 0em;
   text-align: right;
