@@ -149,11 +149,24 @@ class MainController extends Controller
     {
         $items = SpecSuggestions::all();
 
-        $title = "$id->title";
-        $meta_desc = "$id->meta_desc";
-        $meta_key = "$id->meta_key";
+        $title = "";
+        $meta_desc = "";
+        $meta_key = "";
 
-        return view("products.category", compact('items', 'title', 'meta_key', 'meta_desc'));
+        $ROUTE = 'suggestions_detail';
+
+        return view("extra-services-views.index", compact('items', 'title', 'meta_key', 'meta_desc', 'ROUTE'));
+    }
+
+    public function suggestions_detail($id)
+    {
+        $items = SpecSuggestions::where('slug', $id)->firstOrFail();
+
+        $title = "$items->title";
+        $meta_desc = "$items->meta_desc";
+        $meta_key = "$items->meta_key";
+
+        return view("extra-services-views.detail", compact('items', 'title', 'meta_key', 'meta_desc'));
     }
 
     public function skill($slug)

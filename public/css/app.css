@@ -10785,6 +10785,11 @@ input.datepicker {
 .main-page-form .title-description {
   text-align: center;
 }
+@media (max-width: 992px) {
+  .main-page-form .politics {
+    margin: 0 !important;
+  }
+}
 
 .slider-main-page {
   background-repeat: no-repeat;

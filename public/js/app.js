@@ -37696,7 +37696,7 @@ $(function () {
   });
   $.each($('.slick'), function (_, value) {
     $(value).slick({
-      lazyLoad: 'ondemand',
+      // lazyLoad: 'ondemand',
       infinite: false,
       // draggable: false,
       swipe: false,

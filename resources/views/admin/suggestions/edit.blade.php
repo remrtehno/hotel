@@ -53,6 +53,40 @@
                                 <textarea name="text" id="editor" class="form-control">{!! $sl->text !!}</textarea>
                             </div>
                         </div>
+
+
+                        <div class="col-md-12">
+                            <label for="exampleInputFile">Галерея</label>
+                            <p class="help-block">jpeg,png,jpeg</p>
+                            <p class="help-block">размер 419х287</p>
+                            <button type="button"
+                                onclick=' 
+                                                                                                                                                        this.insertAdjacentHTML( "afterEnd", "<input type=\"file\" name=\"file[]\">") '>+
+                                добавить изображение</button>
+
+
+                            <input type="file" id="exampleInputFile" name="file[]">
+                            <br>
+                            <div id="imagesForDelete">
+
+                            </div>
+                            @foreach ($media_library as $val)
+                                <span class="img-preview" style="display: inline-block;">
+                                    <label>
+
+                                        <button style="position: absolute" type="button" onclick='
+                                                                        imagesForDelete.innerHTML +=  "<input type=\"hidden\" value=\"{{ $val->id }}\" name=\"file_del[]\">";
+                                                                        this.closest("span").remove();
+                                                                    '>
+                                            x
+                                        </button>
+                                        <img width="70" src="{{ $val->getImage() }}" alt="">
+                                    </label>
+                                </span>
+                            @endforeach
+
+
+                        </div>
                     </div>
 
 
