@@ -7,7 +7,7 @@
             <h1 class="title">{{ $items->title }}</h1>
             <ul class="breadcrumbs">
                 <li><a href="/">Главная</a></li>
-                <li><a href="/extra-services"> Специальные предложения</a></li>
+                <li><a href="/extra-services"> Дополнительные услуги</a></li>
                 <li><a href="">{{ $items->title }}</a></li>
             </ul>
             <br>

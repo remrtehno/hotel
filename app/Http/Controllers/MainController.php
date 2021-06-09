@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\About;
 use App\Contact;
+use App\DopUslugi;
 use App\DownloadedFiles;
 use App\Gallery;
 use App\Hotels;
@@ -143,6 +144,30 @@ class MainController extends Controller
         $meta_key = $this->meta_key = "Каталог";
 
         return view("products.category", compact('products', 'cat', 'title', 'meta_key', 'meta_desc'));
+    }
+
+    public function dopuslugi()
+    {
+        $items = DopUslugi::all();
+
+        $title = "";
+        $meta_desc = "";
+        $meta_key = "";
+
+        $ROUTE = 'dopuslugi_detail';
+
+        return view("dopuslugi.index", compact('items', 'title', 'meta_key', 'meta_desc', 'ROUTE'));
+    }
+
+    public function dopuslugi_detail($id)
+    {
+        $items = DopUslugi::where('slug', $id)->firstOrFail();
+
+        $title = "$items->title";
+        $meta_desc = "$items->meta_desc";
+        $meta_key = "$items->meta_key";
+
+        return view("dopuslugi.detail", compact('items', 'title', 'meta_key', 'meta_desc'));
     }
 
     public function suggestions()
