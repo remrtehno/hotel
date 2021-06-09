@@ -8,6 +8,7 @@
     <li><a href="{{ route('logo.index') }}"><i class="fa fa-tags"></i> <span>Логотип</span></a></li>
     <li><a href="{{ route('extra-services') }}"><i class="fa fa-tags"></i>Внутренние страницы</a></li>
     <li><a href="{{ route('suggestions.index') }}"><i class="fa fa-tags"></i> <span>Специальные предложения</span></a>
+        <li><a href="{{ route('dopuslugi.index') }}"><i class="fa fa-tags"></i> <span>Доп услуги</span></a>
     </li>
 
     <li><a href="{{ route('about.index') }}"><i class="fa fa-users"></i> <span>О нас</span></a></li>

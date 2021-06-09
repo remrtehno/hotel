@@ -38,11 +38,15 @@ Route::get('/servicesdetail/{id}', "MainController@servicesdetail")->name("servi
 Route::post('/send-email', "MainController@send_email")->name("email");
 Route::get('/thanks', "MainController@thanks");
 
+Route::get('/dopuslugi', "MainController@dopuslugi")->name('dopuslugi');
+Route::get('/dopuslugi/{id}', "MainController@dopuslugi_detail")->name('dopuslugi_detail');
+
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth'], function () {
     Route::get('/', 'MainController@index');
     Route::post('/save-file', 'MainController@save_file')->name('save_file');
     Route::resource('/download-files', 'DownloadedFilesController');
     Route::resource('/post', 'ProductController');
+    Route::resource('/dopuslugi', 'DopUslugiController');
     Route::resource('/suggestions', 'SpecSuggestionsController');
     Route::resource('/reviews', 'ReviewsController');
     Route::resource('/hotels', 'HotelsController');
