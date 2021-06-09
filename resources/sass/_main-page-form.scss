@@ -8,4 +8,9 @@
   .title-description {
     text-align: center;
   }
+  @media (max-width: 992px) {
+    .politics {
+      margin: 0 !important;
+    }
+  }
 }

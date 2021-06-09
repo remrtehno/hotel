@@ -2,6 +2,7 @@
 
 namespace App;
 
+use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
@@ -10,8 +11,9 @@ use Intervention\Image\Facades\Image;
 class SpecSuggestions extends Model
 {
     //
+    use Sluggable;
     protected $table = "spec_suggestions";
-    protected $fillable = ['title', 'text', 'img'];
+    protected $fillable = ['title', 'text', 'img', 'slug'];
 
     public static function add($fields)
     {
@@ -32,6 +34,13 @@ class SpecSuggestions extends Model
         if ($this->img != "") {
             Storage::delete('/uploads/suggestions/' . $this->img);
         }
+    }
+
+    public function getMediaLibrary()
+    {
+        $whereArray = array('id_content' => $this->id, 'id_category' => 4);
+        $media_library = MediaLibrary::where($whereArray)->get();
+        return $media_library;
     }
 
     public function uploadImage($image)
@@ -63,10 +72,20 @@ class SpecSuggestions extends Model
         }
         return '/uploads/suggestions/' . $this->img;
     }
+    
 
     public static function getSuggestions()
     {
         $sliders = self::all();
         return $sliders;
+    }
+
+    public function sluggable(): array
+    {
+        return [
+            'slug' => [
+                'source' => 'title',
+            ],
+        ];
     }
 }
