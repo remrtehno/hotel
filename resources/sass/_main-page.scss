@@ -118,6 +118,43 @@
 }
 
 .reviews-wrapper {
+  position: relative;
+  .prev-btn {
+    position: absolute;
+    left: -55px;
+    top: 100px;
+
+    z-index: 99;
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+    }
+    svg {
+      height: 22px;
+      margin: 0;
+    }
+  }
+  .next-btn {
+    position: absolute;
+    right: -55px;
+    top: 100px;
+
+    z-index: 99;
+    opacity: 0.5;
+    &:hover {
+      opacity: 1;
+    }
+    svg {
+      height: 22px;
+      margin: 0;
+    }
+  }
+  @media (max-width: 992px) {
+    .next-btn,
+    .prev-btn {
+      display: none;
+    }
+  }
   .slick-dots {
     li {
       display: inline-block;

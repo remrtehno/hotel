@@ -14,6 +14,9 @@
     float: left;
   }
   .slide-text {
+    @media (max-width: 992px) {
+      order: 1;
+    }
     &-title {
       font-style: normal;
       font-weight: bold;

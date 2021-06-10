@@ -40,7 +40,26 @@
                         </div>
                     </div>
                     <div class="img-container">
-                        <img src="{{ $product->getImage() }}" loading="lazy" style="margin:0; max-width: 100%;" alt="">
+                        <div class="flexslider {{ count($product->getMediaLibrary()) === 0 ? 'hide-nav' : '' }}">
+                            <ul class="slides">
+                                <li>
+                                    <a data-fancybox="gallery" href="{{ $product->getImage('big') }}"> <img
+                                            src="{{ $product->getImage() }}" loading="lazy"
+                                            style="margin:0; max-width: 100%;" alt="">
+                                    </a>
+                                </li>
+
+                                @foreach ($media_library_menu as $val)
+                                    <li>
+                                        <a data-fancybox="gallery" href="{{ $val->getImage('big') }}">
+                                            <img loading="lazy" style="width: 100%; margin: auto; display: block;"
+                                                src="{{ $val->getImage() }}" alt="">
+                                        </a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
+
                     </div>
                 </div>
 
