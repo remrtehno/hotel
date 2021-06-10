@@ -10522,6 +10522,9 @@ button {
   letter-spacing: 0em;
   text-align: right;
 }
+.header-contacts table td strong {
+  font-weight: 100;
+}
 
 .parallax-window {
   min-height: 400px;

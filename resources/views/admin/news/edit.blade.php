@@ -93,9 +93,7 @@
 
                             <input type="file" id="exampleInputFile" name="file2[]">
                             <br>
-                            <div id="imagesForDelete">
 
-                            </div>
                             @foreach ($media_library_map as $val)
                                 <span class="img-preview" style="display: inline-block;">
                                     <label>
