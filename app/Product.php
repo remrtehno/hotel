@@ -90,8 +90,7 @@ class Product extends Model
         $this->removeImage();
         $filename = str_random(10) . '.' . $image->extension();
         $pat = public_path() . '/uploads/products/small/' . $filename;
-        // $pat2 = public_path().'/uploads/products/prev/'.$filename;
-        // $pat3 = public_path().'/uploads/products/home/'.$filename;
+
         ini_set('memory_limit', '256M');
         $img = Image::make($image);
         $img->backup();
@@ -104,17 +103,23 @@ class Product extends Model
         $img->reset();
         $img->backup();
 
-        $width = 600; // your max width
-        $height = 600; // your max height
+        $pat2 = public_path('/uploads/products/big/');
 
-        $img->height() > $img->width() ? $width=null : $height=null;
+        File::exists($pat2) or
+        File::makeDirectory($pat2, 0777, true);
+
+        $width = 1800; // your max width
+        $height = 1800; // your max height
+
+        $img->height() > $img->width() ? $width = null : $height = null;
         $img->resize($width, $height, function ($constraint) {
         $constraint->aspectRatio();
         });
 
-        $img->save($pat3, 100);
+        $img->save($pat2 . $filename, 100);
         $img->reset();
-        $image->storeAs(public_path().'/uploads/products/', $filename);
+        $image->storeAs(public_path() . '/uploads/products/', $filename);
+
          */
 
         $this->img = $filename;

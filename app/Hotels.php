@@ -5,6 +5,7 @@ namespace App;
 use App\MediaLibrary;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Facades\File;
 use Illuminate\Support\Facades\Storage;
 use Intervention\Image\Facades\Image;
 
@@ -69,6 +70,23 @@ class Hotels extends Model
         $img->backup();
         $img->resize(528, 459)->save($pat, 100);
 
+        $pat2 = public_path('/uploads/hotels/big/');
+
+        File::exists($pat2) or
+        File::makeDirectory($pat2, 0777, true);
+
+        $width = 2800; // your max width
+        $height = 2800; // your max height
+
+        $img->height() > $img->width() ? $width = null : $height = null;
+        $img->resize($width, $height, function ($constraint) {
+            $constraint->aspectRatio();
+        });
+
+        $img->save($pat2 . $filename, 100);
+        $img->reset();
+        $image->storeAs(public_path() . '/uploads/hotels/', $filename);
+
         $this->img = $filename;
         $this->save();
     }
@@ -79,7 +97,7 @@ class Hotels extends Model
             return '/uploads/no-image.png';
         }
 
-        return "/uploads/hotels/$size" . $this->img;
+        return "/uploads/hotels/$size/" . $this->img;
     }
 
     public static function gethotels()

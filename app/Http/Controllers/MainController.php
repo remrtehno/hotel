@@ -296,7 +296,10 @@ class MainController extends Controller
         $meta_desc = "$product->meta_desc";
         $meta_key = "$product->meta_key";
 
-        return view("hotels.detail", compact('product', 'title', 'meta_key', 'meta_desc'));
+        $whereArray = array('id_content' => $product->id, 'id_category' => 1); // 2 hotel
+        $media_library_menu = MediaLibrary::where($whereArray)->get();
+
+        return view("hotels.detail", compact('product', 'title', 'meta_key', 'meta_desc', 'media_library_menu'));
     }
 
     public function detail($slug)
