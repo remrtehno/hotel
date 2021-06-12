@@ -10467,7 +10467,7 @@ button {
 }
 .header-contacts {
   text-align: right;
-  font-weight: 300;
+  font-weight: 100;
 }
 .header-contacts .address {
   padding-top: 8px;
@@ -10479,6 +10479,7 @@ button {
   line-height: 21px;
   letter-spacing: 0em;
   text-align: right;
+  font-feature-settings: "pnum" on, "lnum" on;
 }
 @media (max-width: 992px) {
   .header-contacts {
@@ -10534,6 +10535,7 @@ button {
 }
 .header-contacts table td strong {
   font-weight: 300;
+  font-feature-settings: "pnum" on, "lnum" on;
 }
 
 .parallax-window {
@@ -10621,7 +10623,8 @@ input.datepicker {
 
 .events {
   background: url(/images/events.png?3d5d5f7f1fce4964fb27f05cb77ae9f7) no-repeat;
-  background-position: left center;
+  background-color: white;
+  background-position: left bottom;
   background-size: 96%;
 }
 .events img {
@@ -10810,11 +10813,11 @@ input.datepicker {
   background-repeat: no-repeat;
   background-size: 94%;
   padding: 80px 0;
-  background-position: center center;
+  padding-bottom: 50px;
 }
 @media (min-width: 992px) {
   .slider-main-page {
-    background: url(/images/slider-main-bg.jpg?e783a9047b6bcc82e052c9acf6dbd963);
+    background: white url(/images/slider-main-bg.jpg?e783a9047b6bcc82e052c9acf6dbd963) left bottom no-repeat;
   }
 }
 .slider-main-page .btn-arrows {
@@ -10822,6 +10825,10 @@ input.datepicker {
 }
 .slider-main-page .title-section {
   float: left;
+}
+.slider-main-page .slide-text .orange-btn {
+  margin-bottom: 30px;
+  margin-top: -25px;
 }
 @media (max-width: 992px) {
   .slider-main-page .slide-text {
@@ -10832,7 +10839,7 @@ input.datepicker {
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  line-height: 160%;
+  line-height: 140%;
   /* or 35px */
   color: #1e1e1e;
 }
@@ -10840,7 +10847,7 @@ input.datepicker {
   font-family: Raleway;
   font-style: normal;
   font-weight: normal;
-  font-size: 18px;
+  font-size: 16px;
   line-height: 170%;
   color: #1e1e1e;
   margin-bottom: 30px;
@@ -10905,10 +10912,8 @@ input.datepicker {
 }
 .slider-main-page-restourants .slick-slide .slider-bars-overlay {
   position: absolute;
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 42px 23px 42px 38px;
+  padding: 42px 20px 42px 25px;
+  padding-top: 130px;
   color: white;
   top: 0;
   left: 0;
@@ -10933,7 +10938,7 @@ input.datepicker {
   font-family: Raleway;
   font-style: normal;
   font-weight: bold;
-  font-size: 24px;
+  font-size: 22px;
   line-height: 120%;
   color: #f8f8f8;
   margin-bottom: 8px;
@@ -10942,11 +10947,11 @@ input.datepicker {
   font-family: Raleway;
   font-style: normal;
   font-weight: normal;
-  font-size: 15px;
+  font-size: 14px;
   line-height: 150%;
   /* or 22px */
+  font-weight: 400;
   color: #f8f8f8;
-  opacity: 0.8;
 }
 
 .footer {
@@ -11024,7 +11029,7 @@ input.datepicker {
 .about-plaza ul li {
   position: relative;
   margin-bottom: 20px;
-  font-size: 17px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 300;
   line-height: 1.5;
@@ -11039,6 +11044,11 @@ input.datepicker {
   top: 0;
 }
 
+@media (min-width: 992px) {
+  .services-main-page-wrapper {
+    padding: 45px 0;
+  }
+}
 @media (max-width: 992px) {
   .services-main-page-wrapper .under-title {
     text-align: center;
@@ -11046,7 +11056,7 @@ input.datepicker {
 }
 
 .services-main-page {
-  font-size: 19px;
+  font-size: 16px;
   font-style: normal;
   font-weight: 300;
   line-height: 30px;
@@ -11476,6 +11486,16 @@ main {
   color: #1e1e1e;
 }
 
+.about-page {
+  line-height: 170%;
+}
+.about-page .col-xl-6 > * {
+  line-height: 170%;
+}
+.about-page img {
+  margin: 0;
+}
+
 .hotel-wrapper {
   background-color: #231e1c;
   color: white;
@@ -11515,13 +11535,13 @@ main {
   }
 }
 .hotel-wrapper .description-section {
-  padding-right: 30px;
+  padding-right: 35px;
   font-family: Raleway;
   font-style: normal;
   font-weight: normal;
   font-size: 16px;
   line-height: 1.5;
-  padding-top: 10px;
+  padding-top: 0px;
   position: relative;
   z-index: 1;
 }
@@ -11532,7 +11552,8 @@ main {
   }
 }
 .hotel-wrapper .description {
-  max-height: 128px;
+  max-height: 140px;
+  margin-bottom: 10px;
   overflow: hidden;
 }
 
@@ -11545,7 +11566,7 @@ main {
   }
   .even-items-change .hotel-wrapper:nth-child(even) .description-section {
     order: 1;
-    padding-left: 75px;
+    padding-left: 40px;
   }
 }
 .anonce li {
@@ -11615,10 +11636,10 @@ main {
 .notice {
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 13px;
   line-height: 19px;
   color: #918784;
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 .notice svg {
   vertical-align: middle;
@@ -11659,6 +11680,7 @@ main {
   font-weight: bold;
   font-size: 20px;
   line-height: 150%;
+  margin: 0;
   color: #f8f8f8;
 }
 .bottom table tr p:last-child {
@@ -11674,6 +11696,15 @@ main {
     margin-left: auto;
     margin-right: auto;
   }
+}
+.hotel-detail-page .product .cost {
+  margin-bottom: 20px;
+}
+.hotel-detail-page .product .cost p {
+  font-feature-settings: "pnum" on, "lnum" on;
+}
+.hotel-detail-page .product .cost p:last-child {
+  font-weight: 400;
 }
 @media (min-width: 992px) {
   .hotel-detail-page .product {
@@ -11723,7 +11754,7 @@ main {
   margin-bottom: 40px;
 }
 .hotel-detail-page .product .comfort li {
-  margin-bottom: 19px;
+  margin-bottom: 10px;
 }
 .hotel-detail-page .product .comfort li {
   color: inherit;
@@ -11759,6 +11790,36 @@ main {
 }
 .hotel-detail-page .title-description {
   text-align: center;
+}
+
+.hotels-page .hotel-wrapper .description p {
+  margin: 0;
+}
+.hotels-page .bottom {
+  padding-bottom: 35px;
+}
+.hotels-page .notice {
+  position: relative;
+  top: -6px;
+}
+.hotels-page .img-container img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.hotels-page .comfort {
+  -moz-columns: initial;
+       columns: initial;
+}
+.hotels-page .comfort ul {
+  margin-bottom: -10px;
+}
+@media (min-width: 992px) {
+  .hotels-page .comfort ul {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
 }
 
 .contact-general-data {
@@ -12307,6 +12368,8 @@ main {
   margin-left: -5px;
   margin-right: -5px;
 }
+
+/*# sourceMappingURL=bootstrap-datepicker.css.map */
 html {
   overflow-x: hidden;
 }
@@ -12317,3 +12380,4 @@ body {
     overflow-x: hidden;
   }
 }
+/*# sourceMappingURL=app.css.map*/

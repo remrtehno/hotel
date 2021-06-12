@@ -158,3 +158,15 @@
 
   color: #1e1e1e;
 }
+
+.about-page {
+  line-height: 170%;
+  .col-xl-6 {
+    & > * {
+      line-height: 170%;
+    }
+  }
+  img {
+    margin: 0;
+  }
+}

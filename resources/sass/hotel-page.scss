@@ -36,13 +36,13 @@
   }
   margin-bottom: 36px;
   .description-section {
-    padding-right: 30px;
+    padding-right: 35px;
     font-family: Raleway;
     font-style: normal;
     font-weight: normal;
     font-size: 16px;
     line-height: 1.5;
-    padding-top: 10px;
+    padding-top: 0px;
     position: relative;
     z-index: 1;
     @media (max-width: 992px) {
@@ -51,7 +51,8 @@
     }
   }
   .description {
-    max-height: 128px;
+    max-height: 140px;
+    margin-bottom: 10px;
     overflow: hidden;
   }
 }
@@ -64,7 +65,7 @@
       }
       .description-section {
         order: 1;
-        padding-left: 75px;
+        padding-left: 40px;
       }
     }
   }
@@ -136,7 +137,7 @@
 .notice {
   font-style: normal;
   font-weight: 500;
-  font-size: 16px;
+  font-size: 13px;
   line-height: 19px;
 
   color: #918784;
@@ -145,7 +146,7 @@
     vertical-align: middle;
     margin-right: 7px;
   }
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 
 .bottom {
@@ -183,6 +184,7 @@
       font-weight: bold;
       font-size: 20px;
       line-height: 150%;
+      margin: 0;
 
       color: #f8f8f8;
     }
@@ -204,6 +206,15 @@
     }
   }
   .product {
+    .cost {
+      p {
+        font-feature-settings: "pnum" on, "lnum" on;
+      }
+      p:last-child {
+        font-weight: 400;
+      }
+      margin-bottom: 20px;
+    }
     @media (min-width: 992px) {
       display: grid;
       grid-template-columns: auto 528px;
@@ -252,7 +263,7 @@
     .comfort {
       margin-bottom: 40px;
       li {
-        margin-bottom: 19px;
+        margin-bottom: 10px;
       }
     }
     .comfort li {
@@ -281,5 +292,37 @@
   }
   .title-description {
     text-align: center;
+  }
+}
+
+.hotels-page {
+  .hotel-wrapper .description {
+    p {
+      margin: 0;
+    }
+  }
+  .bottom {
+    padding-bottom: 35px;
+  }
+  .notice {
+    position: relative;
+    top: -6px;
+  }
+  .img-container {
+    img {
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .comfort {
+    columns: initial;
+    ul {
+      margin-bottom: -10px;
+      @media (min-width: 992px) {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+    }
   }
 }

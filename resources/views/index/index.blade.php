@@ -173,7 +173,7 @@
                 подарит гостям незабываемые впечатления. Лобби-бар «Эрмитаж» привлекает своей лёгкостью</p>
 
             <br>
-            <div class="slider-bars slick" data-per-slide="4">
+            <div class="slider-bars slick" data-autoplay="true" data-loop="true" data-per-slide="4">
                 @foreach ($news as $val)
                     <div class="slide">
                         <div class="borders"></div>
@@ -383,7 +383,7 @@
                                 </path>
                             </svg>
                         </button>
-                        <div class="slick" data-parent-dots=".reviews-dots">
+                        <div class="slick" data-autoplay="true" data-parent-dots=".reviews-dots">
                             @foreach ($reviews as $val)
                                 <div class="slide">
                                     <div class="reviews">

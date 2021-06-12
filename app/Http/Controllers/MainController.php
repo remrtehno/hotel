@@ -34,7 +34,7 @@ class MainController extends Controller
         $userwrap = ProdCat::all();
         $about = About::getAbout();
         $gallery = Gallery::limit(8)->get();
-        $news = News::limit(8)->get();
+        $news = News::all();
         $order = Product::limit(4)->get();
         $video = Video::limit(8)->get();
         $cats = ProdCat::limit(9)->get();

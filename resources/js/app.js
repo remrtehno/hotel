@@ -44,6 +44,18 @@ require('./fancybox/jquery.fancybox.min.js');
 
 
 $(function () {
+  setTimeout(function () {
+    var maxHeight = 0;
+    $('.slider-bars-overlay .slide-text-description').each(function (_, val) {
+      maxHeight = maxHeight < $(val).height() ? $(val).height() : maxHeight;
+    })
+    $('.slider-bars-overlay .slide-text-description').height(maxHeight);
+
+  }, 2000)
+
+
+
+  //fancybox
   $.fancybox.defaults.thumbs.autoStart = true;
   $.fancybox.defaults.backFocus = false;
 
@@ -90,14 +102,14 @@ $(function () {
 
     $(value).slick({
       // lazyLoad: 'ondemand',
-      infinite: false,
+      infinite: $(value).data('loop') || false,
       // draggable: false,
       swipe: false,
 
       speed: 800,
       slidesToShow: $(value).data('per-slide') || 1,
       slidesToScroll: 1,
-      autoplay: false,
+      autoplay: $(value).data('autoplay') || false,
       autoplaySpeed: 5000,
       arrows: true,
       dots: true,

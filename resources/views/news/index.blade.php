@@ -50,13 +50,13 @@
                                 {!! $item->anonce !!}
                             </div>
                             <div class="comfort">
-                                {!! $item->comfort !!}
+                                {!! $item->meta_info !!}
                             </div>
                             @include('news.notice')
 
                             <div class="bottom">
                                 <a href="{{ route('newsdetail', $item->slug) }}"
-                                    class="orange-btn small">Забронировать</a>
+                                    class="orange-btn small">Подробнее</a>
                             </div>
                         </div>
                     </div>
