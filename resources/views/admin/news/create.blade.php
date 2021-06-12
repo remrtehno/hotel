@@ -35,6 +35,12 @@
                                         name="title">
                                 </div>
 
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Время работы</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder=""
+                                        name="time">
+                                </div>
+
 
                                 <div class="form-group">
                                     <label for="exampleInputFile">Картинка</label>

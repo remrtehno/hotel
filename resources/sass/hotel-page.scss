@@ -314,15 +314,16 @@
       object-fit: cover;
     }
   }
-  .comfort {
-    columns: initial;
-    ul {
-      margin-bottom: -10px;
-      @media (min-width: 992px) {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-      }
+}
+
+.comfort-row {
+  columns: initial;
+  ul {
+    margin-bottom: -10px;
+    @media (min-width: 992px) {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
   }
 }
