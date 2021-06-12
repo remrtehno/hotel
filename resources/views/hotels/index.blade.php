@@ -35,11 +35,6 @@
                         <div class="img-container">
                             <div class="flexslider {{ count($item->getMediaLibrary()) === 0 ? 'hide-nav' : '' }}">
                                 <ul class="slides">
-                                    <li>
-                                        <img style="width: 100%; margin: auto; display: block;"
-                                            src="{{ $item->getImage() }}" alt="" loading="lazy">
-                                    </li>
-
                                     @foreach ($item->getMediaLibrary() as $val)
                                         <li>
                                             <img loading="lazy" style="width: 100%; margin: auto; display: block;"

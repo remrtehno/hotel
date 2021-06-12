@@ -11533,6 +11533,26 @@ main {
   position: relative;
   margin-bottom: 36px;
 }
+.hotel-wrapper .flexslider {
+  height: 100%;
+}
+.hotel-wrapper .flexslider .flex-viewport,
+.hotel-wrapper .flexslider ul {
+  height: 100%;
+}
+.hotel-wrapper .flexslider .flex-viewport li,
+.hotel-wrapper .flexslider ul li {
+  height: 100%;
+}
+.hotel-wrapper .flexslider .flex-viewport li img,
+.hotel-wrapper .flexslider ul li img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.hotel-wrapper .flexslider .flex-direction-nav {
+  margin: 0;
+}
 @media (min-width: 992px) {
   .hotel-wrapper::after {
     content: " ";
