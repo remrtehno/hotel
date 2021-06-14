@@ -2,8 +2,8 @@
 
 @section('content')
     <div class="hotel-detail-page">
-        <div class="inner-pages">
-            <h1 class="title">Спасибо</h1>
+        <div class="inner-pages"><br/>
+            <!-- <h1 class="title">Спасибо</h1> -->
 
             <br>
 

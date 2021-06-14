@@ -10658,7 +10658,7 @@ input.datepicker {
   margin-bottom: 19px;
 }
 .events-dots li {
-  margin-bottom: 15px;
+  /*margin-bottom: 15px;*/
 }
 .events-dots .slick-active .slide-text-title {
   color: #d09870;
