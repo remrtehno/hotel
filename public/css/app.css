@@ -11527,6 +11527,17 @@ main {
   margin: 0;
 }
 
+.fancybox-slides li {
+  position: relative;
+}
+.fancybox-slides a {
+  position: absolute;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}
+
 .hotel-wrapper {
   background-color: #231e1c;
   color: white;

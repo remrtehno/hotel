@@ -37667,6 +37667,15 @@ __webpack_require__(/*! ./fancybox/jquery.fancybox.min.js */ "./resources/js/fan
 // });
 
 $(function () {
+  $('.hotel-wrapper').on('click', function (event) {
+    var elem = $(this).find('.flex-active-slide a');
+
+    if ($(event.target).hasClass('flex-next') || $(event.target).hasClass('flex-prev') || $(event.target).hasClass('description-section') || $(event.target).closest('.description-section').length) {
+      return;
+    }
+
+    elem[0].click();
+  });
   setTimeout(function () {
     var maxHeight = 0;
     $('.slider-bars-overlay .slide-text-description').each(function (_, val) {
