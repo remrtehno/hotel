@@ -88,10 +88,15 @@ class MainController extends Controller
         $name = $request->get('name');
         $tel = $request->get('tel');
         $message = $request->get('msg');
+        $time = $request->get('time');
 
         $msg = "Имя: $name; Телефон: $tel";
         if ($message) {
             $msg .= " Сообщение: $message";
+        }
+        if($time) {
+            $hotel = $request->get('hotel');
+            $msg .= " Время для бронирования: $time в $hotel ";
         }
 
         // use wordwrap() if lines are longer than 70 characters

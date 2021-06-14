@@ -46,7 +46,12 @@
                             <div style="border: 1px solid #F1F1F1; margin-bottom: 12px;"></div>
                             <br>
                             <div class="bottom">
-                                <a href="#" class="orange-btn big">Забронировать столик</a>
+                                <a data-toggle="modal" onclick="
+
+                                    document.querySelector('.input-hotel').value = 
+                                    '{{$news->title}}';
+                                    return false;
+                                " data-target="#book" class="orange-btn big">Забронировать столик</a>
                             </div>
                         </div>
                     </div>

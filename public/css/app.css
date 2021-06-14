@@ -10292,6 +10292,10 @@ button {
   }
 }
 
+-webkit-calendar-picker-indicator {
+  filter: invert(1);
+}
+
 .btn-burger {
   background: none;
   border: 0;
@@ -10471,6 +10475,7 @@ button {
 }
 .header-contacts .address {
   padding-top: 8px;
+  font-weight: 300;
 }
 .header-contacts .address strong {
   font-size: 18px;
@@ -10626,6 +10631,11 @@ input.datepicker {
   background-color: white;
   background-position: left bottom;
   background-size: 96%;
+}
+@media (min-width: 992px) {
+  .events .text-content p {
+    padding-right: 20px;
+  }
 }
 .events img {
   width: 100%;
@@ -11107,12 +11117,6 @@ input.datepicker {
   margin-bottom: 20px;
 }
 .suggestions .suggestions-dots button {
-  font-family: Raleway;
-  font-size: 18px;
-  font-style: normal;
-  font-weight: 700;
-  line-height: 29px;
-  letter-spacing: 0em;
   text-align: left;
 }
 .suggestions .slide img {
@@ -11525,6 +11529,11 @@ main {
 }
 .about-page img {
   margin: 0;
+}
+
+.restaurant-map,
+.restaurant-menu {
+  max-width: 635px;
 }
 
 .fancybox-slides li {

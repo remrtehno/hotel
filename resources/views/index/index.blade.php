@@ -43,14 +43,14 @@
             <div class="row services-main-page">
                 <div class="col-xl-4">
                     <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <use xlink:href="/img/minibus-trip-1.png"></use>
+                        <image xlink:href="/img/minibus-trip-1.png"></image>
                     </svg>
                     <div>Трансфер по ХМАО и за его пределами в комфортабельных автомобилях премиум-класса</div>
                 </div>
 
                 <div class="col-xl-4">
                     <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <use xlink:href="/img/presentation-1.png"></use>
+                        <image xlink:href="/img/presentation-1.png"></image>
                     </svg>
                     <div>Бизнес - услуги: аренда конференц- зала и презентационного оборудования, организация фуршета</div>
                 </div>
@@ -58,14 +58,14 @@
 
                 <div class="col-xl-4">
                     <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <use xlink:href="/img/clothes-donation-1.png"></use>
+                        <image xlink:href="/img/clothes-donation-1.png"></image>
                     </svg>
                     <div>Услуги прачечной и химчистки - сухая и аквачистка одежды и обуви, в том числе деликатных тканей</div>
                 </div>
 
                 <div class="col-xl-4">
                     <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <use xlink:href="/img/parking-1.png"></use>
+                        <image xlink:href="/img/parking-1.png"></image>
                     </svg>
                     <div>Охраняемая парковка с круглосуточным контролем въезда и выезда
                     </div>
@@ -73,14 +73,14 @@
 
                 <div class="col-xl-4">
                     <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <use xlink:href="/img/room-service-1.png"></use>
+                        <image xlink:href="/img/room-service-1.png"></image>
                     </svg>
                     <div>Обслуживание в номерах — подача еды и напитков в номера из любого нашего бара или ресторана</div>
                 </div>
 
                 <div class="col-xl-4">
                     <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
-                        <use xlink:href="/img/dog-1.png"></use>
+                        <image xlink:href="/img/dog-1.png"></image>
                     </svg>
                     <div>Номера для размещения с домашними питомцами</div>
                 </div>
@@ -193,11 +193,11 @@
     <section class="section events">
         <div class="container">
             <div class="row">
-                <div class="col-xl-5 align-self-center">
+                <div class="col-xl-5 align-self-center text-content">
                     <h2 class="title-section">Мероприятия</h2>
                     <br>
                     <p></p>
-                    <div class="events-dots"></div>
+                    <div class="events-dots events-dots-s"></div>
                     <p>Таким образом, курс на социально-ориентированный национальный проект обеспечивает актуальность
                         всесторонне сбалансированных нововведений.
                         Соображения высшего порядка, а также начало повседневной работы по формированию позиции обеспечивает
@@ -208,7 +208,7 @@
                         <button class="prev-btn"><img src="\img\arrow-left-black.png" alt=""></button>
                         <button class="next-btn"><img src="\img\arrow-right-black.png" alt=""></button>
                     </div>
-                    <div class="slick" data-parent-dots=".events-dots">
+                    <div class="slick" data-parent-dots=".events-dots-s">
                         @foreach ($services as $val)
                             <div class="slide" data-title="{{ $val->title }}">
                                 <div class="borders"></div>
@@ -245,9 +245,9 @@
                                     <button class="next-btn"><img src="\img\arrow-right-black.png" alt=""></button>
                                 </div>
                             </div>
-                            <div class="col-xl-5 align-self-center">
+                            <div class="col-xl-5">
                                 <h2 class="title-section">Специальные предложения </h2>
-                                <div class="suggestions-dots"></div>
+                                <div class="suggestions-dots events-dots"></div>
                                 {!! $val->text !!}
                                 <div class="slider-bars-overlay">
                                     <div class="slide-text-description">{!! $val->anonce !!}</div>

@@ -37,6 +37,46 @@
 
 
 <!-- Modal -->
+<div class="modal fade" id="book" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-body">
+                    <form class="form" action="{{ route('email') }}" method="POST">
+                        @csrf
+                        <input type="hidden" class="input-hotel" name="hotel" name="hotel">
+                        <input type="hidden" name="msg" value="Забронировать столик">
+                        <input name="name" type="text" placeholder="Ваше имя">
+                        <input name="tel" type="text" placeholder="Ваш номер">
+                        <input name="time" style="position: static; opacity: 1; font-feature-settings: 'pnum' on, 'lnum' on;   z-index: 9;
+                        position: relative;
+                " type="datetime-local"  placeholder="Желаемые дата и время бронирования">
+                        <br>
+                        <p></p>
+                        <br>
+                        <div style="position: absolute;
+                        top: 183px;
+                        right: 29px;
+                        mix-blend-mode: soft-light;
+                        background: white;
+                        width: 35px;
+                        height: 35px;
+                        min-width: 35px;
+                        min-height: 35px;"></div>
+                        <button class="orange-btn" type="submit">Забронировать</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Modal -->
 <div class="modal fade" id="politics" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
