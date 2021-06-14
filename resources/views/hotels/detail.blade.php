@@ -64,12 +64,6 @@
                     <div class="img-container">
                         <div class="flexslider {{ count($product->getMediaLibrary()) === 0 ? 'hide-nav' : '' }}">
                             <ul class="slides">
-                                {{-- <li>
-                                    <a data-fancybox="gallery" href="{{ $product->getImage('big') }}"> <img
-                                            src="{{ $product->getImage() }}" loading="lazy"
-                                            style="margin:0; max-width: 100%;" alt="">
-                                    </a>
-                                </li> --}}
 
                                 @foreach ($product->getMediaLibrary() as $val)
                                     <li>

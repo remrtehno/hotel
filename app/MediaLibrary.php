@@ -77,12 +77,12 @@ class MediaLibrary extends Model
         $img->backup();
 
         File::exists($this->path2) or File::makeDirectory($this->path2, 0777, true);
-        $img->fit(605, 419)->save($this->path2 . $filename, 100);
+        $img->resize(605, 419)->save($this->path2 . $filename, 100);
         $img->reset();
         $img->backup();
 
         File::exists($this->path3) or File::makeDirectory($this->path3, 0777, true);
-        $img->fit(649, 533)->save($this->path3 . $filename, 100);
+        $img->resize(649, 533)->save($this->path3 . $filename, 100);
         $img->reset();
 
         $this->img = $filename;

@@ -34,12 +34,14 @@
                     <div class="hotel-wrapper">
                         <div class="img-container">
                             <div class="flexslider {{ count($item->getMediaLibrary()) === 0 ? 'hide-nav' : '' }}">
-                                <ul class="slides">
+                                <ul class="slides fancybox-slides">
                                     @foreach ($item->getMediaLibrary() as $val)
-                                        <li>
+                                    <li>
+                                        <a data-fancybox="gallery" href="{{ $val->getImage('big') }}"></a>
                                             <img loading="lazy" style="width: 100%; margin: auto; display: block;"
                                                 src="{{ $val->getImage() }}" alt="">
-                                        </li>
+                                        
+                                    </li>
                                     @endforeach
                                 </ul>
                             </div>

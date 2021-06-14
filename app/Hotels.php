@@ -109,7 +109,7 @@ class Hotels extends Model
 
     public function getMediaLibrary()
     {
-        $whereArray = array('id_content' => $this->id, 'id_category' => 0);
+        $whereArray = array('id_content' => $this->id, 'id_category' => 1);
         $media_library = MediaLibrary::where($whereArray)->get();
         return $media_library;
     }
