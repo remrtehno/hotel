@@ -35,6 +35,12 @@
                                     value="{{ $sl->title }}" name="title">
                             </div>
 
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Время работы</label>
+                                <input type="text" value="{{ $sl->time }}" class="form-control" id="exampleInputEmail1" placeholder=""
+                                    name="time">
+                            </div>
+
 
                             <div class="form-group">
                                 <img src="{{ $sl->getImage() }}" alt="" class="img-responsive" width="200">

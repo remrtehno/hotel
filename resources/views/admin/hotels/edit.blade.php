@@ -34,6 +34,12 @@
                             </div>
 
                             <div class="form-group">
+                                <label for="exampleInputEmail1">Площадь</label>
+                                <input type="text" value="{{ $sl->area }}" class="form-control" id="exampleInputEmail1" placeholder=""
+                                    name="area">
+                            </div>
+
+                            <div class="form-group">
                                 <label for="exampleInputFile">Картинка</label>
                                 <input value="{{ $sl->img }}" type="file" id="exampleInputFile" name="img">
 

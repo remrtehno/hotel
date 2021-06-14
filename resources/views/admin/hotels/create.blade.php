@@ -30,6 +30,12 @@
                                 </div>
 
                                 <div class="form-group">
+                                    <label for="exampleInputEmail1">Площадь</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder=""
+                                        name="area">
+                                </div>
+
+                                <div class="form-group">
                                     <label for="exampleInputFile">Картинка</label>
                                     <input type="file" id="exampleInputFile" name="img">
 

@@ -11001,6 +11001,37 @@ input.datepicker {
   fill: white;
 }
 
+.title-main-screen {
+  text-align: center;
+  margin: auto;
+  color: white;
+}
+.title-main-screen h1 {
+  font-family: Yeseva One;
+  font-size: calc(35px + 65 * ((100vw - 320px) / 1600));
+  font-style: normal;
+  font-weight: 400;
+  line-height: 56px;
+  letter-spacing: 0em;
+  text-align: center;
+  margin-bottom: 25px;
+  margin-top: 3.5vmin;
+}
+@media (min-width: 992px) {
+  .title-main-screen h1 br {
+    display: none;
+  }
+}
+.title-main-screen .descr {
+  font-family: Raleway;
+  font-size: calc(20px + 10 * ((100vw - 320px) / 1600));
+  font-style: normal;
+  font-weight: 300;
+  line-height: 48px;
+  letter-spacing: 0em;
+  text-align: center;
+}
+
 .about-plaza {
   margin-bottom: 25px;
   font-size: 22px;
@@ -11502,6 +11533,26 @@ main {
   position: relative;
   margin-bottom: 36px;
 }
+.hotel-wrapper .flexslider {
+  height: 100%;
+}
+.hotel-wrapper .flexslider .flex-viewport,
+.hotel-wrapper .flexslider ul {
+  height: 100%;
+}
+.hotel-wrapper .flexslider .flex-viewport li,
+.hotel-wrapper .flexslider ul li {
+  height: 100%;
+}
+.hotel-wrapper .flexslider .flex-viewport li img,
+.hotel-wrapper .flexslider ul li img {
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.hotel-wrapper .flexslider .flex-direction-nav {
+  margin: 0;
+}
 @media (min-width: 992px) {
   .hotel-wrapper::after {
     content: " ";
@@ -11807,15 +11858,16 @@ main {
   -o-object-fit: cover;
      object-fit: cover;
 }
-.hotels-page .comfort {
+
+.comfort-row {
   -moz-columns: initial;
        columns: initial;
 }
-.hotels-page .comfort ul {
+.comfort-row ul {
   margin-bottom: -10px;
 }
 @media (min-width: 992px) {
-  .hotels-page .comfort ul {
+  .comfort-row ul {
     display: flex;
     justify-content: space-between;
     flex-wrap: wrap;
@@ -12368,8 +12420,6 @@ main {
   margin-left: -5px;
   margin-right: -5px;
 }
-
-/*# sourceMappingURL=bootstrap-datepicker.css.map */
 html {
   overflow-x: hidden;
 }
@@ -12380,4 +12430,3 @@ body {
     overflow-x: hidden;
   }
 }
-/*# sourceMappingURL=app.css.map*/

@@ -51,6 +51,13 @@
         </div>
     </header>
 
+    <div class="_container title-main-screen">
+        <h1>Отель <br> «Роял Плаза»</h1>
+        <div class="descr">
+            Отель премиум-класса в Нефтеюганске
+        </div>
+    </div>
+
     <div class="_container book__container">
         <div class="book">
             <h3>Забронировать номер</h3>

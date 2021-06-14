@@ -2,6 +2,23 @@
   background-color: #231e1c;
   color: white;
   position: relative;
+  .flexslider {
+    height: 100%;
+    .flex-viewport,
+    ul {
+      height: 100%;
+      li {
+        height: 100%;
+        img {
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+    }
+    .flex-direction-nav {
+      margin: 0;
+    }
+  }
   @media (min-width: 992px) {
     &::after {
       content: " ";
@@ -314,15 +331,16 @@
       object-fit: cover;
     }
   }
-  .comfort {
-    columns: initial;
-    ul {
-      margin-bottom: -10px;
-      @media (min-width: 992px) {
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-      }
+}
+
+.comfort-row {
+  columns: initial;
+  ul {
+    margin-bottom: -10px;
+    @media (min-width: 992px) {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
     }
   }
 }

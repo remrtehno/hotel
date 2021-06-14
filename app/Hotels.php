@@ -17,6 +17,7 @@ class Hotels extends Model
         'title',
         'description',
         'comfort',
+        'area',
         'cost',
         'img',
         'created_at',
