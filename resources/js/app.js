@@ -12,6 +12,7 @@ require('./fancybox/jquery.fancybox.min.js');
 
 
 
+
 !function (a) { a.fn.datepicker.dates.ru = { days: ["Воскресенье", "Понедельник", "Вторник", "Среда", "Четверг", "Пятница", "Суббота"], daysShort: ["Вск", "Пнд", "Втр", "Срд", "Чтв", "Птн", "Суб"], daysMin: ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"], months: ["Январь", "Февраль", "Март", "Апрель", "Май", "Июнь", "Июль", "Август", "Сентябрь", "Октябрь", "Ноябрь", "Декабрь"], monthsShort: ["Янв", "Фев", "Мар", "Апр", "Май", "Июн", "Июл", "Авг", "Сен", "Окт", "Ноя", "Дек"], today: "Сегодня", clear: "Очистить", format: "dd.mm.yyyy", weekStart: 1, monthsTitle: "Месяцы" } }(jQuery);
 
 
@@ -44,6 +45,20 @@ require('./fancybox/jquery.fancybox.min.js');
 
 
 $(function () {
+  $('.hotel-wrapper').on('click', function (event) {
+    var elem = $(this).find('.flex-active-slide a');
+
+    if (
+      $(event.target).hasClass('flex-next')
+      || $(event.target).hasClass('flex-prev')
+      || $(event.target).hasClass('description-section')
+      || $(event.target).closest('.description-section').length
+    ) {
+      return;
+    }
+    elem[0].click();
+  })
+
   setTimeout(function () {
     var maxHeight = 0;
     $('.slider-bars-overlay .slide-text-description').each(function (_, val) {

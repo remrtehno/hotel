@@ -28,7 +28,7 @@
                                 <ul class="slides fancybox-slides">
                                     @foreach ($item->getMediaLibrary() as $val)
                                     <li>
-                                        <a data-fancybox="gallery" href="{{ $val->getImage('big') }}"></a>
+                                        <a  data-fancybox="gallery-{{$item->slug}}" href="{{ $val->getImage('big') }}"></a>
                                             <img loading="lazy" style="width: 100%; margin: auto; display: block;"
                                                 src="{{ $val->getImage() }}" alt="">
                                         

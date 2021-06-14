@@ -11544,10 +11544,6 @@ main {
   position: relative;
   margin-bottom: 36px;
 }
-.hotel-wrapper .img-container {
-  position: relative;
-  z-index: 1;
-}
 .hotel-wrapper .flexslider {
   height: 100%;
 }
