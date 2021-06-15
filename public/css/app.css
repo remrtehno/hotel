@@ -10245,11 +10245,11 @@ button {
 }
 
 .contact-info-title {
-  opacity: 0.7;
+  /*opacity: 0.7;*/
   display: block;
   font-style: normal;
-  font-weight: 300;
-  font-size: 16px;
+  font-weight: 400;
+  font-size: 15px;
   line-height: 19px;
   margin-bottom: 7px;
 }
@@ -10792,14 +10792,14 @@ input.datepicker {
   color: #1e1e1e;
 }
 .event-detail-page .form input::-moz-placeholder, .event-detail-page .form textarea::-moz-placeholder {
-  opacity: 0.6;
+  opacity: 0.8;
 }
 .event-detail-page .form input:-ms-input-placeholder, .event-detail-page .form textarea:-ms-input-placeholder {
-  opacity: 0.6;
+  opacity: 0.8;
 }
 .event-detail-page .form input::placeholder,
 .event-detail-page .form textarea::placeholder {
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 .main-page-form {
@@ -10956,11 +10956,11 @@ input.datepicker {
 .slider-main-page-restourants .slick-slide .slider-bars-overlay .slide-text-description {
   font-family: Raleway;
   font-style: normal;
-  font-weight: normal;
+  /*font-weight: normal;*/
   font-size: 14px;
   line-height: 150%;
   /* or 22px */
-  font-weight: 400;
+  font-weight: 500;
   color: #f8f8f8;
 }
 
@@ -10978,17 +10978,18 @@ input.datepicker {
   /* or 22px */
   color: #ffffff;
   opacity: 0.7;
+  font-feature-settings: "pnum" on, "lnum" on;
 }
 .footer-logo {
   margin-bottom: 10px;
 }
 .footer-nav a {
-  opacity: 0.7;
+  /*opacity: 0.7;*/
   display: block;
   font-style: normal;
-  font-weight: 300;
-  font-size: 16px;
-  line-height: 19px;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 11px;
   margin-bottom: 20px;
 }
 @media (max-width: 992px) {
@@ -11262,7 +11263,7 @@ input.datepicker {
 .form .politics {
   font-style: normal;
   font-weight: normal;
-  font-size: 11px;
+  font-size: 14px;
   line-height: 150%;
   /* or 16px */
   color: #adadad;
@@ -11287,14 +11288,14 @@ input.datepicker {
   padding: 15px 0;
 }
 .form input::-moz-placeholder, .form textarea::-moz-placeholder {
-  opacity: 0.6;
+  opacity: 0.8;
 }
 .form input:-ms-input-placeholder, .form textarea:-ms-input-placeholder {
-  opacity: 0.6;
+  opacity: 0.8;
 }
 .form input::placeholder,
 .form textarea::placeholder {
-  opacity: 0.6;
+  opacity: 0.8;
 }
 .form textarea {
   resize: none;
@@ -11390,7 +11391,7 @@ main {
   }
 }
 .inner-pages .breadcrumbs li:last-child {
-  opacity: 0.4;
+  opacity: 0.7;
 }
 .inner-pages .breadcrumbs li:not(:last-child)::after {
   content: " ";
@@ -11489,14 +11490,14 @@ main {
   color: #1e1e1e;
 }
 .inner-pages-form .form input::-moz-placeholder, .inner-pages-form .form textarea::-moz-placeholder {
-  opacity: 0.6;
+  opacity: 0.8;
 }
 .inner-pages-form .form input:-ms-input-placeholder, .inner-pages-form .form textarea:-ms-input-placeholder {
-  opacity: 0.6;
+  opacity: 0.8;
 }
 .inner-pages-form .form input::placeholder,
 .inner-pages-form .form textarea::placeholder {
-  opacity: 0.6;
+  opacity: 0.8;
 }
 
 .inner-pages-title {
@@ -11692,7 +11693,7 @@ main {
 .comfort li {
   margin-bottom: 5px;
   font-style: normal;
-  font-weight: normal;
+  font-weight: 500;
   font-size: 14px;
   line-height: 150%;
   /* or 24px */
@@ -11709,7 +11710,7 @@ main {
   font-weight: 500;
   font-size: 13px;
   line-height: 19px;
-  color: #918784;
+  color: #fff;
   margin-bottom: 5px;
 }
 .notice svg {
@@ -11756,7 +11757,7 @@ main {
 }
 .bottom table tr p:last-child {
   font-style: normal;
-  font-weight: 100;
+  font-weight: 300;
   font-size: 16px;
   line-height: 150%;
 }
@@ -11806,7 +11807,7 @@ main {
   display: flex;
   align-items: center;
   font-feature-settings: "pnum" on, "lnum" on;
-  color: #1e1e1e;
+  color: #202020;
 }
 .hotel-detail-page .product .notice svg path {
   fill: #1e1e1e;
@@ -11847,14 +11848,14 @@ main {
   color: #1e1e1e;
 }
 .hotel-detail-page .form input::-moz-placeholder, .hotel-detail-page .form textarea::-moz-placeholder {
-  opacity: 0.6;
+  opacity: 0.8;
 }
 .hotel-detail-page .form input:-ms-input-placeholder, .hotel-detail-page .form textarea:-ms-input-placeholder {
-  opacity: 0.6;
+  opacity: 0.8;
 }
 .hotel-detail-page .form input::placeholder,
 .hotel-detail-page .form textarea::placeholder {
-  opacity: 0.6;
+  opacity: 0.8;
 }
 .hotel-detail-page .title-section {
   text-align: center;
@@ -11872,6 +11873,7 @@ main {
 .hotels-page .notice {
   position: relative;
   top: -6px;
+  display: flex;
 }
 .hotels-page .img-container img {
   height: 100%;
@@ -12449,4 +12451,12 @@ html {
 body {
     overflow-x: hidden;
   }
+}
+
+.description {
+	font-feature-settings: "pnum" on, "lnum" on;
+}
+
+td p {
+	padding: 0;
 }

@@ -27,7 +27,6 @@
                             line-height: 32px;
                             letter-spacing: 0em;
                             text-align: left;
-                            margin-top: -15px;
                             ">
                             @if ($product->area)
                             <svg style="margin-right: 5px;" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
