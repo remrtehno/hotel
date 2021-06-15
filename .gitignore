@@ -11,3 +11,4 @@ npm-debug.log
 yarn-error.log
 .history/
 /public/uploads
+deployment/nginx/log/access.log
