@@ -10632,6 +10632,11 @@ input.datepicker {
   background-position: left bottom;
   background-size: 96%;
 }
+.events .btn-arrows {
+  margin: auto;
+  margin-right: 0;
+  float: right;
+}
 @media (min-width: 992px) {
   .events .text-content p {
     padding-right: 20px;
@@ -10658,7 +10663,7 @@ input.datepicker {
   margin-bottom: 19px;
 }
 .events-dots li {
-  /*margin-bottom: 15px;*/
+  margin-bottom: 0px;
 }
 .events-dots .slick-active .slide-text-title {
   color: #d09870;
@@ -10667,7 +10672,7 @@ input.datepicker {
   font-style: normal;
   font-weight: bold;
   font-size: 22px;
-  line-height: 160%;
+  line-height: 140%;
 }
 
 @media (min-width: 992px) {

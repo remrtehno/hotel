@@ -132,8 +132,8 @@ $(function () {
       customPaging: function (slider, i) {
         return '<button role="button" class="slide-text-title">' + $(slider['$slides'][i]).data('title') + '</button>';
       },
-      prevArrow: $(value).parent().find('.prev-btn'),
-      nextArrow: $(value).parent().find('.next-btn'),
+      prevArrow: $(value).data('prev-btn') || $(value).parent().find('.prev-btn'),
+      nextArrow: $(value).data('next-btn') || $(value).parent().find('.next-btn'),
       responsive: [
         {
           breakpoint: 992,

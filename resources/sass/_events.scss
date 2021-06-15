@@ -3,6 +3,11 @@
   background-color: white;
   background-position: left bottom;
   background-size: 96%;
+  .btn-arrows {
+    margin: auto;
+    margin-right: 0;
+    float: right;
+  }
   .text-content {
     p {
       @media (min-width: 992px) {
@@ -36,7 +41,7 @@
   &-dots {
     margin-bottom: 19px;
     li {
-      margin-bottom: 15px;
+      margin-bottom: 0px;
     }
     .slick-active {
       .slide-text-title {
@@ -48,7 +53,7 @@
       font-style: normal;
       font-weight: bold;
       font-size: 22px;
-      line-height: 160%;
+      line-height: 140%;
     }
   }
 }

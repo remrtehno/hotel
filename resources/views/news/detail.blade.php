@@ -48,15 +48,26 @@
                             <div class="bottom">
                                 <a data-toggle="modal" onclick="
 
-                                    document.querySelector('.input-hotel').value = 
-                                    '{{$news->title}}';
-                                    return false;
-                                " data-target="#book" class="orange-btn big">Забронировать столик</a>
+                                                        document.querySelector('.input-hotel').value = 
+                                                        '{{ $news->title }}';
+                                                        return false;
+                                                    " data-target="#book" class="orange-btn big">Забронировать столик</a>
                             </div>
                         </div>
                     </div>
                     <div class="img-container">
-                        <img src="{{ $news->getImageBig() }}" loading="lazy" style="margin:0; max-width: 100%;" alt="">
+                        <div class="flexslider {{ count($media_library_gallery) === 1 ? 'hide-nav' : '' }}">
+                            <ul class="slides">
+                                @foreach ($media_library_gallery as $val)
+                                    <li>
+                                        <a data-fancybox="gallery" href="{{ $val->getImage('big') }}">
+                                            <img loading="lazy" style="width: 100%; margin: auto; display: block;"
+                                                src="{{ $val->getImage() }}" alt="">
+                                        </a>
+                                    </li>
+                                @endforeach
+                            </ul>
+                        </div>
                     </div>
                 </div>
 

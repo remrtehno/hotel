@@ -10,17 +10,22 @@
         <div class="container">
             <h2 class="title-section">
                 Royal Plaza - отель премиум-класса в г. Нефтеюганске<br>
-                
+
             </h2>
             <div class="row">
                 <div class="col-xl-6">
-                    <h6 class="title"> РОЯЛ ПЛАЗА - идеальное место для семейного отдыха, романтических встреч и размещения во время деловых поездок.</h6>
+                    <h6 class="title"> РОЯЛ ПЛАЗА - идеальное место для семейного отдыха, романтических встреч и размещения
+                        во время деловых поездок.</h6>
                     <div>
                         <ul>
-                            <li>В нашем отеле представлены 54 комфортных номера категории Стандарт, Junior Suite и Люкс. В каждом номере созданы все условия для плодотворной работы и приятного отдыха.</li>
-                            <li>Мы постарались учесть все нюансы в оформлении и наполнении номеров Роял Плаза, чтобы у Вас остались только положительные впечатления от пребывания в нашем отеле.</li>
+                            <li>В нашем отеле представлены 54 комфортных номера категории Стандарт, Junior Suite и Люкс. В
+                                каждом номере созданы все условия для плодотворной работы и приятного отдыха.</li>
+                            <li>Мы постарались учесть все нюансы в оформлении и наполнении номеров Роял Плаза, чтобы у Вас
+                                остались только положительные впечатления от пребывания в нашем отеле.</li>
                             <li>
-                                Для гостей с ограниченными возможностями здоровья мы предоставляем номера, оборудованные с учётом их повышенных потребностей. А для постояльцев, заселяющихся с домашними животными предлагаем комфортное размещение с питомцем.
+                                Для гостей с ограниченными возможностями здоровья мы предоставляем номера, оборудованные с
+                                учётом их повышенных потребностей. А для постояльцев, заселяющихся с домашними животными
+                                предлагаем комфортное размещение с питомцем.
                             </li>
                         </ul>
                     </div>
@@ -60,7 +65,8 @@
                     <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <image xlink:href="/img/clothes-donation-1.png"></image>
                     </svg>
-                    <div>Услуги прачечной и химчистки - сухая и аквачистка одежды и обуви, в том числе деликатных тканей</div>
+                    <div>Услуги прачечной и химчистки - сухая и аквачистка одежды и обуви, в том числе деликатных тканей
+                    </div>
                 </div>
 
                 <div class="col-xl-4">
@@ -168,7 +174,8 @@
             </div>
 
             <div style="clear: both;"></div>
-            <p>Роял Плаза отличается не только комфортными номерами, но и разнообразием мест для отдыха, встреч с друзьями и деловых переговоров.</p>
+            <p>Роял Плаза отличается не только комфортными номерами, но и разнообразием мест для отдыха, встреч с друзьями и
+                деловых переговоров.</p>
 
             <br>
             <div class="slider-bars slick" data-autoplay="true" data-loop="true" data-per-slide="4">
@@ -192,27 +199,35 @@
 
     <section class="section events">
         <div class="container">
+            <h2 class="title-section float-left">Мероприятия</h2>
+            <div class="btn-arrows float-right">
+                <button class="prev-btn slick-arrow" style=""><svg>
+                        <use xlink:href="/img/sprite.svg#prev"></use>
+                    </svg></button>
+                <button class="next-btn slick-arrow" style=""><svg>
+                        <use xlink:href="/img/sprite.svg#next"></use>
+                    </svg></button>
+            </div>
+            <div style="clear: both"></div>
             <div class="row">
                 <div class="col-xl-5 align-self-center text-content">
-                    <h2 class="title-section">Мероприятия</h2>
-
-                    <br>
-                    <p></p>
-
-
-              
                     <div class="events-dots events-dots-s"></div>
-                    <p>Событие любого формата приобретает особый статус и становится незабываем, если проходит в Отеле Роял Плаза: свадьбы, банкеты, конференции, фуршеты. Мы предлагаем разный формат многофункциональных залов отеля – от камерного и изысканного ресторана до уютного и мягкого лаунж. Благодаря этому возможно проведение мероприятий любого уровня: как деловых конференций, так и пышных свадеб или торжественных банкетов.</p>
-
+                    <p>Событие любого формата приобретает особый статус и становится незабываем, если проходит в Отеле Роял
+                        Плаза: свадьбы, банкеты, конференции, фуршеты. Мы предлагаем разный формат многофункциональных залов
+                        отеля – от камерного и изысканного ресторана до уютного и мягкого лаунж. Благодаря этому возможно
+                        проведение мероприятий любого уровня: как деловых конференций, так и пышных свадеб или торжественных
+                        банкетов.</p>
+                    <br>
+                    <a href="#"
+                        onclick="this.closest('.row').querySelector('.slick-current.slick-active .detail').click(); return false;"
+                        class="orange-btn">Подробнее</a>
                 </div>
                 <div class="col-xl-7">
-                    <div class="slick-arrow-container">
-                        <button class="prev-btn"><img src="\img\arrow-left-black.png" alt=""></button>
-                        <button class="next-btn"><img src="\img\arrow-right-black.png" alt=""></button>
-                    </div>
-                    <div class="slick" data-parent-dots=".events-dots-s">
+                    <div class="slick" data-prev-btn=".events .prev-btn" data-next-btn=".events .next-btn"
+                        data-parent-dots=".events-dots-s">
                         @foreach ($services as $val)
                             <div class="slide" data-title="{{ $val->title }}">
+                                <a href="{{ route('eventsdetail', $val->slug) }}" class="detail"></a>
                                 <div class="borders"></div>
                                 <a data-fancybox="events" href="{{ $val->getImage('big') }}"><img
                                         style="max-width: 100%; margin: auto; display: block;"
@@ -233,7 +248,18 @@
 
     <section id="suggestions" class="section suggestions">
         <div class="container">
-            <div class="slick" data-parent-dots=".suggestions-dots">
+            <h2 class="title-section float-left" style="margin-left: -15px;">Специальные предложения </h2>
+            <div class="btn-arrows float-right">
+                <button class="prev-btn slick-arrow" style=""><svg>
+                        <use xlink:href="/img/sprite.svg#prev"></use>
+                    </svg></button>
+                <button class="next-btn slick-arrow" style=""><svg>
+                        <use xlink:href="/img/sprite.svg#next"></use>
+                    </svg></button>
+            </div>
+            <div style="clear: both"></div>
+            <div class="slick" data-prev-btn=".suggestions .prev-btn" data-next-btn=".suggestions .next-btn"
+                data-parent-dots=".suggestions-dots">
                 @foreach ($suggestions as $val)
                     <div class="slide" data-title="{{ $val->title }}">
                         <div class="row">
@@ -242,14 +268,9 @@
                                     <img style="max-width: 100%; margin: auto; display: block;"
                                         data-lazy="{{ $val->getImage('smaller') }}" alt="">
                                 </a>
-                                <div class="slick-arrow-container">
-                                    <button class="prev-btn"><img src="\img\arrow-left-black.png" alt=""></button>
-                                    <button class="next-btn"><img src="\img\arrow-right-black.png" alt=""></button>
-                                </div>
                             </div>
                             <div class="col-xl-5">
-                                <h2 class="title-section">Специальные предложения </h2>
-                                <div class="suggestions-dots events-dots"></div>
+                                <div class="suggestions-dots events-dots dots"></div>
                                 {!! $val->text !!}
                                 <div class="slider-bars-overlay">
                                     <div class="slide-text-description">{!! $val->anonce !!}</div>
