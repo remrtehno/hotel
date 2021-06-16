@@ -37,8 +37,8 @@
 
                             <div class="form-group">
                                 <label for="exampleInputEmail1">Время работы</label>
-                                <input type="text" value="{{ $sl->time }}" class="form-control" id="exampleInputEmail1" placeholder=""
-                                    name="time">
+                                <input type="text" value="{{ $sl->time }}" class="form-control" id="exampleInputEmail1"
+                                    placeholder="" name="time">
                             </div>
 
 
@@ -94,7 +94,7 @@
                             <p class="help-block">размер 419х287</p>
                             <button type="button"
                                 onclick=' 
-                                                                                                                                                            this.insertAdjacentHTML( "afterEnd", "<input type=\"file\" name=\"file[]\">") '>+
+                                                                                                                                                                this.insertAdjacentHTML( "afterEnd", "<input type=\"file\" name=\"file2[]\">") '>+
                                 добавить изображение</button>
 
                             <input type="file" id="exampleInputFile" name="file2[]">
@@ -105,9 +105,9 @@
                                     <label>
 
                                         <button style="position: absolute" type="button" onclick='
-                                                                            imagesForDelete.innerHTML +=  "<input type=\"hidden\" value=\"{{ $val->id }}\" name=\"file_del[]\">";
-                                                                            this.closest("span").remove();
-                                                                        '>
+                                                                                imagesForDelete.innerHTML +=  "<input type=\"hidden\" value=\"{{ $val->id }}\" name=\"file_del[]\">";
+                                                                                this.closest("span").remove();
+                                                                            '>
                                             x
                                         </button>
                                         <img width="70" src="{{ $val->getImage() }}" alt="">
@@ -135,9 +135,9 @@
                                     <label>
 
                                         <button style="position: absolute" type="button" onclick='
-                                                                            imagesForDelete.innerHTML +=  "<input type=\"hidden\" value=\"{{ $val->id }}\" name=\"file_del[]\">";
-                                                                            this.closest("span").remove();
-                                                                        '>
+                                                                                imagesForDelete.innerHTML +=  "<input type=\"hidden\" value=\"{{ $val->id }}\" name=\"file_del[]\">";
+                                                                                this.closest("span").remove();
+                                                                            '>
                                             x
                                         </button>
                                         <img width="70" src="{{ $val->getImage() }}" alt="">
@@ -160,9 +160,9 @@
                                     <label>
 
                                         <button style="position: absolute" type="button" onclick='
-                                                                            imagesForDelete.innerHTML +=  "<input type=\"hidden\" value=\"{{ $val->id }}\" name=\"file_del[]\">";
-                                                                            this.closest("span").remove();
-                                                                        '>
+                                                                                imagesForDelete.innerHTML +=  "<input type=\"hidden\" value=\"{{ $val->id }}\" name=\"file_del[]\">";
+                                                                                this.closest("span").remove();
+                                                                            '>
                                             x
                                         </button>
                                         <img width="70" src="{{ $val->getImage() }}" alt="">

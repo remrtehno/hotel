@@ -158,6 +158,7 @@ class NewsController extends Controller
                 $instance->save();
             };
         }
+    
 
         if ($request->file('file_gallery') !== null) {
             foreach ($request->file('file_gallery') as $file) {
