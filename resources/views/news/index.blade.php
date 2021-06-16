@@ -25,17 +25,27 @@
                 @foreach ($news as $item)
                     <div class="hotel-wrapper">
                         <div class="img-container">
-                            <img class="lozad" style="max-width: 100%; margin: 0; width: 100%;" loading="lazy"
-                                src="{!! $item->getImageBig() !!}" alt="">
+                            <div class="flexslider {{ count($item->getMediaLibrary()) === 1 ? 'hide-nav' : '' }}">
+                                <ul class="slides">
+                                    @foreach ($item->getMediaLibrary() as $val)
+                                        <li>
+                                            <a data-fancybox="gallery" href="{{ $val->getImage('big') }}">
+                                                <img loading="lazy" style="width: 100%; margin: auto; display: block;"
+                                                    src="{{ $val->getImage() }}" alt="">
+                                            </a>
+                                        </li>
+                                    @endforeach
+                                </ul>
+                            </div>
                         </div>
                         <div class="description-section">
                             <br>
                             <h3 class="title-section">
                                 {!! $item->title !!}
                             </h3>
-                            <div class="description">
+                            {{-- <div class="description">
                                 {!! $item->text !!}
-                            </div>
+                            </div> --}}
                             <div class="anonce">
                                 {!! $item->anonce !!}
                             </div>

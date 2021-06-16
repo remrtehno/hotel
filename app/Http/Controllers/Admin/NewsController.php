@@ -68,6 +68,16 @@ class NewsController extends Controller
             };
         }
 
+        if ($request->file('file_gallery') !== null) {
+            foreach ($request->file('file_gallery') as $file) {
+                $instance = new MediaLibrary;
+                $instance->uploadImage($file);
+                $instance->id_content = $prod->id;
+                $instance->id_category = 6; // map
+                $instance->save();
+            };
+        }
+
         return redirect()->route('news.index');
     }
 
@@ -95,8 +105,10 @@ class NewsController extends Controller
         $media_library_menu = MediaLibrary::where($whereArray)->get();
         $whereArray = array('id_content' => $id, 'id_category' => 3); // 3 map restaurant
         $media_library_map = MediaLibrary::where($whereArray)->get();
+        $whereArray = array('id_content' => $id, 'id_category' => 6); // 6 gallery restaurant
+        $media_library_gallery = MediaLibrary::where($whereArray)->get();
 
-        return view('admin.news.edit', compact('sl', 'media_library_menu', 'media_library_map'));
+        return view('admin.news.edit', compact('sl', 'media_library_gallery', 'media_library_menu', 'media_library_map'));
     }
 
     /**
@@ -147,6 +159,16 @@ class NewsController extends Controller
             };
         }
 
+        if ($request->file('file_gallery') !== null) {
+            foreach ($request->file('file_gallery') as $file) {
+                $instance = new MediaLibrary;
+                $instance->uploadImage($file);
+                $instance->id_content = $post->id;
+                $instance->id_category = 6; // map
+                $instance->save();
+            };
+        }
+
         return redirect()->route('news.index');
     }
 
@@ -174,6 +196,14 @@ class NewsController extends Controller
         };
 
         $whereArray = array('id_content' => $id, 'id_category' => 2);
+        $media_library = MediaLibrary::where($whereArray)->get();
+
+        foreach ($media_library as $file) {
+            $file->removeImage();
+            $file->delete();
+        };
+
+        $whereArray = array('id_content' => $id, 'id_category' => 6);
         $media_library = MediaLibrary::where($whereArray)->get();
 
         foreach ($media_library as $file) {

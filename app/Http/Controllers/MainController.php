@@ -94,7 +94,7 @@ class MainController extends Controller
         if ($message) {
             $msg .= " Сообщение: $message";
         }
-        if($time) {
+        if ($time) {
             $hotel = $request->get('hotel');
             $msg .= " Время для бронирования: $time в $hotel ";
         }
@@ -328,11 +328,14 @@ class MainController extends Controller
         $whereArray = array('id_content' => $news->id, 'id_category' => 3); // 3 map restaurant
         $media_library_map = MediaLibrary::where($whereArray)->get();
 
+        $whereArray = array('id_content' => $news->id, 'id_category' => 6); // 6 gallery restaurant
+        $media_library_gallery = MediaLibrary::where($whereArray)->get();
+
         $title = "$news->title";
         $meta_desc = "$news->meta_desc";
         $meta_key = "$news->meta_key";
 
-        return view("news.detail", compact('news', 'media_library_map', 'media_library_menu', 'title', 'meta_key', 'meta_desc'));
+        return view("news.detail", compact('news', 'media_library_gallery', 'media_library_map', 'media_library_menu', 'title', 'meta_key', 'meta_desc'));
     }
 
     public function gallery()

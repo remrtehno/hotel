@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\MediaLibrary;
 use Cviebrock\EloquentSluggable\Sluggable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\File;
@@ -86,6 +87,13 @@ class News extends Model
     {
         $news = self::orderBy('created_at', 'desc')->take(4)->get();
         return $news;
+    }
+
+    public function getMediaLibrary()
+    {
+        $whereArray = array('id_content' => $this->id, 'id_category' => 6);
+        $media_library = MediaLibrary::where($whereArray)->get();
+        return $media_library;
     }
 
     public function sluggable(): array
