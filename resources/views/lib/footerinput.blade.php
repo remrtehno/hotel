@@ -52,10 +52,10 @@
                         <input type="hidden" class="input-hotel" name="hotel" name="hotel">
                         <input type="hidden" name="msg" value="Забронировать столик">
                         <input name="name" type="text" placeholder="Ваше имя">
-                        <input name="tel" type="text" placeholder="Ваш номер">
+                        <input name="tel" required type="text" placeholder="Ваш номер">
                         <input name="time" style="position: static; opacity: 1; font-feature-settings: 'pnum' on, 'lnum' on;   z-index: 9;
                         position: relative;
-                " type="datetime-local"  placeholder="Желаемые дата и время бронирования">
+                " type="datetime-local" placeholder="Желаемые дата и время бронирования">
                         <br>
                         <p></p>
                         <br>
@@ -123,7 +123,7 @@
                 <form class="form" action="{{ route('email') }}" method="POST">
                     @csrf
                     <input name="name" type="text" placeholder="Ваше имя">
-                    <input name="tel" type="text" placeholder="Ваш номер">
+                    <input name="tel" required type="text" placeholder="Ваш номер">
                     <br>
                     <p></p>
                     <br>
@@ -148,7 +148,7 @@
                 <form class="form" action="{{ route('email') }}" method="POST">
                     @csrf
                     <input name="name" type="text" placeholder="Ваше имя">
-                    <input name="tel" type="text" placeholder="Ваш номер">
+                    <input name="tel" required type="text" placeholder="Ваш номер">
                     <br>
                     <textarea name="msg" placeholder="Сообщение"></textarea>
                     <p></p>

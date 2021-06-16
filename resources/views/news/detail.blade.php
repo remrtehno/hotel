@@ -48,10 +48,11 @@
                             <div class="bottom">
                                 <a data-toggle="modal" onclick="
 
-                                                        document.querySelector('.input-hotel').value = 
-                                                        '{{ $news->title }}';
-                                                        return false;
-                                                    " data-target="#book" class="orange-btn big">Забронировать столик</a>
+                                                            document.querySelector('.input-hotel').value = 
+                                                            '{{ $news->title }}';
+                                                            return false;
+                                                        " data-target="#book" class="orange-btn big">Забронировать
+                                    столик</a>
                             </div>
                         </div>
                     </div>
@@ -61,7 +62,7 @@
                                 @foreach ($media_library_gallery as $val)
                                     <li>
                                         <a data-fancybox="gallery" href="{{ $val->getImage('big') }}">
-                                            <img loading="lazy" style="width: 100%; margin: auto; display: block;"
+                                            <img style="width: 100%; margin: auto; display: block;"
                                                 src="{{ $val->getImage() }}" alt="">
                                         </a>
                                     </li>
@@ -73,15 +74,14 @@
 
                 <div style="display: none;">
                     @foreach ($media_library_map as $val)
-                        <a data-fancybox="map"> <img data-fancybox="map" class="restaurant-map" loading="lazy"
+                        <a data-fancybox="map"> <img data-fancybox="map" class="restaurant-map"
                                 src="{{ $val->getImage('big') }}" alt="">
                         </a>
                     @endforeach
 
                     @foreach ($media_library_menu as $val)
                         <a data-fancybox="menu">
-                            <img data-fancybox="menu" class="restaurant-menu" loading="lazy"
-                                src="{{ $val->getImage('big') }}" alt="">
+                            <img data-fancybox="menu" class="restaurant-menu" src="{{ $val->getImage('big') }}" alt="">
                         </a>
                     @endforeach
                 </div>

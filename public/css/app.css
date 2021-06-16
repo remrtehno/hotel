@@ -10695,12 +10695,17 @@ input.datepicker {
      object-fit: cover;
 }
 .events-page .title-section {
+  text-align: left;
   margin-bottom: 5px;
 }
 .events-page .description {
   margin-bottom: 28px;
-  max-height: 90px;
   overflow: hidden;
+}
+@media (min-width: 992px) {
+  .events-page .description {
+    max-height: 90px;
+  }
 }
 .events-page .events-detail-link {
   font-style: normal;
@@ -10733,7 +10738,7 @@ input.datepicker {
   }
 }
 .events-page .events-wrapper .description-section {
-  padding: 25px;
+  padding: 15px 0;
 }
 @media (min-width: 992px) {
   .events-page .events-wrapper .description-section {
@@ -10835,6 +10840,11 @@ input.datepicker {
     background: white url(/images/slider-main-bg.jpg?e783a9047b6bcc82e052c9acf6dbd963) left bottom no-repeat;
   }
 }
+@media (max-width: 992px) {
+  .slider-main-page .slider-hotels {
+    flex-direction: column;
+  }
+}
 .slider-main-page .btn-arrows {
   float: right;
 }
@@ -10843,7 +10853,11 @@ input.datepicker {
 }
 .slider-main-page .slide-text .orange-btn {
   margin-bottom: 30px;
-  margin-top: -25px;
+}
+@media (min-width: 992px) {
+  .slider-main-page .slide-text .orange-btn {
+    margin-top: -25px;
+  }
 }
 @media (max-width: 992px) {
   .slider-main-page .slide-text {
@@ -11118,6 +11132,19 @@ input.datepicker {
   margin-bottom: 28px;
 }
 
+@media (max-width: 992px) {
+  .suggestions {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  .suggestions img {
+    margin-bottom: 20px !important;
+    margin-top: 10px !important;
+  }
+  .suggestions .orange-btn {
+    margin-bottom: 35px;
+  }
+}
 .suggestions .suggestions-dots {
   margin-bottom: 20px;
 }

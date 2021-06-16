@@ -40,7 +40,7 @@
                         </div>
                     </div>
                     <div class="img-container">
-                        <img src="{{ $product->getImage() }}" loading="lazy" style="margin:0; max-width: 100%;" alt="">
+                        <img src="{{ $product->getImage() }}" style="margin:0; max-width: 100%;" alt="">
                     </div>
                 </div>
 

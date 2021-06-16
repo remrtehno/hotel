@@ -130,7 +130,7 @@
                                     <li>
                                         <a data-fancybox="hotel-{{ $val->slug }}" href="{{ $val->getImage('big') }}">
                                             <img style="width: 100%; margin: auto; display: block;"
-                                                src="{{ $val->getImage() }}" alt="" loading="lazy">
+                                                src="{{ $val->getImage() }}" alt="">
                                         </a>
                                     </li>
 
@@ -138,7 +138,7 @@
                                         <li>
                                             <a data-fancybox="hotel-{{ $val->slug }}"
                                                 href="{{ $val2->getImage('big') }}">
-                                                <img loading="lazy" style="width: 100%; margin: auto; display: block;"
+                                                <img style="width: 100%; margin: auto; display: block;"
                                                     src="{{ $val2->getImage() }}" alt="">
                                             </a>
                                         </li>
@@ -210,23 +210,26 @@
             </div>
             <div style="clear: both"></div>
             <div class="row">
-                <div class="col-xl-5 align-self-center text-content">
+                <div class="col-xl-5 text-content">
                     <div class="events-dots events-dots-s"></div>
-                    <p>Событие любого формата приобретает особый статус и становится незабываем, если проходит в Отеле Роял
-                        Плаза: свадьбы, банкеты, конференции, фуршеты. Мы предлагаем разный формат многофункциональных залов
-                        отеля – от камерного и изысканного ресторана до уютного и мягкого лаунж. Благодаря этому возможно
-                        проведение мероприятий любого уровня: как деловых конференций, так и пышных свадеб или торжественных
-                        банкетов.</p>
+                    <div class="desc-contaiener">
+                        {!! $services[0]->text !!}
+
+                    </div>
+
                     <br>
                     <a href="#"
                         onclick="this.closest('.row').querySelector('.slick-current.slick-active .detail').click(); return false;"
                         class="orange-btn">Подробнее</a>
                 </div>
                 <div class="col-xl-7">
-                    <div class="slick" data-prev-btn=".events .prev-btn" data-next-btn=".events .next-btn"
-                        data-parent-dots=".events-dots-s">
+                    <div class="slick" data-description-container=".desc-contaiener" data-prev-btn=".events .prev-btn"
+                        data-next-btn=".events .next-btn" data-parent-dots=".events-dots-s">
                         @foreach ($services as $val)
                             <div class="slide" data-title="{{ $val->title }}">
+                                <div class="desc" style="display: none">
+                                    {!! $val->text !!}
+                                </div>
                                 <a href="{{ route('eventsdetail', $val->slug) }}" class="detail"></a>
                                 <div class="borders"></div>
                                 <a data-fancybox="events" href="{{ $val->getImage('big') }}"><img
@@ -276,6 +279,7 @@
                                     <div class="slide-text-description">{!! $val->anonce !!}</div>
 
                                 </div>
+                                <a class="orange-btn" href="{{ route('suggestions_detail', $val->slug) }}">Подробнее</a>
                             </div>
                         </div>
                     </div>
