@@ -10928,7 +10928,7 @@ input.datepicker {
 .slider-main-page-restourants .slick-slide .slider-bars-overlay {
   position: absolute;
   padding: 42px 20px 42px 25px;
-  padding-top: 130px;
+  padding-top: 80px;
   color: white;
   top: 0;
   left: 0;
@@ -10975,14 +10975,14 @@ input.datepicker {
   color: white;
 }
 .footer .copyright {
-  max-width: 276px;
+  max-width: 280px;
   font-style: normal;
   font-weight: 300;
   font-size: 14px;
   line-height: 160%;
   /* or 22px */
   color: #ffffff;
-  opacity: 0.7;
+  /*opacity: 0.7;*/
   font-feature-settings: "pnum" on, "lnum" on;
 }
 .footer-logo {
@@ -11326,10 +11326,11 @@ main {
 }
 
 .sidebar a {
-  padding: 8px 32px 8px 32px;
+  padding: 10px 32px 8px 32px;
+      line-height: 1.2;
   text-decoration: none;
   font-size: 18px;
-  color: #818181;
+  color: #f4f4f4;
   display: block;
   transition: 0.3s;
 }
@@ -11520,7 +11521,7 @@ main {
   font-family: Raleway;
   font-style: normal;
   font-weight: 500;
-  font-size: 26px;
+  font-size: 20px;
   line-height: 160%;
   /* identical to box height, or 42px */
   font-feature-settings: "pnum" on, "lnum" on;
@@ -11665,7 +11666,7 @@ main {
 }
 .anonce li img {
   margin: 0;
-  vertical-align: middle;
+  vertical-align: -3px;
   margin-right: 6px;
 }
 
@@ -11687,7 +11688,7 @@ main {
 }
 
 .comfort {
-  margin-bottom: 18px;
+  margin-bottom: 20px;
 }
 @media (min-width: 500px) {
   .comfort {
@@ -11700,7 +11701,7 @@ main {
   font-style: normal;
   font-weight: 500;
   font-size: 14px;
-  line-height: 150%;
+  line-height: 149%;
   /* or 24px */
   color: #f8f8f8;
 }
@@ -11716,7 +11717,7 @@ main {
   font-size: 13px;
   line-height: 19px;
   color: #fff;
-  margin-bottom: 5px;
+  /*margin-bottom: 5px;*/
 }
 .notice svg {
   vertical-align: middle;
@@ -11759,13 +11760,14 @@ main {
   line-height: 150%;
   margin: 0;
   color: #f8f8f8;
+  font-feature-settings: "pnum" on, "lnum" on;
 }
 .bottom table tr p:last-child {
   font-style: normal;
   font-weight: 300;
-  font-size: 16px;
-  line-height: 150%;
-}
+  font-size: 14px;
+  line-height: 1.8;
+  }
 
 @media (max-width: 992px) {
   .hotel-detail-page .send-email {
@@ -11874,7 +11876,7 @@ main {
 }
 .hotels-page .bottom {
   padding-bottom: 35px;
-      margin-top: 15px;
+      /*margin-top: 15px;*/
 }
 .hotels-page .notice {
   position: relative;
@@ -11921,7 +11923,7 @@ main {
   font-family: Raleway;
   font-style: normal;
   font-weight: bold;
-  font-size: 26px;
+  font-size: 20px;
   line-height: 160%;
   /* identical to box height, or 42px */
   font-feature-settings: "pnum" on, "lnum" on;
@@ -12485,4 +12487,9 @@ table {
 .business-services a {
 	color: #e27f04;
     font-weight: 600;
+}
+
+.bottom td {
+	line-height: 1;
+	font-size: 14px !important;
 }

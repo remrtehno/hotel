@@ -51,7 +51,6 @@
 
                             <div class="bottom">
                                 {!! $item->cost !!}
-                                <pre>   </pre>
                                 <a href="{{ route('hotel-detail', $item->slug) }}" class="orange-btn small">Подробнее</a>
                             </div>
                         </div>

@@ -65,7 +65,7 @@
                                     Время не указано
                                 @endif
                             </div>
-
+							<p>&nbsp;</p>
                             <div class="bottom">
                                 <a href="{{ route('newsdetail', $item->slug) }}"
                                     class="orange-btn small">Подробнее</a>

@@ -65,7 +65,7 @@
                     <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <image xlink:href="/img/clothes-donation-1.png"></image>
                     </svg>
-                    <div>Услуги прачечной и химчистки - сухая и аквачистка одежды и обуви, в том числе деликатных тканей
+                    <div>Услуги прачечной и мелкий ремонт одежды
                     </div>
                 </div>
 
@@ -73,7 +73,7 @@
                     <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <image xlink:href="/img/parking-1.png"></image>
                     </svg>
-                    <div>Охраняемая парковка с круглосуточным контролем въезда и выезда
+                    <div>Охраняемая парковка с круглосуточным видеонаблюдением
                     </div>
                 </div>
 
