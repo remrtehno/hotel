@@ -122,6 +122,7 @@
                             <div class="dots"></div>
                             {{-- <h3 class="slide-text-title">{{ $val->title }}</h3> --}}
                             <div class="slide-text-description">{!! $val->description !!}</div>
+                            <br>
                             <a href="{{ route('hotel-detail', $val->slug) }}" class="orange-btn">Подробнее</a>
                         </div>
                         <div class="col-xl-6">
