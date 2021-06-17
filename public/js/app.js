@@ -37682,10 +37682,14 @@ $(function () {
       maxHeight = maxHeight < $(val).height() ? $(val).height() : maxHeight;
     });
     $('.slider-main-page-restourants .slider-bars-overlay .slide-text-description').height(maxHeight);
-  }, 2000); //fancybox
+  }, 2000);
 
-  $.fancybox.defaults.thumbs.autoStart = true;
-  $.fancybox.defaults.backFocus = false;
+  if (window.innerWidth < 992) {
+    //fancybox
+    $.fancybox.defaults.thumbs.autoStart = true;
+    $.fancybox.defaults.backFocus = false;
+  }
+
   $('[click-attr]').on('click', function () {
     $($(this).attr('target')).first().trigger('click');
   });

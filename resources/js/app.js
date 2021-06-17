@@ -69,10 +69,11 @@ $(function () {
   }, 2000)
 
 
-
-  //fancybox
-  $.fancybox.defaults.thumbs.autoStart = true;
-  $.fancybox.defaults.backFocus = false;
+  if (window.innerWidth < 992) {
+    //fancybox
+    $.fancybox.defaults.thumbs.autoStart = true;
+    $.fancybox.defaults.backFocus = false;
+  }
 
   $('[click-attr]').on('click', function () {
     $(
