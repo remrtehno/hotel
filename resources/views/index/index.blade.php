@@ -413,7 +413,7 @@
                                         <div class="stars">{{ $val->stars }}</div>
                                         <h6 class="title">{{ $val->title }}</h6>
                                         <div class="description"> {!! $val->description !!}</div>
-                                        <div class="date">{!! $val->created_at->format('M D Y') !!}</div>
+                                        <!-- <div class="date">{!! $val->created_at->format('M D Y') !!}</div> -->
                                     </div>
                                 </div>
                             @endforeach
