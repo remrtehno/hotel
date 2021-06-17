@@ -69,7 +69,7 @@ $(function () {
   }, 2000)
 
 
-  if (window.innerWidth < 992) {
+  if (window.innerWidth > 992) {
     //fancybox
     $.fancybox.defaults.thumbs.autoStart = true;
     $.fancybox.defaults.backFocus = false;
