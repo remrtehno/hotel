@@ -124,6 +124,17 @@ $maxWidth: 1920;
 }
 
 .suggestions {
+  @media (max-width: 992px) {
+    padding-left: 15px;
+    padding-right: 15px;
+    img {
+      margin-bottom: 20px !important;
+      margin-top: 10px !important;
+    }
+    .orange-btn {
+      margin-bottom: 35px;
+    }
+  }
   .suggestions-dots {
     button {
       // font-family: Raleway;

@@ -8,6 +8,12 @@
   padding: 80px 0;
   padding-bottom: 50px;
   // background-position: center center;
+
+  @media (max-width: 992px) {
+    .slider-hotels {
+      flex-direction: column;
+    }
+  }
   .btn-arrows {
     float: right;
   }
@@ -17,7 +23,9 @@
   .slide-text {
     .orange-btn {
       margin-bottom: 30px;
-      margin-top: -25px;
+      @media (min-width: 992px) {
+        margin-top: -25px;
+      }
     }
     @media (max-width: 992px) {
       order: 1;

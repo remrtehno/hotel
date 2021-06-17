@@ -37678,10 +37678,10 @@ $(function () {
   });
   setTimeout(function () {
     var maxHeight = 0;
-    $('.slider-bars-overlay .slide-text-description').each(function (_, val) {
+    $('.slider-main-page-restourants .slider-bars-overlay .slide-text-description').each(function (_, val) {
       maxHeight = maxHeight < $(val).height() ? $(val).height() : maxHeight;
     });
-    $('.slider-bars-overlay .slide-text-description').height(maxHeight);
+    $('.slider-main-page-restourants .slider-bars-overlay .slide-text-description').height(maxHeight);
   }, 2000); //fancybox
 
   $.fancybox.defaults.thumbs.autoStart = true;
@@ -37692,9 +37692,12 @@ $(function () {
   $('.start-map').on('click', function () {
     $.fancybox.open($('.restaurant-map'));
   });
-  $('.flexslider').flexslider({
-    animation: "slide",
-    animationLoop: false
+  $.each($('.flexslider'), function (_, value) {
+    $(value).flexslider({
+      animation: "slide",
+      animationLoop: false // slideshow: !$(value).data('autoplay-disabled'),
+
+    });
   });
   $(".datepicker").datepicker({
     language: 'ru'
@@ -37740,7 +37743,19 @@ $(function () {
         }
       }]
     });
+    var container = $(value).data('description-container');
+    $(value).on('beforeChange', function (event, slick, currentSlide) {
+      if (container) {
+        $(container).fadeOut();
+        $(container).parent().find('.orange-btn').fadeOut();
+      }
+    });
     $(value).on('afterChange', function (event, slick, currentSlide) {
+      if (container) {
+        $(container).html($(value).find('.slick-active').find('.desc').html()).fadeIn();
+        $(container).parent().find('.orange-btn').fadeIn();
+      }
+
       $.each($(value).find('.dots'), function (_, val) {
         $(val).find('li').eq(currentSlide).addClass('slick-active');
       });

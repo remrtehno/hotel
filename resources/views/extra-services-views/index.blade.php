@@ -29,8 +29,8 @@
                             <div class="img-container">
                                 <img class="lozad"
                                     style="object-fit: cover;
-                                                                        height: 400px; max-width: 100%; margin: 0; width: 100%;"
-                                    loading="lazy" src="{!! $item->getImage('big') !!}" alt="">
+                                                                            height: 400px; max-width: 100%; margin: 0; width: 100%;"
+                                    src="{!! $item->getImage('big') !!}" alt="">
                             </div>
                             <div class="description-section">
                                 <div>
@@ -55,12 +55,12 @@
                                         </a>
                                     </div>
                                     <a style="
-                                                                                    position: absolute;
-                                                                                    left: 0;
-                                                                                    right: 0;
-                                                                                    top: 0;
-                                                                                    bottom: 0;
-                                                                                  "
+                                                                                        position: absolute;
+                                                                                        left: 0;
+                                                                                        right: 0;
+                                                                                        top: 0;
+                                                                                        bottom: 0;
+                                                                                      "
                                         href="{{ route(isset($ROUTE) ? $ROUTE : 'eventsdetail', $item->slug) }}"></a>
                                 </div>
                             </div>
