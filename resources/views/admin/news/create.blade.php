@@ -41,6 +41,12 @@
                                         name="time">
                                 </div>
 
+                                <div class="form-group">
+                                    <label for="exampleInputEmail1">Этаж</label>
+                                    <input type="text" class="form-control" id="exampleInputEmail1" placeholder=""
+                                        name="floor">
+                                </div>
+
 
                                 <div class="form-group">
                                     <label for="exampleInputFile">Картинка</label>

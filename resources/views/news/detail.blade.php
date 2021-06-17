@@ -31,7 +31,8 @@
 
 
                             <h3>Режим работы и расположение</h3>
-                            <p>Вт-Вс: с 12:00 до 24:00, Пн: выходной <br> Первый этаж</p>
+                            <p>{{ $news->time }}</p>
+                            <p>{{ $news->floor }}</p>
                             <br>
 
                             @if (count($media_library_menu))
@@ -48,10 +49,10 @@
                             <div class="bottom">
                                 <a data-toggle="modal" onclick="
 
-                                                            document.querySelector('.input-hotel').value = 
-                                                            '{{ $news->title }}';
-                                                            return false;
-                                                        " data-target="#book" class="orange-btn big">Забронировать
+                                                                    document.querySelector('.input-hotel').value = 
+                                                                    '{{ $news->title }}';
+                                                                    return false;
+                                                                " data-target="#book" class="orange-btn big">Забронировать
                                     столик</a>
                             </div>
                         </div>

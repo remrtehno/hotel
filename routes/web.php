@@ -41,6 +41,11 @@ Route::get('/thanks', "MainController@thanks");
 Route::get('/dopuslugi', "MainController@dopuslugi")->name('dopuslugi');
 Route::get('/dopuslugi/{id}', "MainController@dopuslugi_detail")->name('dopuslugi_detail');
 
+Route::get('/rules-of-life', function () {
+    return view('rules-of-life.index', ['meta_key' => '', 'meta_desc' => '']);
+});
+
+
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth'], function () {
     Route::get('/', 'MainController@index');
     Route::post('/save-file', 'MainController@save_file')->name('save_file');

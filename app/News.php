@@ -13,7 +13,7 @@ class News extends Model
 {
     use Sluggable;
     protected $table = "news";
-    protected $fillable = ['title', 'time', 'anonce', 'text', 'slug', 'meta_info', 'meta_desc', 'meta_key'];
+    protected $fillable = ['title', 'floor', 'time', 'anonce', 'text', 'slug', 'meta_info', 'meta_desc', 'meta_key'];
 
     public static function add($fields)
     {

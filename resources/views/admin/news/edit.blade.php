@@ -41,6 +41,12 @@
                                     placeholder="" name="time">
                             </div>
 
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Этаж</label>
+                                <input type="text" value="{{ $sl->floor }}" class="form-control" id="exampleInputEmail1"
+                                    placeholder="" name="time">
+                            </div>
+
 
                             <div class="form-group">
                                 <img src="{{ $sl->getImage() }}" alt="" class="img-responsive" width="200">
@@ -93,8 +99,7 @@
                             <p class="help-block">jpeg,png,jpeg</p>
                             <p class="help-block">размер 419х287</p>
                             <button type="button"
-                                onclick=' 
-                                                                                                                                                                this.insertAdjacentHTML( "afterEnd", "<input type=\"file\" name=\"file2[]\">") '>+
+                                onclick='this.insertAdjacentHTML( "afterEnd", "<input type=\"file\" name=\"file2[]\">") '>+
                                 добавить изображение</button>
 
                             <input type="file" id="exampleInputFile" name="file2[]">
