@@ -78,7 +78,7 @@ $(function () {
     $(
       $(this).attr('target')
 
-    ).first().trigger('click')
+    ).first().trigger('click');
   })
 
 
