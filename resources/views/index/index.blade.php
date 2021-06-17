@@ -221,7 +221,7 @@
                         @foreach ($services as $val)
                             <div class="slide" data-title="{{ $val->title }}">
                                 <div class="desc" style="display: none">
-                                    {!! $val->text !!}
+                                    {!! $val->anonce !!}
                                 </div>
                                 <a href="{{ route('eventsdetail', $val->slug) }}" class="detail"></a>
                                 <div class="borders"></div>
