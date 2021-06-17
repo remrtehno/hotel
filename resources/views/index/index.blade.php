@@ -213,7 +213,7 @@
                 <div class="col-xl-5 text-content">
                     <div class="events-dots events-dots-s"></div>
                     <div class="desc-contaiener">
-                        {!! $services[0]->text !!}
+                        {!! $services[0]->anonce !!}
 
                     </div>
 
