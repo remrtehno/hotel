@@ -78,6 +78,16 @@ class NewsController extends Controller
             };
         }
 
+        if ($request->file('file_cigarette') !== null) {
+            foreach ($request->file('file_cigarette') as $file) {
+                $instance = new MediaLibrary;
+                $instance->uploadImage($file);
+                $instance->id_content = $prod->id;
+                $instance->id_category = 7; // cigarette
+                $instance->save();
+            };
+        }
+
         return redirect()->route('news.index');
     }
 
@@ -108,7 +118,10 @@ class NewsController extends Controller
         $whereArray = array('id_content' => $id, 'id_category' => 6); // 6 gallery restaurant
         $media_library_gallery = MediaLibrary::where($whereArray)->get();
 
-        return view('admin.news.edit', compact('sl', 'media_library_gallery', 'media_library_menu', 'media_library_map'));
+        $whereArray = array('id_content' => $id, 'id_category' => 7); // 7 cigarette restaurant
+        $media_library_file_cigarette = MediaLibrary::where($whereArray)->get();
+
+        return view('admin.news.edit', compact('sl', 'media_library_file_cigarette', 'media_library_gallery', 'media_library_menu', 'media_library_map'));
     }
 
     /**
@@ -158,7 +171,6 @@ class NewsController extends Controller
                 $instance->save();
             };
         }
-    
 
         if ($request->file('file_gallery') !== null) {
             foreach ($request->file('file_gallery') as $file) {
@@ -166,6 +178,16 @@ class NewsController extends Controller
                 $instance->uploadImage($file);
                 $instance->id_content = $post->id;
                 $instance->id_category = 6; // map
+                $instance->save();
+            };
+        }
+
+        if ($request->file('file_cigarette') !== null) {
+            foreach ($request->file('file_cigarette') as $file) {
+                $instance = new MediaLibrary;
+                $instance->uploadImage($file);
+                $instance->id_content = $post->id;
+                $instance->id_category = 7; // cigarette
                 $instance->save();
             };
         }

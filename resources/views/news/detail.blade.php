@@ -35,12 +35,43 @@
                             <p>{{ $news->floor }}</p>
                             <br>
 
+
+
                             @if (count($media_library_menu))
-                                <a class="start-menu meta-info">Меню</a>
+                                <a class="start-menu meta-info" click-attr target=".menu-rest">Меню</a>
                             @endif
                             @if (count($media_library_map))
-                                <a class="start-map meta-info">Винная карта</a>
+                                <a class="start-map meta-info" click-attr target=".map">Винная карта</a>
                             @endif
+
+                            @if (count($media_library_file_cigarette))
+                                <a class="start-cigarette meta-info" click-attr target=".cigar">Сигарная карта</a>
+                            @endif
+
+
+                            <div style="display: none;">
+                                @foreach ($media_library_map as $val)
+                                    <a data-fancybox="map" class="map"> <img data-fancybox="map" class="restaurant-map"
+                                            src="{{ $val->getImage('big') }}" alt="">
+                                    </a>
+                                @endforeach
+
+                                @foreach ($media_library_menu as $val)
+                                    <a data-fancybox="menu" class="menu-rest">
+                                        <img data-fancybox="menu" class="restaurant-menu"
+                                            src="{{ $val->getImage('big') }}" alt="">
+                                    </a>
+                                @endforeach
+
+                                @foreach ($media_library_file_cigarette as $val)
+                                    <a data-fancybox="cigar" class="cigar">
+                                        <img data-fancybox="cigar" class="restaurant-menu-cigar"
+                                            src="{{ $val->getImage('big') }}" alt="">
+                                    </a>
+                                @endforeach
+                            </div>
+
+
 
                             <br>
 
@@ -49,10 +80,11 @@
                             <div class="bottom">
                                 <a data-toggle="modal" onclick="
 
-                                                                    document.querySelector('.input-hotel').value = 
-                                                                    '{{ $news->title }}';
-                                                                    return false;
-                                                                " data-target="#book" class="orange-btn big">Забронировать
+                                                                                                                document.querySelector('.input-hotel').value = 
+                                                                                                                '{{ $news->title }}';
+                                                                                                                return false;
+                                                                                                            "
+                                    data-target="#book" class="orange-btn big">Забронировать
                                     столик</a>
                             </div>
                         </div>
@@ -73,19 +105,7 @@
                     </div>
                 </div>
 
-                <div style="display: none;">
-                    @foreach ($media_library_map as $val)
-                        <a data-fancybox="map"> <img data-fancybox="map" class="restaurant-map"
-                                src="{{ $val->getImage('big') }}" alt="">
-                        </a>
-                    @endforeach
 
-                    @foreach ($media_library_menu as $val)
-                        <a data-fancybox="menu">
-                            <img data-fancybox="menu" class="restaurant-menu" src="{{ $val->getImage('big') }}" alt="">
-                        </a>
-                    @endforeach
-                </div>
 
 
             </div>

@@ -74,13 +74,13 @@ $(function () {
   $.fancybox.defaults.thumbs.autoStart = true;
   $.fancybox.defaults.backFocus = false;
 
-  $('.start-menu').on('click', function () {
-    $.fancybox.open($('.restaurant-menu'))
+  $('[click-attr]').on('click', function () {
+    $(
+      $(this).attr('target')
+
+    ).first().trigger('click')
   })
 
-  $('.start-map').on('click', function () {
-    $.fancybox.open($('.restaurant-map'))
-  })
 
 
 
