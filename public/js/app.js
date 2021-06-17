@@ -37684,7 +37684,7 @@ $(function () {
     $('.slider-main-page-restourants .slider-bars-overlay .slide-text-description').height(maxHeight);
   }, 2000);
 
-  if (window.innerWidth < 992) {
+  if (window.innerWidth > 992) {
     //fancybox
     $.fancybox.defaults.thumbs.autoStart = true;
     $.fancybox.defaults.backFocus = false;
