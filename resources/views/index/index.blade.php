@@ -127,13 +127,6 @@
                         <div class="col-xl-6">
                             <div class="flexslider {{ count($val->getMediaLibrary()) === 0 ? 'hide-nav' : '' }}">
                                 <ul class="slides">
-                                    <li>
-                                        <a data-fancybox="hotel-{{ $val->slug }}" href="{{ $val->getImage('big') }}">
-                                            <img style="width: 100%; margin: auto; display: block;"
-                                                src="{{ $val->getImage() }}" alt="">
-                                        </a>
-                                    </li>
-
                                     @foreach ($val->getMediaLibrary() as $val2)
                                         <li>
                                             <a data-fancybox="hotel-{{ $val->slug }}"
