@@ -177,8 +177,8 @@
                     <div class="slide">
                         <div class="borders"></div>
                         <a data-fancybox="bars" href="{{ $val->getImage('big') }}">
-                            <img style="max-width: 100%; margin: auto; display: block;"
-                                data-lazy="{{ $val->getImage() }}" alt="">
+                            <img style="max-width: 100%; margin: auto; display: block;" src="{{ $val->getImage() }}"
+                                alt="">
                         </a>
                         <div class="slider-bars-overlay">
                             <h5 class="title">{{ $val->title }}</h5>
@@ -228,7 +228,7 @@
                                 <div class="borders"></div>
                                 <a data-fancybox="events" href="{{ $val->getImage('big') }}"><img
                                         style="max-width: 100%; margin: auto; display: block;"
-                                        data-lazy="{{ $val->getImage('smaller') }}" alt=""></a>
+                                        src="{{ $val->getImage('smaller') }}" alt=""></a>
                                 <div class="slider-bars-overlay">
                                     {{-- <div class="slide-text-description">{!! $val->anonce !!}</div> --}}
                                     <a class="link" href="{{ route('newsdetail', $val->slug) }}"></a>
@@ -263,7 +263,7 @@
                             <div class="col-xl-7">
                                 <a data-fancybox="SPEC" href="{{ $val->getImage('big') }}">
                                     <img style="max-width: 100%; margin: auto; display: block;"
-                                        data-lazy="{{ $val->getImage('smaller') }}" alt="">
+                                        src="{{ $val->getImage('smaller') }}" alt="">
                                 </a>
                             </div>
                             <div class="col-xl-5">

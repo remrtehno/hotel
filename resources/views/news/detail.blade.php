@@ -52,22 +52,22 @@
                             <div style="display: none;">
                                 @foreach ($media_library_map as $val)
                                     <a data-fancybox="map" class="map">
-                                        <img style="max-width: 100%" class="restaurant-map"
-                                            src="{{ $val->getImage('big') }}" alt="">
+                                        <img style="max-width: 100%" class="restaurant-map" src="{{ $val->getImage() }}"
+                                            alt="">
                                     </a>
                                 @endforeach
 
                                 @foreach ($media_library_menu as $val)
                                     <a data-fancybox="menu" class="menu-rest">
-                                        <img style="max-width: 100%" class="restaurant-menu"
-                                            src="{{ $val->getImage('big') }}" alt="">
+                                        <img style="max-width: 100%" class="restaurant-menu" src="{{ $val->getImage() }}"
+                                            alt="">
                                     </a>
                                 @endforeach
 
                                 @foreach ($media_library_file_cigarette as $val)
                                     <a data-fancybox="cigar" class="cigar">
                                         <img style="max-width: 100%" class="restaurant-menu-cigar"
-                                            src="{{ $val->getImage('big') }}" alt="">
+                                            src="{{ $val->getImage() }}" alt="">
                                     </a>
                                 @endforeach
                             </div>
@@ -81,10 +81,10 @@
                             <div class="bottom">
                                 <a data-toggle="modal" onclick="
 
-                                                                                                                    document.querySelector('.input-hotel').value = 
-                                                                                                                    '{{ $news->title }}';
-                                                                                                                    return false;
-                                                                                                                "
+                                                                                                                        document.querySelector('.input-hotel').value = 
+                                                                                                                        '{{ $news->title }}';
+                                                                                                                        return false;
+                                                                                                                    "
                                     data-target="#book" class="orange-btn big">Забронировать
                                     столик</a>
                             </div>
