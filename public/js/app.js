@@ -37694,10 +37694,11 @@ $(function () {
     $($(this).attr('target')).first().trigger('click');
   });
   $.each($('.flexslider'), function (_, value) {
+    console.log($(value).data('autoplay-disabled'), value);
     $(value).flexslider({
       animation: "slide",
-      animationLoop: false // slideshow: !$(value).data('autoplay-disabled'),
-
+      animationLoop: false,
+      slideshow: $(value).data('autoplay-disabled') ? !$(value).data('autoplay-disabled') : true
     });
   });
   $(".datepicker").datepicker({
