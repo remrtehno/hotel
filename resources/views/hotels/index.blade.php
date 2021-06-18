@@ -28,7 +28,8 @@
                 @foreach ($items as $item)
                     <div class="hotel-wrapper">
                         <div class="img-container">
-                            <div class="flexslider {{ count($item->getMediaLibrary()) === 0 ? 'hide-nav' : '' }}">
+                            <div data-autoplay-disabled="true"
+                                class="flexslider {{ count($item->getMediaLibrary()) === 0 ? 'hide-nav' : '' }}">
                                 <ul class="slides fancybox-slides">
                                     @foreach ($item->getMediaLibrary() as $val)
                                         <li>
