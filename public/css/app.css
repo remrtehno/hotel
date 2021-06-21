@@ -12549,3 +12549,22 @@ table {
 	font-size: 2rem;
 	font-weight: 500;
 }
+
+@media (max-width: 992px) {
+	.events-page .title-section {
+		margin-top: 25px;
+		margin-bottom: 13px;
+		} 
+	.description h2 {
+			line-height: 1.7;
+		}
+	.events-page .description {
+    margin-bottom: 0px;
+	}
+	.bottom td {
+		padding: 0;
+	}
+	.bottom table tr td:first-child {
+		padding-right: 10px;
+	}
+}
