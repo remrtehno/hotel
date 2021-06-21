@@ -125,8 +125,9 @@ $(function () {
       infinite: $(value).data('loop') || false,
       // draggable: false,
       swipe: false,
-
-      speed: 800,
+      fade: $(value).data('fade'),
+      cssEase: 'linear',
+      speed: 400,
       slidesToShow: $(value).data('per-slide') || 1,
       slidesToScroll: 1,
       autoplay: $(value).data('autoplay') || false,

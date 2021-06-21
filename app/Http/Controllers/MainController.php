@@ -24,9 +24,9 @@ use Illuminate\Http\Request;
 
 class MainController extends Controller
 {
-    public $title = "";
-    public $meta_desc = "";
-    public $meta_key = "";
+    public $title = "Royal Plaza - гостиница в Нефтеюганске и ресторанный комплекс | Заказать номер в гостинице можно по телефону +7 (3463) 25-00-00";
+    public $meta_desc = "Сайт гостиницы &quot;Royal Plaza&quot; г.Нефтеюганск приглашает приятно провести время! Информация по телефону: +7 (3463) 25-00-00.";
+    public $meta_key = "Сайт гостиницы &quot;Royal Plaza&quot; г.Нефтеюганск приглашает приятно провести время! Информация по телефону: +7 (3463) 25-00-00.";
 
     public function index()
     {
@@ -179,7 +179,7 @@ class MainController extends Controller
     {
         $items = SpecSuggestions::all();
 
-        $title = "";
+        $title = "Специальные предложения $this->title";
         $meta_desc = "";
         $meta_key = "";
 
@@ -192,7 +192,7 @@ class MainController extends Controller
     {
         $items = SpecSuggestions::where('slug', $id)->firstOrFail();
 
-        $title = "$items->title";
+        $title = "$items->title в отеле \"Роял Плаза\" | Royal Plaza - гостиница в Нефтеюганске и ресторанный комплекс";
         $meta_desc = "$items->meta_desc";
         $meta_key = "$items->meta_key";
 
@@ -276,7 +276,7 @@ class MainController extends Controller
     {
         $items = Services::all();
 
-        $title = "Все мероприятия";
+        $title = "$this->title мероприятия";
         $meta_desc = "$this->meta_desc";
         $meta_key = "$this->meta_key";
 
@@ -287,7 +287,7 @@ class MainController extends Controller
     {
         $items = Hotels::all();
 
-        $title = "Все отели";
+        $title = "Номера в $this->title";
         $meta_desc = "$this->meta_desc";
         $meta_key = "$this->meta_key";
 
@@ -297,7 +297,7 @@ class MainController extends Controller
     {
         $product = Hotels::where('slug', $slug)->firstOrFail();
 
-        $title = "$product->title";
+        $title = "$product->title в отеле \"Royal Plaza\" | Royal Plaza - гостиница в Нефтеюганске и ресторанный комплекс";
         $meta_desc = "$product->meta_desc";
         $meta_key = "$product->meta_key";
 
@@ -334,7 +334,7 @@ class MainController extends Controller
         $whereArray = array('id_content' => $news->id, 'id_category' => 7); // 7 cigarette restaurant
         $media_library_file_cigarette = MediaLibrary::where($whereArray)->get();
 
-        $title = "$news->title";
+        $title = "$news->title в отеле \"Royal Plaza\" | Royal Plaza - гостиница в Нефтеюганске и ресторанный комплекс";
         $meta_desc = "$news->meta_desc";
         $meta_key = "$news->meta_key";
 
@@ -366,7 +366,7 @@ class MainController extends Controller
     public function servicesdetail($slug)
     {
         $product = Services::where('slug', $slug)->firstOrFail();
-        $title = $this->title;
+        $title = "$product->title в отеле \"Роял Плаза\" | Royal Plaza - гостиница в Нефтеюганске и ресторанный комплекс";
         $meta_desc = $this->meta_desc;
         $meta_key = $this->meta_key;
         return view("products.detail", compact('product', 'title', 'meta_key', 'meta_desc'));
@@ -377,7 +377,7 @@ class MainController extends Controller
         $news = News::all();
         $order = News::orderBy('created_at', 'desc')->take(3)->get();
         $gallery = Gallery::limit(9)->get();
-        $title = $this->title;
+        $title = "Лучшие бары, рестораны и кафе Нефтеюганска | Royal Plaza - гостиница в Нефтеюганске и ресторанный комплекс";
         $meta_desc = $this->meta_desc;
         $meta_key = $this->meta_key;
         return view("news.index", compact('news', 'order', 'gallery', 'title', 'meta_key', 'meta_desc'));

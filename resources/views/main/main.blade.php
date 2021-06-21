@@ -8,7 +8,8 @@
     <meta name="description" content="{{ $meta_desc }}">
     <script src="https://cdn.jsdelivr.net/npm/lozad/dist/lozad.min.js"></script>
 
-
+    <title>{{ $title }}</title>
+    <link rel="icon" type="image/png" href="/img/favicon.png" />
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
@@ -21,7 +22,7 @@
     <link rel="stylesheet" href="/css/style.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
 
-</head> 
+</head>
 
 <body>
     @include("lib.header-inner")

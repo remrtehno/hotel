@@ -172,7 +172,7 @@
                 деловых переговоров.</p>
 
             <br>
-            <div class="slider-bars slick" data-autoplay="true" data-loop="true" data-per-slide="4">
+            <div class="slider-bars slick" data-fade="false" data-autoplay="true" data-loop="true" data-per-slide="4">
                 @foreach ($news as $val)
                     <div class="slide">
                         <div class="borders"></div>
@@ -255,8 +255,8 @@
                     </svg></button>
             </div>
             <div style="clear: both"></div>
-            <div class="slick" data-prev-btn=".suggestions .prev-btn" data-next-btn=".suggestions .next-btn"
-                data-parent-dots=".suggestions-dots">
+            <div class="slick" data-fade="true" data-prev-btn=".suggestions .prev-btn"
+                data-next-btn=".suggestions .next-btn" data-parent-dots=".suggestions-dots">
                 @foreach ($suggestions as $val)
                     <div class="slide" data-title="{{ $val->title }}">
                         <div class="row">
@@ -268,9 +268,9 @@
                             </div>
                             <div class="col-xl-5">
                                 <div class="suggestions-dots events-dots dots"></div>
-                                {!! $val->text !!}
+                                {!! $val->anonce !!}
                                 <div class="slider-bars-overlay">
-                                    <div class="slide-text-description">{!! $val->anonce !!}</div>
+                                    <div class="slide-text-description"></div>
 
                                 </div>
                                 <a class="orange-btn" href="{{ route('suggestions_detail', $val->slug) }}">Подробнее</a>
@@ -293,7 +293,7 @@
             <form class="form" action="{{ route('email') }}" method="POST">
                 @csrf
                 <input name="name" type="text" placeholder="Ваше имя">
-                <input name="tel" type="tel" placeholder="Телефон или эл. почта">
+                <input name="tel" required type="tel" placeholder="Телефон или эл. почта">
                 <textarea name="msg" placeholder="Сообщение"></textarea>
                 <p></p>
                 <br>
@@ -402,7 +402,7 @@
                                 </path>
                             </svg>
                         </button>
-                        <div class="slick" data-autoplay="true" data-parent-dots=".reviews-dots">
+                        <div class="slick" data-fade="false" data-autoplay="true" data-parent-dots=".reviews-dots">
                             @foreach ($reviews as $val)
                                 <div class="slide">
                                     <div class="reviews">

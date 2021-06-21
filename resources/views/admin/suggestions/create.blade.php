@@ -35,6 +35,13 @@
                                         name="title">
                                 </div>
 
+                                <div class="col-md-12">
+                                    <div class="form-group">
+                                        <label for="exampleInputEmail1">Анонс</label>
+                                        <textarea name="anonce" id="editor" class="form-control"></textarea>
+                                    </div>
+                                </div>
+
                                 <div class="form-group">
                                     <label for="exampleInputFile">Картинка</label>
                                     <input type="file" id="exampleInputFile" name="img">
