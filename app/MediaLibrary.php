@@ -26,6 +26,7 @@ class MediaLibrary extends Model
         $this->path1 = $this->base_path . $this->upload_path . "/big/";
         $this->path2 = $this->base_path . $this->upload_path . "/medium/";
         $this->path3 = $this->base_path . $this->upload_path . "/small/";
+        $this->path4 = $this->base_path . $this->upload_path . "/origina-size/";
     }
 
     public static function add($fields)
@@ -48,6 +49,7 @@ class MediaLibrary extends Model
             File::delete($this->path1 . $this->img);
             File::delete($this->path2 . $this->img);
             File::delete($this->path3 . $this->img);
+            File::delete($this->path4 . $this->img);
         }
     }
 
@@ -85,6 +87,10 @@ class MediaLibrary extends Model
         $img->resize(649, 533)->save($this->path3 . $filename, 100);
         $img->reset();
 
+        File::exists($this->path4) or File::makeDirectory($this->path4, 0777, true);
+        $img->save($this->path4 . $filename, 100);
+        $img->reset();
+
         $this->img = $filename;
         $this->save();
     }
@@ -93,6 +99,10 @@ class MediaLibrary extends Model
     {
         if ($this->img == null) {
             return '/img/no-image.png';
+        }
+
+        if (!"/uploads/media/$size/" . $this->img) {
+            return "/uploads/media/big/" . $this->img;
         }
 
         return "/uploads/media/$size/" . $this->img;
