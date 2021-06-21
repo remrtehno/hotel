@@ -52,14 +52,14 @@
                             <div style="display: none;">
                                 @foreach ($media_library_map as $val)
                                     <a data-fancybox="map" class="map">
-                                        <img style="max-width: 100%" class="restaurant-map" src="{{ $val->getImage() }}"
+                                        <img style="max-width: 100%" class="restaurant-map" src="{{ $val->getImage('original-size') }}"
                                             alt="">
                                     </a>
                                 @endforeach
 
                                 @foreach ($media_library_menu as $val)
                                     <a data-fancybox="menu" class="menu-rest">
-                                        <img style="max-width: 100%" class="restaurant-menu" src="{{ $val->getImage() }}"
+                                        <img style="max-width: 100%" class="restaurant-menu" src="{{ $val->getImage('original-size') }}"
                                             alt="">
                                     </a>
                                 @endforeach
@@ -67,7 +67,7 @@
                                 @foreach ($media_library_file_cigarette as $val)
                                     <a data-fancybox="cigar" class="cigar">
                                         <img style="max-width: 100%" class="restaurant-menu-cigar"
-                                            src="{{ $val->getImage() }}" alt="">
+                                            src="{{ $val->getImage('original-size') }}" alt="">
                                     </a>
                                 @endforeach
                             </div>
