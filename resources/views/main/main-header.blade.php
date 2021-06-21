@@ -7,7 +7,8 @@
     <meta name="keywords" content="{{ $meta_key }}">
     <meta name="description" content="{{ $meta_desc }}">
 
-
+    <title>{{ $title }}</title>
+    <link rel="icon" type="image/png" href="/img/favicon.png" />
 
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;400;500;600;700;800;900&display=swap"
         rel="stylesheet">

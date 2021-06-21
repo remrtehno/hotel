@@ -10314,7 +10314,7 @@ button {
 
 .first-screen {
   min-height: 100vh;
-  background-image: url(/images/main-bg.jpg?7c6e0194c9540d692e09d3f4e132a3af);
+  background-image: url(/images/main-bg.jpg?127f7d0f56930cc708598d38892646ec);
   display: flex;
   flex-direction: column;
 }
@@ -10813,7 +10813,7 @@ input.datepicker {
 }
 
 .main-page-form {
-  background: url(/images/form.png?53c54e83872960299bb216ad4ce43858) center center/cover;
+  background: url(/images/form.png?61593046d8602402eba1d101a8719e85) center center/cover;
   color: white;
   padding-bottom: 180px;
 }

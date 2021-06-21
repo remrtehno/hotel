@@ -10,7 +10,7 @@
             <input name="name" type="text" placeholder="Ваше имя">
         </div>
         <div class="col-md-6">
-            <input name="tel" type="tel" placeholder="Телефон или эл. почта">
+            <input name="tel" required type="tel" placeholder="Телефон или эл. почта">
         </div>
     </div>
 

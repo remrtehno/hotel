@@ -13,7 +13,7 @@ class SpecSuggestions extends Model
     //
     use Sluggable;
     protected $table = "spec_suggestions";
-    protected $fillable = ['title', 'text', 'img', 'slug'];
+    protected $fillable = ['title', 'anonce','text', 'img', 'slug'];
 
     public static function add($fields)
     {

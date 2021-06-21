@@ -54,6 +54,13 @@
                             </div>
                         </div>
 
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Анонс</label>
+                                <textarea name="anonce" id="editor" class="form-control">{!! $sl->anonce !!}</textarea>
+                            </div>
+                        </div>
+
 
                         <div class="col-md-12">
                             <label for="exampleInputFile">Галерея</label>
