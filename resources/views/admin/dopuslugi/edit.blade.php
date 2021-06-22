@@ -17,8 +17,7 @@
             @include('admin.errors')
             <!-- Default box -->
 
-            <form action="{{ route('dopuslugi.update', ['id' => $sl->id]) }}" method="post"
-                enctype="multipart/form-data">
+            <form action="{{ route('dopuslugi.update', ['id' => $sl->id]) }}" method="post" enctype="multipart/form-data">
                 @csrf
                 <div class="box">
                     <div class="box-header with-border">
@@ -54,6 +53,38 @@
                             </div>
                         </div>
 
+                        @if (isset($fields))
+                            @foreach ($fields as $val)
+                                <div class="col-md-12">
+                                    <label for="exampleInputFile">{{ $val['label'] }}</label>
+                                    <p class="help-block">jpeg,png,jpeg</p>
+                                    <p class="help-block">размер 419х287</p>
+                                    <button type="button"
+                                        onclick='this.insertAdjacentHTML( "afterEnd", "<input type=\"file\" name=\"{{ $val['request_name'] }}[]\">") '>+
+                                        добавить изображение</button>
+
+
+                                    <input type="file" id="exampleInputFile" name="{{ $val['request_name'] }}[]">
+
+
+                                    <br>
+                                    @foreach ($val['media_library'] as $val)
+                                        <span class="img-preview" style="display: inline-block;">
+                                            <label>
+
+                                                <button style="position: absolute" type="button" onclick='
+                                                                                        imagesForDelete.innerHTML +=  "<input type=\"hidden\" value=\"{{ $val->id }}\" name=\"file_del[]\">";
+                                                                                        this.closest("span").remove();
+                                                                                    '>
+                                                    x
+                                                </button>
+                                                <img width="70" src="{{ $val->getImage() }}" alt="">
+                                            </label>
+                                        </span>
+                                    @endforeach
+                                </div>
+                            @endforeach
+                        @endif
 
                         <div class="col-md-12">
                             <label for="exampleInputFile">Галерея</label>
@@ -61,7 +92,7 @@
                             <p class="help-block">размер 419х287</p>
                             <button type="button"
                                 onclick=' 
-                                                                                                                                                        this.insertAdjacentHTML( "afterEnd", "<input type=\"file\" name=\"file[]\">") '>+
+                                                                                                                                                                        this.insertAdjacentHTML( "afterEnd", "<input type=\"file\" name=\"file[]\">") '>+
                                 добавить изображение</button>
 
 
@@ -75,9 +106,9 @@
                                     <label>
 
                                         <button style="position: absolute" type="button" onclick='
-                                                                        imagesForDelete.innerHTML +=  "<input type=\"hidden\" value=\"{{ $val->id }}\" name=\"file_del[]\">";
-                                                                        this.closest("span").remove();
-                                                                    '>
+                                                                                        imagesForDelete.innerHTML +=  "<input type=\"hidden\" value=\"{{ $val->id }}\" name=\"file_del[]\">";
+                                                                                        this.closest("span").remove();
+                                                                                    '>
                                             x
                                         </button>
                                         <img width="70" src="{{ $val->getImage() }}" alt="">

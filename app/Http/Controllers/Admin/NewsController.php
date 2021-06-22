@@ -10,6 +10,17 @@ use Illuminate\Support\Facades\Storage;
 
 class NewsController extends Controller
 {
+    public static function media_library_array($id_content)
+    {
+        return [
+            ['request_name' => 'file', 'id_category' => 2, 'id_content' => $id_content],
+            ['request_name' => 'file2', 'id_category' => 3, 'id_content' => $id_content],
+            ['request_name' => 'file_gallery', 'id_category' => 6, 'id_content' => $id_content],
+            ['request_name' => 'file_cigarette', 'id_category' => 7, 'id_content' => $id_content],
+            ['request_name' => 'file_kalyan', 'id_category' => 10, 'id_content' => $id_content],
+        ];
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -48,45 +59,7 @@ class NewsController extends Controller
         $prod = News::add($request->all());
         $prod->uploadImage($request->file('img'));
 
-        if ($request->file('file') !== null) {
-            foreach ($request->file('file') as $file) {
-                $instance = new MediaLibrary;
-                $instance->uploadImage($file);
-                $instance->id_content = $prod->id;
-                $instance->id_category = 2;
-                $instance->save();
-            };
-        }
-
-        if ($request->file('file2') !== null) {
-            foreach ($request->file('file2') as $file) {
-                $instance = new MediaLibrary;
-                $instance->uploadImage($file);
-                $instance->id_content = $prod->id;
-                $instance->id_category = 3;
-                $instance->save();
-            };
-        }
-
-        if ($request->file('file_gallery') !== null) {
-            foreach ($request->file('file_gallery') as $file) {
-                $instance = new MediaLibrary;
-                $instance->uploadImage($file);
-                $instance->id_content = $prod->id;
-                $instance->id_category = 6; // map
-                $instance->save();
-            };
-        }
-
-        if ($request->file('file_cigarette') !== null) {
-            foreach ($request->file('file_cigarette') as $file) {
-                $instance = new MediaLibrary;
-                $instance->uploadImage($file);
-                $instance->id_content = $prod->id;
-                $instance->id_category = 7; // cigarette
-                $instance->save();
-            };
-        }
+        MediaLibrary::mmediaLibraryImages($request, $this->media_library_array($prod->id));
 
         return redirect()->route('news.index');
     }
@@ -121,7 +94,10 @@ class NewsController extends Controller
         $whereArray = array('id_content' => $id, 'id_category' => 7); // 7 cigarette restaurant
         $media_library_file_cigarette = MediaLibrary::where($whereArray)->get();
 
-        return view('admin.news.edit', compact('sl', 'media_library_file_cigarette', 'media_library_gallery', 'media_library_menu', 'media_library_map'));
+        $whereArray = array('id_content' => $id, 'id_category' => 10); // 10 kalyan restaurant
+        $media_library_kalyan = MediaLibrary::where($whereArray)->get();
+
+        return view('admin.news.edit', compact('sl', 'media_library_kalyan', 'media_library_file_cigarette', 'media_library_gallery', 'media_library_menu', 'media_library_map'));
     }
 
     /**
@@ -152,45 +128,7 @@ class NewsController extends Controller
             };
         }
 
-        if ($request->file('file') !== null) {
-            foreach ($request->file('file') as $file) {
-                $instance = new MediaLibrary;
-                $instance->uploadImage($file);
-                $instance->id_content = $post->id;
-                $instance->id_category = 2; // menu
-                $instance->save();
-            };
-        }
-
-        if ($request->file('file2') !== null) {
-            foreach ($request->file('file2') as $file) {
-                $instance = new MediaLibrary;
-                $instance->uploadImage($file);
-                $instance->id_content = $post->id;
-                $instance->id_category = 3; // map
-                $instance->save();
-            };
-        }
-
-        if ($request->file('file_gallery') !== null) {
-            foreach ($request->file('file_gallery') as $file) {
-                $instance = new MediaLibrary;
-                $instance->uploadImage($file);
-                $instance->id_content = $post->id;
-                $instance->id_category = 6; // map
-                $instance->save();
-            };
-        }
-
-        if ($request->file('file_cigarette') !== null) {
-            foreach ($request->file('file_cigarette') as $file) {
-                $instance = new MediaLibrary;
-                $instance->uploadImage($file);
-                $instance->id_content = $post->id;
-                $instance->id_category = 7; // cigarette
-                $instance->save();
-            };
-        }
+        MediaLibrary::mmediaLibraryImages($request, $this->media_library_array($post->id));
 
         return redirect()->route('news.index');
     }
@@ -233,6 +171,19 @@ class NewsController extends Controller
             $file->removeImage();
             $file->delete();
         };
+
+        foreach ($this->media_library_array as $val) {
+            $media_library = MediaLibrary::where(
+                array(
+                    'id_content' => $id,
+                    'id_category' => $val['id_category'],
+                )
+            )->get();
+            foreach ($media_library as $file) {
+                $file->removeImage();
+                $file->delete();
+            };
+        }
 
         return redirect()->route('news.index');
     }

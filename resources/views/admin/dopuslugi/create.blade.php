@@ -52,12 +52,66 @@
                             </div>
                         </div>
                         <div class="col-md-12">
+                            <label for="exampleInputFile">Сигарная карта</label>
+                            <p class="help-block">jpeg,png,jpeg</p>
+                            <p class="help-block">размер 419х287</p>
+                            <button type="button"
+                                onclick='this.insertAdjacentHTML( "afterEnd", "<input type=\"file\" name=\"file_cigarette[]\">") '>+
+                                добавить изображение</button>
+
+
+                            <input type="file" id="exampleInputFile" name="file_cigarette[]">
+
+                        </div>
+
+                        <div class="col-md-12">
+                            <label for="exampleInputFile">Винная карта</label>
+                            <p class="help-block">jpeg,png,jpeg</p>
+                            <p class="help-block">размер 419х287</p>
+                            <button type="button"
+                                onclick='this.insertAdjacentHTML( "afterEnd", "<input type=\"file\" name=\"file2[]\">") '>+
+                                добавить изображение</button>
+
+
+                            <input type="file" id="exampleInputFile" name="file2[]">
+
+                        </div>
+
+
+                        <div class="col-md-12">
+                            <label for="exampleInputFile">Меню</label>
+                            <p class="help-block">jpeg,png,jpeg</p>
+                            <p class="help-block">размер 419х287</p>
+                            <button type="button"
+                                onclick='this.insertAdjacentHTML( "afterEnd", "<input type=\"file\" name=\"file_menu[]\">") '>+
+                                добавить изображение</button>
+
+
+                            <input type="file" id="exampleInputFile" name="file_menu[]">
+
+                        </div>
+
+                        <div class="col-md-12">
+                            <label for="exampleInputFile">Кальянная карта</label>
+                            <p class="help-block">jpeg,png,jpeg</p>
+                            <p class="help-block">размер 419х287</p>
+                            <button type="button"
+                                onclick='this.insertAdjacentHTML( "afterEnd", "<input type=\"file\" name=\"file_kalyan[]\">") '>+
+                                добавить изображение</button>
+
+
+                            <input type="file" id="exampleInputFile" name="file_kalyan[]">
+
+                        </div>
+
+
+                        <div class="col-md-12">
                             <label for="exampleInputFile">Галерея</label>
                             <p class="help-block">jpeg,png,jpeg</p>
                             <p class="help-block">размер 419х287</p>
                             <button type="button"
                                 onclick=' 
-                                                                                this.insertAdjacentHTML( "afterEnd", "<input type=\"file\" name=\"file[]\">") '>+
+                                                                                        this.insertAdjacentHTML( "afterEnd", "<input type=\"file\" name=\"file[]\">") '>+
                                 добавить изображение</button>
 
 
