@@ -12,3 +12,4 @@ yarn-error.log
 .history/
 /public/uploads
 deployment/nginx/log/access.log
+/deployment/nginx/log/access.log
