@@ -42,9 +42,8 @@ Route::get('/dopuslugi', "MainController@dopuslugi")->name('dopuslugi');
 Route::get('/dopuslugi/{id}', "MainController@dopuslugi_detail")->name('dopuslugi_detail');
 
 Route::get('/rules-of-life', function () {
-    return view('rules-of-life.index', ['meta_key' => '', 'meta_desc' => '']);
+    return view('rules-of-life.index', ['title' => 'Об отеле', 'meta_key' => '', 'meta_desc' => '']);
 });
-
 
 Route::group(['prefix' => 'admin', 'namespace' => 'Admin', 'middleware' => 'auth'], function () {
     Route::get('/', 'MainController@index');
