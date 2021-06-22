@@ -13,3 +13,4 @@ yarn-error.log
 /public/uploads
 deployment/nginx/log/access.log
 /public/uploads/
+/deployment/nginx/log/access.log
