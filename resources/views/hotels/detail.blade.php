@@ -21,14 +21,14 @@
 
                         <div class="product-container">
                             <div style="font-family: Raleway;
-                                font-size: 18px;
-                                font-style: normal;
-                                font-weight: 400;
-                                line-height: 32px;
-                                letter-spacing: 0em;
-                                text-align: left;
-                                margin-top: -15px;
-                                ">
+                                    font-size: 18px;
+                                    font-style: normal;
+                                    font-weight: 400;
+                                    line-height: 32px;
+                                    letter-spacing: 0em;
+                                    text-align: left;
+                                    margin-top: -15px;
+                                    ">
                                 @if ($product->area)
                                     <svg style="margin-right: 5px;" width="20" height="20" viewBox="0 0 20 20" fill="none"
                                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -68,11 +68,12 @@
                         <div class="flexslider {{ count($product->getMediaLibrary()) === 0 ? 'hide-nav' : '' }}">
                             <ul class="slides">
 
-                                @foreach ($product->getMediaLibrary() as $val)
+                                @foreach ($product->getMediaLibrary() as $key => $val)
                                     <li>
                                         <a data-fancybox="gallery" href="{{ $val->getImage('big') }}">
-                                            <img style="width: 100%; margin: auto; display: block;"
-                                                src="{{ $val->getImage() }}" alt="">
+                                            <img {{ $key ? 'loading=lazy' : null }}
+                                                style="width: 100%; margin: auto; display: block;"
+                                                src="{{ $val->getImage('small') }}" alt="">
                                         </a>
                                     </li>
                                 @endforeach
