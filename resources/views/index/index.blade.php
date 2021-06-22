@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="col-xl-6">
-                    <img  loading="lazy" src="/uploads/about-main.jpg" alt="">
+                    <img loading="lazy" src="/uploads/about-main.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -132,8 +132,8 @@
                                         <li>
                                             <a data-fancybox="hotel-{{ $val->slug }}"
                                                 href="{{ $val2->getImage('big') }}">
-                                                <img  loading="lazy" style="width: 100%; margin: auto; display: block;"
-                                                    src="{{ $val2->getImage() }}" alt="">
+                                                <img loading="lazy" style="width: 100%; margin: auto; display: block;"
+                                                    src="{{ $val2->getImage('small') }}" alt="">
                                             </a>
                                         </li>
                                     @endforeach
@@ -177,8 +177,8 @@
                     <div class="slide">
                         <div class="borders"></div>
                         <a data-fancybox="bars" href="{{ $val->getImage('big') }}">
-                            <img  loading="lazy" style="max-width: 100%; margin: auto; display: block;" src="{{ $val->getImage() }}"
-                                alt="">
+                            <img loading="lazy" style="max-width: 100%; margin: auto; display: block;"
+                                src="{{ $val->getImage() }}" alt="">
                         </a>
                         <div class="slider-bars-overlay">
                             <h5 class="title">{{ $val->title }}</h5>
@@ -226,7 +226,7 @@
                                 </div>
                                 <a href="{{ route('eventsdetail', $val->slug) }}" class="detail"></a>
                                 <div class="borders"></div>
-                                <a data-fancybox="events" href="{{ $val->getImage('big') }}"><img  loading="lazy"
+                                <a data-fancybox="events" href="{{ $val->getImage('big') }}"><img loading="lazy"
                                         style="max-width: 100%; margin: auto; display: block;"
                                         src="{{ $val->getImage('smaller') }}" alt=""></a>
                                 <div class="slider-bars-overlay">
@@ -262,7 +262,7 @@
                         <div class="row">
                             <div class="col-xl-7">
                                 <a data-fancybox="SPEC" href="{{ $val->getImage('big') }}">
-                                    <img  loading="lazy" style="max-width: 100%; margin: auto; display: block;"
+                                    <img loading="lazy" style="max-width: 100%; margin: auto; display: block;"
                                         src="{{ $val->getImage('smaller') }}" alt="">
                                 </a>
                             </div>
@@ -380,7 +380,7 @@
             <h3 class="title-section text-center">Отзывы на Booking</h3>
             <div class="row">
                 <div class="col-xl-8 offset-xl-2">
-                    <img  loading="lazy" src="/img/booking.png" alt="" style="margin-bottom: 20px;">
+                    <img loading="lazy" src="/img/booking.png" alt="" style="margin-bottom: 20px;">
                     <div class="position-relative">
                         <button class="prev-btn">
 

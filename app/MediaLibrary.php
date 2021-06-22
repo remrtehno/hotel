@@ -101,7 +101,9 @@ class MediaLibrary extends Model
             return '/img/no-image.png';
         }
 
-        if (!"/uploads/media/$size/" . $this->img) {
+        if (!File::exists(
+            $this->base_path . $this->upload_path . "/$size/" . $this->img
+        )) {
             return "/uploads/media/big/" . $this->img;
         }
 
