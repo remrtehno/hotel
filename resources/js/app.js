@@ -45,6 +45,25 @@ require('./fancybox/jquery.fancybox.min.js');
 
 
 $(function () {
+  var srcElems = [];
+  $.each($('.event-detail-page .img-container img'), function (index, val) {
+    srcElems.push({
+      src: $(this).attr('src').replace('medium', 'big'), opts: {
+        thumb: $(this).attr('src')
+      }
+    });
+    $(this).css('cursor', 'pointer').attr('data-id', index)
+  })
+  $(document).on('click', ".img-container img", function () {
+    $.fancybox.open(srcElems, {
+      loop: false
+    });
+    var id = $(this).attr('data-id')
+    $.fancybox.getInstance('jumpTo', id);
+  })
+
+
+
   $('.hotel-wrapper').on('click', function (event) {
     var elem = $(this).find('.flex-active-slide a');
 

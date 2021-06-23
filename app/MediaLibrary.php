@@ -17,6 +17,7 @@ class MediaLibrary extends Model
     public $path1;
     public $path2;
     public $path3;
+    public $path4;
     public $upload_path;
 
     public function __construct()
@@ -108,6 +109,32 @@ class MediaLibrary extends Model
         }
 
         return "/uploads/media/$size/" . $this->img;
+    }
+
+    public static function mmediaLibraryImages($request, $media_library_array)
+    {
+        foreach ($media_library_array as $val) {
+            if ($request->file($val['request_name']) !== null) {
+                foreach ($request->file($val['request_name']) as $file) {
+                    $instance = new MediaLibrary;
+                    $instance->uploadImage($file);
+                    $instance->id_content = $val['id_content'];
+                    $instance->id_category = $val['id_category'];
+                    $instance->save();
+                };
+            }
+        }
+    }
+
+    public static function mediaLibraryFilterArray($media_library_array)
+    {
+        return array_map(
+            function (array $elem) {
+                unset($elem['request_name']); // modify $elem
+                return $elem; // and return it to be put into the result
+            },
+            $media_library_array
+        );
     }
 
     public function sluggable(): array

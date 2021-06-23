@@ -10,6 +10,15 @@ use Illuminate\Support\Facades\Storage;
 
 class DopUslugiController extends Controller
 {
+    public static function media_library_array($id_content)
+    {
+        return [
+            ['label' => 'Винная карта', 'request_name' => 'file2', 'id_category' => 12, 'id_content' => $id_content],
+            ['label' => 'Меню', 'request_name' => 'file_menu', 'id_category' => 13, 'id_content' => $id_content],
+            ['label' => 'Сигаретная карта', 'request_name' => 'file_cigarette', 'id_category' => 14, 'id_content' => $id_content],
+            ['label' => 'Кальянная карта', 'request_name' => 'file_kalyan', 'id_category' => 15, 'id_content' => $id_content],
+        ];
+    }
     /**
      * Display a listing of the resource.
      *
@@ -28,7 +37,8 @@ class DopUslugiController extends Controller
      */
     public function create()
     {
-        return view('admin.dopuslugi.create');
+        $fields = $this->media_library_array(0);
+        return view('admin.dopuslugi.create', compact('fields'));
     }
 
     /**
@@ -57,6 +67,8 @@ class DopUslugiController extends Controller
             };
         }
 
+        MediaLibrary::mmediaLibraryImages($request, $this->media_library_array($prod->id));
+
         return redirect()->route('dopuslugi.index');
     }
 
@@ -82,7 +94,19 @@ class DopUslugiController extends Controller
         $whereArray = array('id_content' => $id, 'id_category' => 5);
         $media_library = MediaLibrary::where($whereArray)->get();
         $sl = DopUslugi::find($id);
-        return view('admin.dopuslugi.edit', compact('sl', 'media_library'));
+
+        $array_ids = $this->media_library_array($id);
+        $fields = [];
+        foreach ($array_ids as $val) {
+            $media_library_fields = MediaLibrary::where([
+                'id_content' => $id,
+                'id_category' => $val['id_category'],
+            ])->get();
+
+            $fields[] = array_merge($val, ['media_library' => $media_library_fields]);
+        }
+
+        return view('admin.dopuslugi.edit', compact('sl', 'media_library', 'fields'));
     }
 
     /**
@@ -122,6 +146,8 @@ class DopUslugiController extends Controller
             };
         }
 
+        MediaLibrary::mmediaLibraryImages($request, $this->media_library_array($post->id));
+
         return redirect()->route('dopuslugi.index');
     }
 
@@ -138,10 +164,18 @@ class DopUslugiController extends Controller
         $whereArray = array('id_content' => $id, 'id_category' => 5);
         $media_library = MediaLibrary::where($whereArray)->get();
 
-        foreach ($media_library as $file) {
-            $file->removeImage();
-            $file->delete();
-        };
+        foreach ($this->media_library_array as $val) {
+            $media_library = MediaLibrary::where(
+                array(
+                    'id_content' => $id,
+                    'id_category' => $val['id_category'],
+                )
+            )->get();
+            foreach ($media_library as $file) {
+                $file->removeImage();
+                $file->delete();
+            };
+        }
 
         if ($gallery->img != null) {
             Storage::delete('/uploads/dopuslugi/' . $gallery->img);

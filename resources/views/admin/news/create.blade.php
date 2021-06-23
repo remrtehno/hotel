@@ -73,7 +73,8 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Анонс</label>
-                                    <textarea name="anonce" id="editor" cols="30" rows="10" class="form-control">Анонс</textarea>
+                                    <textarea name="anonce" id="editor" cols="30" rows="10"
+                                        class="form-control">Анонс</textarea>
                                 </div>
                             </div>
 
@@ -88,12 +89,13 @@
                             <div class="col-md-12">
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Полный текст</label>
-                                    <textarea id="" cols="30" rows="10" class="form-control" name="text">Полный текст</textarea>
+                                    <textarea id="" cols="30" rows="10" class="form-control"
+                                        name="text">Полный текст</textarea>
                                 </div>
                             </div>
                         </div>
 
-                        
+
                         <div class="col-md-12">
                             <label for="exampleInputFile">Сигарная карта</label>
                             <p class="help-block">jpeg,png,jpeg</p>
@@ -133,6 +135,23 @@
                             <input type="file" id="exampleInputFile" name="file[]">
 
                         </div>
+
+                        @if (isset($fields))
+                            @foreach ($fields as $val)
+                                <div class="col-md-12">
+                                    <label for="exampleInputFile">{{ $val['label'] }}</label>
+                                    <p class="help-block">jpeg,png,jpeg</p>
+                                    <p class="help-block">размер 419х287</p>
+                                    <button type="button"
+                                        onclick='this.insertAdjacentHTML( "afterEnd", "<input type=\"file\" name=\"{{ $val['request_name'] }}[]\">") '>+
+                                        добавить изображение</button>
+
+
+                                    <input type="file" id="exampleInputFile" name="{{ $val['request_name'] }}[]">
+
+                                </div>
+                            @endforeach
+                        @endif
 
                         <div class="col-md-12">
                             <label for="exampleInputFile">Галерея</label>
