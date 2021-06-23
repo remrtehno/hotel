@@ -48,6 +48,10 @@
                                 <a class="start-cigarette meta-info" click-attr target=".cigar">Сигарная карта</a>
                             @endif
 
+                            @if (count($media_library_kalyan))
+                                <a class=" meta-info" click-attr target=".kalyan">Кальянная карта</a>
+                            @endif
+
 
                             <div style="display: none;">
                                 @foreach ($media_library_map as $key => $val)
@@ -71,6 +75,14 @@
                                             alt="">
                                     </a>
                                 @endforeach
+
+                                @foreach ($media_library_kalyan as $key => $val)
+                                    <a data-fancybox="kalyan" class="kalyan">
+                                        <img {{ $key ? 'loading=lazy' : null }} style="max-width: 100%"
+                                            class="restaurant-menu-cigar" src="{{ $val->getImage('original-size') }}"
+                                            alt="">
+                                    </a>
+                                @endforeach
                             </div>
 
 
@@ -80,12 +92,13 @@
                             <div style="border: 1px solid #F1F1F1; margin-bottom: 12px;"></div>
                             <br>
                             <div class="bottom">
-                                <a data-toggle="modal" onclick="
+                                <a data-toggle="modal"
+                                    onclick="
 
-                                                                                                                            document.querySelector('.input-hotel').value = 
-                                                                                                                            '{{ $news->title }}';
-                                                                                                                            return false;
-                                                                                                                        "
+                                                                                                                                        document.querySelector('.input-hotel').value = 
+                                                                                                                                        '{{ $news->title }}';
+                                                                                                                                        return false;
+                                                                                                                                    "
                                     data-target="#book" class="orange-btn big">Забронировать
                                     столик</a>
                             </div>

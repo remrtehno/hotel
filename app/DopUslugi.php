@@ -14,6 +14,31 @@ class DopUslugi extends Model
     use Sluggable;
     protected $table = "dop_uslugis";
     protected $fillable = ['title', 'text', 'img', 'slug'];
+    /*
+    public static function media_library_array($id_content)
+    {
+    return [
+    ['label' => 'Винная карта', 'request_name' => 'file2', 'id_category' => 12, 'id_content' => $id_content],
+    ['label' => 'Меню', 'request_name' => 'file_menu', 'id_category' => 13, 'id_content' => $id_content],
+    ['label' => 'Сигаретная карта', 'request_name' => 'file_cigarette', 'id_category' => 14, 'id_content' => $id_content],
+    ['label' => 'Кальянная карта', 'request_name' => 'file_kalyan', 'id_category' => 15, 'id_content' => $id_content],
+    ];
+    }
+
+    public static function getFieldsArray($id)
+    {
+    $array_ids = $this->media_library_array($id);
+    $fields = [];
+    foreach ($array_ids as $val) {
+    $media_library_fields = MediaLibrary::where([
+    'id_content' => $id,
+    'id_category' => $val['id_category'],
+    ])->get();
+
+    $fields[] = array_merge($val, ['media_library' => $media_library_fields]);
+    }
+    }
+     */
 
     public static function add($fields)
     {
@@ -72,7 +97,7 @@ class DopUslugi extends Model
         }
         return '/uploads/dopuslugi/' . $this->img;
     }
-    
+
     public function sluggable(): array
     {
         return [
