@@ -98,12 +98,12 @@ class DopUslugiController extends Controller
         $array_ids = $this->media_library_array($id);
         $fields = [];
         foreach ($array_ids as $val) {
-            $media_library = MediaLibrary::where([
+            $media_library_fields = MediaLibrary::where([
                 'id_content' => $id,
                 'id_category' => $val['id_category'],
             ])->get();
 
-            $fields[] = array_merge($val, ['media_library' => $media_library]);
+            $fields[] = array_merge($val, ['media_library' => $media_library_fields]);
         }
 
         return view('admin.dopuslugi.edit', compact('sl', 'media_library', 'fields'));
