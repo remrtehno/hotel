@@ -76,7 +76,7 @@
                                 <a href="#" class="orange-btn big">Забронировать</a>
                             </div>
                         </div>
-                    </div>
+                    
                     <div class="img-container">
                         <div class="flexslider {{ count($product->getMediaLibrary()) === 0 ? 'hide-nav' : '' }}">
                             <ul class="slides">
