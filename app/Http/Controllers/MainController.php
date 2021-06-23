@@ -172,7 +172,21 @@ class MainController extends Controller
         $meta_desc = "$items->meta_desc";
         $meta_key = "$items->meta_key";
 
-        return view("dopuslugi.detail", compact('items', 'title', 'meta_key', 'meta_desc'));
+        $whereArray = array('id_content' => $items->id, 'id_category' => 13); // 2 menu restaurant
+        $media_library_menu = MediaLibrary::where($whereArray)->get();
+        $whereArray = array('id_content' => $items->id, 'id_category' => 12); // 3 map restaurant
+        $media_library_map = MediaLibrary::where($whereArray)->get();
+
+        $whereArray = array('id_content' => $items->id, 'id_category' => 5); // 6 gallery restaurant
+        $media_library_gallery = MediaLibrary::where($whereArray)->get();
+
+        $whereArray = array('id_content' => $items->id, 'id_category' => 14); // 7 cigarette restaurant
+        $media_library_file_cigarette = MediaLibrary::where($whereArray)->get();
+
+        $whereArray = array('id_content' => $items->id, 'id_category' => 15); // 10 kalyan restaurant
+        $media_library_kalyan = MediaLibrary::where($whereArray)->get();
+
+        return view("dopuslugi.detail", compact('media_library_map', 'media_library_kalyan', 'media_library_file_cigarette', 'media_library_menu', 'media_library_gallery', 'items', 'title', 'meta_key', 'meta_desc'));
     }
 
     public function suggestions()
@@ -334,11 +348,14 @@ class MainController extends Controller
         $whereArray = array('id_content' => $news->id, 'id_category' => 7); // 7 cigarette restaurant
         $media_library_file_cigarette = MediaLibrary::where($whereArray)->get();
 
+        $whereArray = array('id_content' => $news->id, 'id_category' => 10); // 10 kalyan restaurant
+        $media_library_kalyan = MediaLibrary::where($whereArray)->get();
+
         $title = "$news->title в отеле \"Royal Plaza\" | Royal Plaza - гостиница в Нефтеюганске и ресторанный комплекс";
         $meta_desc = "$news->meta_desc";
         $meta_key = "$news->meta_key";
 
-        return view("news.detail", compact('news', 'media_library_file_cigarette', 'media_library_gallery', 'media_library_map', 'media_library_menu', 'title', 'meta_key', 'meta_desc'));
+        return view("news.detail", compact('news', 'media_library_kalyan', 'media_library_file_cigarette', 'media_library_gallery', 'media_library_map', 'media_library_menu', 'title', 'meta_key', 'meta_desc'));
     }
 
     public function gallery()

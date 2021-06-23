@@ -28,6 +28,51 @@
                         {!! $items->text !!}
                     </div>
 
+                    @if (count($media_library_menu))
+                        <a class="start-menu meta-info" click-attr target=".menu-rest">Меню</a>
+                    @endif
+                    @if (count($media_library_map))
+                        <a class="start-map meta-info" click-attr target=".map">Винная карта</a>
+                    @endif
+
+                    @if (count($media_library_file_cigarette))
+                        <a class="start-cigarette meta-info" click-attr target=".cigar">Сигарная карта</a>
+                    @endif
+
+                    @if (count($media_library_kalyan))
+                        <a class=" meta-info" click-attr target=".kalyan">Кальянная карта</a>
+                    @endif
+
+                    <div style="display: none;">
+                        @foreach ($media_library_map as $key => $val)
+                            <a data-fancybox="map" class="map">
+                                <img {{ $key ? 'loading=lazy' : null }} style="max-width: 100%" class="restaurant-map"
+                                    src="{{ $val->getImage('original-size') }}" alt="">
+                            </a>
+                        @endforeach
+
+                        @foreach ($media_library_menu as $key => $val)
+                            <a data-fancybox="menu" class="menu-rest">
+                                <img {{ $key ? 'loading=lazy' : null }} style="max-width: 100%" class="restaurant-menu"
+                                    src="{{ $val->getImage('original-size') }}" alt="">
+                            </a>
+                        @endforeach
+
+                        @foreach ($media_library_file_cigarette as $key => $val)
+                            <a data-fancybox="cigar" class="cigar">
+                                <img {{ $key ? 'loading=lazy' : null }} style="max-width: 100%"
+                                    class="restaurant-menu-cigar" src="{{ $val->getImage('original-size') }}" alt="">
+                            </a>
+                        @endforeach
+
+                        @foreach ($media_library_kalyan as $key => $val)
+                            <a data-fancybox="kalyan" class="kalyan">
+                                <img {{ $key ? 'loading=lazy' : null }} style="max-width: 100%"
+                                    class="restaurant-menu-cigar" src="{{ $val->getImage('original-size') }}" alt="">
+                            </a>
+                        @endforeach
+                    </div>
+
                     <br>
                     <br>
                     <a href="#" data-toggle="modal" data-target="#wait-callback" class="orange-btn big">Получить
