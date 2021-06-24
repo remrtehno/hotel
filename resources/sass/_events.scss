@@ -9,6 +9,10 @@
     float: right;
   }
   .text-content {
+    @media (max-width: 992px) {
+      order: 1;
+      margin-top: 25px;
+    }
     p {
       @media (min-width: 992px) {
         padding-right: 20px;
@@ -147,7 +151,11 @@
       grid-template-columns: repeat(4, 1fr);
     }
     @media (max-width: 992px) {
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      // grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      display: block;
+      img:not(:first-child) {
+        display: none;
+      }
     }
     gap: 9px;
     @media (min-width: 992px) {

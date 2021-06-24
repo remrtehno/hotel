@@ -1,5 +1,6 @@
 .slick-track {
   display: flex;
+  align-items: flex-start;
 }
 .slick-list {
   overflow: hidden;
@@ -16,6 +17,7 @@ a:hover {
 
 .slick-slide {
   margin: 0 27px;
+    align-content: flex-start;
 }
 /* the parent */
 .slick-list {

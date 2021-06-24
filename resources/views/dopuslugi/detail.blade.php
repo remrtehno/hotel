@@ -45,28 +45,28 @@
 
                     <div style="display: none;">
                         @foreach ($media_library_map as $key => $val)
-                            <a data-fancybox="map" class="map">
+                            <a data-fancybox="map" href="{{ $val->getImage('original-size') }}" class="map">
                                 <img {{ $key ? 'loading=lazy' : null }} style="max-width: 100%" class="restaurant-map"
                                     src="{{ $val->getImage('original-size') }}" alt="">
                             </a>
                         @endforeach
 
                         @foreach ($media_library_menu as $key => $val)
-                            <a data-fancybox="menu" class="menu-rest">
+                            <a data-fancybox="menu" href="{{ $val->getImage('original-size') }}" class="menu-rest">
                                 <img {{ $key ? 'loading=lazy' : null }} style="max-width: 100%" class="restaurant-menu"
                                     src="{{ $val->getImage('original-size') }}" alt="">
                             </a>
                         @endforeach
 
                         @foreach ($media_library_file_cigarette as $key => $val)
-                            <a data-fancybox="cigar" class="cigar">
+                            <a data-fancybox="cigar" href="{{ $val->getImage('original-size') }}" class="cigar">
                                 <img {{ $key ? 'loading=lazy' : null }} style="max-width: 100%"
                                     class="restaurant-menu-cigar" src="{{ $val->getImage('original-size') }}" alt="">
                             </a>
                         @endforeach
 
                         @foreach ($media_library_kalyan as $key => $val)
-                            <a data-fancybox="kalyan" class="kalyan">
+                            <a data-fancybox="kalyan" href="{{ $val->getImage('original-size') }}" class="kalyan">
                                 <img {{ $key ? 'loading=lazy' : null }} style="max-width: 100%"
                                     class="restaurant-menu-cigar" src="{{ $val->getImage('original-size') }}" alt="">
                             </a>

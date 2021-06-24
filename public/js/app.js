@@ -37760,9 +37760,13 @@ $(function () {
           slidesToShow: 1,
           slidesToScroll: 1,
           // infinite: true,
+          mobileFirst: true,
           dots: true
         }
       }]
+    });
+    $(value).on('breakpoint', function (event, slick, breakpoint) {
+      $(value).find('.slick-slide').css('height', $(this).find('.slick-current img').height());
     });
     var container = $(value).data('description-container');
     $(value).on('beforeChange', function (event, slick, currentSlide) {
