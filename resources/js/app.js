@@ -50,7 +50,7 @@ window.LazyLoad = require('./lazyload.min.js');
 
 
 $(function () {
-  var myLazyLoad = new LazyLoad();
+  var lazyLoad = new LazyLoad();
 
   var srcElems = [];
   $.each($('.event-detail-page .img-container img'), function (index, val) {
@@ -119,7 +119,12 @@ $(function () {
       animationLoop: false,
       slideshow: $(value).data('autoplay-disabled') ? !$(value).data('autoplay-disabled') : true,
     });
+    $(value).on('afterChange', e => {
+      lazyLoad.update()
+    });
   });
+
+
   $(".datepicker").datepicker({
     language: 'ru'
   }).on("changeDate", function (e) {

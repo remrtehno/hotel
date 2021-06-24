@@ -37668,7 +37668,7 @@ window.LazyLoad = __webpack_require__(/*! ./lazyload.min.js */ "./resources/js/l
 // });
 
 $(function () {
-  var myLazyLoad = new LazyLoad();
+  var lazyLoad = new LazyLoad();
   var srcElems = [];
   $.each($('.event-detail-page .img-container img'), function (index, val) {
     srcElems.push({
@@ -37719,6 +37719,9 @@ $(function () {
       animation: "slide",
       animationLoop: false,
       slideshow: $(value).data('autoplay-disabled') ? !$(value).data('autoplay-disabled') : true
+    });
+    $(value).on('afterChange', function (e) {
+      lazyLoad.update();
     });
   });
   $(".datepicker").datepicker({
