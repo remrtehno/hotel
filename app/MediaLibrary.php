@@ -99,15 +99,22 @@ class MediaLibrary extends Model
     public function getImage($size = 'small')
     {
         if ($this->img == null) {
-            return '/img/no-image.png';
+            return '/uploads/no-image.png';
+        }
+
+        if (!File::exists(
+            $this->base_path . $this->upload_path . "/$size/" . $this->img
+        ) && File::exists(
+            $this->base_path . $this->upload_path . "/big/" . $this->img
+        )) {
+            return "/uploads/media/big/" . $this->img;
         }
 
         if (!File::exists(
             $this->base_path . $this->upload_path . "/$size/" . $this->img
         )) {
-            return "/uploads/media/big/" . $this->img;
+            return '/uploads/no-image.png';
         }
-
         return "/uploads/media/$size/" . $this->img;
     }
 

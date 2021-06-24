@@ -101,7 +101,8 @@ $(function () {
     $.fancybox.defaults.backFocus = false;
   }
 
-  $('[click-attr]').on('click', function () {
+  $('[click-attr]').on('click', function (e) {
+    e.preventDefault();
     $(
       $(this).attr('target')
 
