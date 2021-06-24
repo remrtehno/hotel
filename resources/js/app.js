@@ -50,6 +50,9 @@ window.LazyLoad = require('./lazyload.min.js');
 
 
 $(function () {
+
+
+
   var lazyLoad = new LazyLoad();
 
   var srcElems = [];
@@ -186,10 +189,13 @@ $(function () {
         },
       ]
     });
-
-    $(value).on('breakpoint', function (event, slick, breakpoint) {
-      $(value).find('.slick-slide').css('height', $(this).find('.slick-current img').height());
+    $(value).on('afterChange', function (event, slick, breakpoint) {
+      var currentHeight = $(value).find('.slick-current.slick-active').height();
+      $(value).height(currentHeight)
     });
+    // $(value).on('breakpoint', function (event, slick, breakpoint) {
+    //   $(value).find('.slick-slide').css('height', $(this).find('.slick-current img').height());
+    // });
 
     var container = $(value).data('description-container')
     $(value).on('beforeChange', function (event, slick, currentSlide) {
@@ -217,7 +223,11 @@ $(function () {
 
 
 
-
+  setTimeout(function () {
+    $.each($('.flexslider [data-src]'), function (val) {
+      $(this).attr('src', $(this).data('src'))
+    })
+  }, 5000)
 
 });
 

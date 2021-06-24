@@ -259,6 +259,10 @@ input.datepicker {
   max-height: 459px;
   overflow: hidden;
   position: relative;
+  @media (max-width: 992px) {
+    max-height: 418px;
+    margin-bottom: 15px;
+  }
   &.hide-nav {
     .flex-direction-nav {
       display: none;
