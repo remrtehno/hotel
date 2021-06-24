@@ -6,6 +6,8 @@
 
 @section('content')
 
+
+
     <section class="section about-plaza">
         <div class="container">
             <h2 class="title-section">
@@ -31,7 +33,7 @@
                     </div>
                 </div>
                 <div class="col-xl-6">
-                    <img loading="lazy" src="/uploads/about-main.jpg" alt="">
+                    <img class="lazy" data-src="/uploads/about-main.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -132,8 +134,8 @@
                                         <li>
                                             <a data-fancybox="hotel-{{ $val->slug }}"
                                                 href="{{ $val2->getImage('big') }}">
-                                                <img loading="lazy" style="width: 100%; margin: auto; display: block;"
-                                                    src="{{ $val2->getImage('small') }}" alt="">
+                                                <img style="width: 100%; margin: auto; display: block;" class="lazy"
+                                                    data-src="{{ $val2->getImage('small') }}" alt="">
                                             </a>
                                         </li>
                                     @endforeach
@@ -177,8 +179,8 @@
                     <div class="slide">
                         <div class="borders"></div>
                         <a data-fancybox="bars" href="{{ $val->getImage('big') }}">
-                            <img loading="lazy" style="max-width: 100%; margin: auto; display: block;"
-                                src="{{ $val->getImage() }}" alt="">
+                            <img style="max-width: 100%; margin: auto; display: block;" class="lazy"
+                                data-src="{{ $val->getImage() }}" alt="">
                         </a>
                         <div class="slider-bars-overlay">
                             <h5 class="title">{{ $val->title }}</h5>
@@ -226,9 +228,9 @@
                                 </div>
                                 <a href="{{ route('eventsdetail', $val->slug) }}" class="detail"></a>
                                 <div class="borders"></div>
-                                <a data-fancybox="events" href="{{ $val->getImage('big') }}"><img loading="lazy"
-                                        style="max-width: 100%; margin: auto; display: block;"
-                                        src="{{ $val->getImage('smaller') }}" alt=""></a>
+                                <a data-fancybox="events" href="{{ $val->getImage('big') }}"><img
+                                        style="max-width: 100%; margin: auto; display: block;" class="lazy"
+                                        data-src="{{ $val->getImage('smaller') }}" alt=""></a>
                                 <div class="slider-bars-overlay">
                                     {{-- <div class="slide-text-description">{!! $val->anonce !!}</div> --}}
                                     <a class="link" href="{{ route('newsdetail', $val->slug) }}"></a>
@@ -262,8 +264,8 @@
                         <div class="row">
                             <div class="col-xl-7">
                                 <a data-fancybox="SPEC" href="{{ $val->getImage('big') }}">
-                                    <img loading="lazy" style="max-width: 100%; margin: auto; display: block;"
-                                        src="{{ $val->getImage('smaller') }}" alt="">
+                                    <img style="max-width: 100%; margin: auto; display: block;" class="lazy"
+                                        data-src="{{ $val->getImage('smaller') }}" alt="">
                                 </a>
                             </div>
                             <div class="col-xl-5">
@@ -364,10 +366,9 @@
                                         position: uluru
                                     });
                                 }
-
                             </script>
-                            <script async defer
-                                src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgJ3vc67_ZY5OD9lHJi3tvLqHdho3kEts&callback=initMap">
+                            <script async defer class="lazy"
+                                                        data-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgJ3vc67_ZY5OD9lHJi3tvLqHdho3kEts&callback=initMap">
                             </script>
                         </div>
                     </div>
@@ -380,7 +381,7 @@
             <h3 class="title-section text-center">Отзывы на Booking</h3>
             <div class="row">
                 <div class="col-xl-8 offset-xl-2">
-                    <img loading="lazy" src="/img/booking.png" alt="" style="margin-bottom: 20px;">
+                    <img class="lazy" data-src="/img/booking.png" alt="" style="margin-bottom: 20px;">
                     <div class="position-relative">
                         <button class="prev-btn">
 

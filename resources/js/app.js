@@ -3,12 +3,17 @@
  * includes Vue and other libraries. It is a great starting point when
  * building robust, powerful web applications using Vue and Laravel.
  */
+document.body.classList.add('loaded_hiding');
 
-require('./test.js');
+
 require('./bootstrap');
 require('./bootstrap-datepicker.min.js');
 require('./jquery.flexslider.js');
 require('./fancybox/jquery.fancybox.min.js');
+
+
+
+window.LazyLoad = require('./lazyload.min.js');
 
 
 
@@ -45,6 +50,8 @@ require('./fancybox/jquery.fancybox.min.js');
 
 
 $(function () {
+  var myLazyLoad = new LazyLoad();
+
   var srcElems = [];
   $.each($('.event-detail-page .img-container img'), function (index, val) {
     srcElems.push({
@@ -174,9 +181,9 @@ $(function () {
       ]
     });
 
-    $(value).on('breakpoint', function(event, slick, breakpoint){
+    $(value).on('breakpoint', function (event, slick, breakpoint) {
       $(value).find('.slick-slide').css('height', $(this).find('.slick-current img').height());
-   });
+    });
 
     var container = $(value).data('description-container')
     $(value).on('beforeChange', function (event, slick, currentSlide) {
@@ -207,6 +214,15 @@ $(function () {
 
 
 });
+
+
+window.onload = function () {
+  document.body.classList.add('loaded_hiding');
+  window.setTimeout(function () {
+    document.body.classList.add('loaded');
+    document.body.classList.remove('loaded_hiding');
+  }, 50);
+}
 
 
 

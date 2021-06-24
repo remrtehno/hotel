@@ -23,7 +23,7 @@
 <link rel="stylesheet" href="/css/custom.css">
 </head>
 
-<body>
+<body class="loaded_hiding">
     @include("lib.header")
 
     <main>
