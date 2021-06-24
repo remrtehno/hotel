@@ -10139,6 +10139,7 @@ a {
 
 .slick-track {
   display: flex;
+  align-items: flex-start;
 }
 
 .slick-list {
@@ -10157,6 +10158,7 @@ a:hover {
 
 .slick-slide {
   margin: 0 27px;
+  align-content: flex-start;
 }
 
 /* the parent */
@@ -10637,6 +10639,12 @@ input.datepicker {
   margin-right: 0;
   float: right;
 }
+@media (max-width: 992px) {
+  .events .text-content {
+    order: 1;
+    margin-top: 25px;
+  }
+}
 @media (min-width: 992px) {
   .events .text-content p {
     padding-right: 20px;
@@ -10767,7 +10775,10 @@ input.datepicker {
 }
 @media (max-width: 992px) {
   .event-detail-page .img-container {
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    display: block;
+  }
+  .event-detail-page .img-container img:not(:first-child) {
+    display: none;
   }
 }
 @media (min-width: 992px) {
@@ -10911,6 +10922,14 @@ input.datepicker {
   margin-left: 28px;
 }
 
+@media (max-width: 992px) {
+  .slider-main-page-restourants .slick-slide img {
+    width: 100%;
+    -o-object-fit: cover;
+       object-fit: cover;
+    height: 330px;
+  }
+}
 .slider-main-page-restourants .btn-arrows {
   float: right;
 }
@@ -10952,7 +10971,6 @@ input.datepicker {
 }
 @media (max-width: 992px) {
   .slider-main-page-restourants .slick-slide .slider-bars-overlay {
-    max-width: 281px;
     margin: auto;
   }
 }

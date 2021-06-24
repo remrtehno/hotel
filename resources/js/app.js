@@ -153,6 +153,7 @@ $(function () {
       autoplaySpeed: 5000,
       arrows: true,
       dots: true,
+
       appendDots: $(value).data('parent-dots') ? $($(value).data('parent-dots')) : false || $(value).parent().find('.dots'),
       customPaging: function (slider, i) {
         return '<button role="button" class="slide-text-title">' + $(slider['$slides'][i]).data('title') + '</button>';
@@ -166,11 +167,16 @@ $(function () {
             slidesToShow: 1,
             slidesToScroll: 1,
             // infinite: true,
+            mobileFirst: true,
             dots: true
           }
         },
       ]
     });
+
+    $(value).on('breakpoint', function(event, slick, breakpoint){
+      $(value).find('.slick-slide').css('height', $(this).find('.slick-current img').height());
+   });
 
     var container = $(value).data('description-container')
     $(value).on('beforeChange', function (event, slick, currentSlide) {
