@@ -330,7 +330,7 @@
                         <br>
                         <p></p>
                         <br>
-                        <div>
+                        <div style="margin-bottom: 20px;">
                             <div class="social-title">Мы в социальных сетях:</div>
 
                             @include('_some-parts.social')
@@ -367,8 +367,8 @@
                                     });
                                 }
                             </script>
-                            <script async defer class="lazy"
-                                                        data-src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgJ3vc67_ZY5OD9lHJi3tvLqHdho3kEts&callback=initMap">
+                            <script async defer
+                                                        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDgJ3vc67_ZY5OD9lHJi3tvLqHdho3kEts&callback=initMap">
                             </script>
                         </div>
                     </div>
@@ -376,7 +376,7 @@
         </section>
     @endforeach
 
-    <section class="section text-center reviews-wrapper">
+    <section class="section text-center reviews-wrapper" style="padding-left:  15px; padding-right: 15px;">
         <div class="container">
             <h3 class="title-section text-center">Отзывы на Booking</h3>
             <div class="row">
