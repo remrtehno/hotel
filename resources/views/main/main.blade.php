@@ -14,6 +14,13 @@
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Yeseva+One&display=swap" rel="stylesheet">
     <link rel="icon" type="image/png" href="">
+    <style>
+        body.loaded_hiding {
+            opacity: 0;
+            pointer-events: none;
+        }
+
+    </style>
     {{-- <link href="/css/slick.css" rel="stylesheet">
         <link href="/css/slicknav.css" rel="stylesheet"> --}}
     {{-- <link href="/css/jquery.fancybox.min.css" rel="stylesheet"> --}}
@@ -24,7 +31,7 @@
 
 </head>
 
-<body>
+<body class="loaded_hiding">
     @include("lib.header-inner")
 
     <main>

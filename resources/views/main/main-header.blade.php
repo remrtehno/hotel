@@ -23,7 +23,7 @@
 
 </head>
 
-<body>
+<body class="loaded_hiding">
     @include("lib.header")
 
     <main>
