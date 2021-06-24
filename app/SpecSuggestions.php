@@ -13,7 +13,7 @@ class SpecSuggestions extends Model
     //
     use Sluggable;
     protected $table = "spec_suggestions";
-    protected $fillable = ['title', 'anonce','text', 'img', 'slug'];
+    protected $fillable = ['title', 'anonce', 'text', 'img', 'slug'];
 
     public static function add($fields)
     {
@@ -70,9 +70,14 @@ class SpecSuggestions extends Model
         if ($this->img == null) {
             return '/uploads/no-image.jpg';
         }
+        if (!File::exists(
+            public_path() . '/uploads/suggestions/' . $this->img
+        )) {
+            return '/uploads/no-image.png';
+        }
+
         return '/uploads/suggestions/' . $this->img;
     }
-    
 
     public static function getSuggestions()
     {
