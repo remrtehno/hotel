@@ -206,7 +206,7 @@
             </div>
             <div style="clear: both"></div>
             <div class="row">
-           <div class="col-xl-5 text-content">
+           <div class="col-xl-6 text-content">
                    <div class="events-dots events-dots-s"></div>
                     <div class="desc-contaiener">
                         {!! $services[0]->anonce !!}
@@ -218,7 +218,7 @@
                         onclick="this.closest('.row').querySelector('.slick-current.slick-active .detail').click(); return false;"
                         class="orange-btn">Подробнее</a>
                 </div>
-                <div class="col-xl-7">
+                <div class="col-xl-6">
                     <div class="slick" data-description-container=".desc-contaiener" data-prev-btn=".events .prev-btn"
                         data-next-btn=".events .next-btn" data-parent-dots=".events-dots-s">
                         @foreach ($services as $val)
@@ -262,13 +262,13 @@
                 @foreach ($suggestions as $val)
                     <div class="slide" data-title="{{ $val->title }}">
                         <div class="row">
-                            <div class="col-xl-7">
+                            <div class="col-xl-6">
                                 <a data-fancybox="SPEC" href="{{ $val->getImage('big') }}">
                                     <img style="max-width: 100%; margin: auto; display: block;" class="lazy"
                                         data-src="{{ $val->getImage('smaller') }}" alt="">
                                 </a>
                             </div>
-                            <div class="col-xl-5">
+                            <div class="col-xl-6">
                                 <div class="suggestions-dots events-dots dots"></div>
                                 {!! $val->anonce !!}
                                 <div class="slider-bars-overlay">
