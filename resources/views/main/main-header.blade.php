@@ -61,6 +61,7 @@
             if (!document.querySelector('iframe')) {
                 count++
                 setTimeout(() => styleBnovo(), 1000);
+                return;
             }
             if (count > 30) {
                 return;
@@ -111,22 +112,22 @@
             padding-bottom:0;
         }
         ${width < 992 ? `
-                    .bnovo__field {
-                        text-align: center;
-                    }
-                    .bnovo__inputs {
-                        display: flex;
-                        flex-direction: column;
-                    }
-                    .bnovo__fields {
-                        display: flex;
-                        flex-direction: column;
-                        margin: auto;
-                        align-items: center;
-                        width: ${width};         
-                    }
+                        .bnovo__field {
+                            text-align: center;
+                        }
+                        .bnovo__inputs {
+                            display: flex;
+                            flex-direction: column;
+                        }
+                        .bnovo__fields {
+                            display: flex;
+                            flex-direction: column;
+                            margin: auto;
+                            align-items: center;
+                            width: ${width};         
+                        }
 
-                ` : ''}
+                    ` : ''}
 
         .bnovo__header {
             display: none;
