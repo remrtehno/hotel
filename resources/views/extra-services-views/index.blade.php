@@ -1,6 +1,12 @@
 @extends("main.main")
 
 @section('content')
+<style>
+    .inner-header {
+        background-image: url(/images/BG/spec-services-bg.png), url(/images/inner-nd-bg.png);
+    }
+
+</style>
     <div class="inner-pages">
         <h1 class="title"> Специальные предложения</h1>
         <ul class="breadcrumbs">

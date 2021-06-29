@@ -1,13 +1,19 @@
 @extends("main.main")
 
 @section('content')
+    <style>
+        .inner-header {
+            background-image: url(/images/BG/extra-services-bg.png), url(/images/inner-nd-bg.png);
+        }
+
+    </style>
     <div class="event-detail-page">
 
         <div class="inner-pages">
             <h1 class="title">{{ $items->title }}</h1>
             <ul class="breadcrumbs">
                 <li><a href="/">Главная</a></li>
-                <li><a href="/extra-services"> Дополнительные услуги</a></li>
+                <li><a href="/dopuslugi"> Дополнительные услуги</a></li>
                 <li><a href="">{{ $items->title }}</a></li>
             </ul>
             <br>

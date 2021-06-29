@@ -1,6 +1,12 @@
 @extends("main.main")
 
 @section('content')
+    <style>
+        .inner-header {
+            background-image: url(/images/BG/restourants-single-bg.png), url(/images/inner-nd-bg.png);
+        }
+
+    </style>
     <div class="hotel-detail-page">
         <div class="inner-pages">
             <h1 class="title">{{ $news->title }}</h1>
@@ -62,7 +68,8 @@
                                 @endforeach
 
                                 @foreach ($media_library_menu as $key => $val)
-                                    <a data-fancybox="menu" href="{{ $val->getImage('original-size') }}" class="menu-rest">
+                                    <a data-fancybox="menu" href="{{ $val->getImage('original-size') }}"
+                                        class="menu-rest">
                                         <img {{ $key ? 'loading=lazy' : null }} style="max-width: 100%"
                                             class="restaurant-menu" src="{{ $val->getImage('original-size') }}" alt="">
                                     </a>
@@ -77,7 +84,8 @@
                                 @endforeach
 
                                 @foreach ($media_library_kalyan as $key => $val)
-                                    <a data-fancybox="kalyan" href="{{ $val->getImage('original-size') }}" class="kalyan">
+                                    <a data-fancybox="kalyan" href="{{ $val->getImage('original-size') }}"
+                                        class="kalyan">
                                         <img {{ $key ? 'loading=lazy' : null }} style="max-width: 100%"
                                             class="restaurant-menu-cigar" src="{{ $val->getImage('original-size') }}"
                                             alt="">
@@ -95,10 +103,10 @@
                                 <a data-toggle="modal"
                                     onclick="
 
-                                                                                                                                        document.querySelector('.input-hotel').value = 
-                                                                                                                                        '{{ $news->title }}';
-                                                                                                                                        return false;
-                                                                                                                                    "
+                                                                                                                                            document.querySelector('.input-hotel').value = 
+                                                                                                                                            '{{ $news->title }}';
+                                                                                                                                            return false;
+                                                                                                                                        "
                                     data-target="#book" class="orange-btn big">Забронировать
                                     столик</a>
                             </div>

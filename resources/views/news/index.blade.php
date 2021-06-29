@@ -3,6 +3,13 @@
 
 
 @section('content')
+
+    <style>
+        .inner-header {
+            background-image: url(/images/BG/restourants-bg.png), url(/images/inner-nd-bg.png);
+        }
+
+    </style>
     <div class="inner-pages">
         <h1 class="title">Рестораны и бары</h1>
         <ul class="breadcrumbs">

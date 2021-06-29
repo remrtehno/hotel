@@ -4,9 +4,8 @@
     @include("lib.slider")
 @endsection --}}
 
+
 @section('content')
-
-
 
     <section class="section about-plaza">
         <div class="container">

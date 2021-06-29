@@ -1,6 +1,12 @@
 @extends("main.main")
 
 @section('content')
+    <style>
+        .inner-header {
+            background-image: url(/images/BG/extra-services-bg.png), url(/images/inner-nd-bg.png);
+        }
+
+    </style>
     <div class="inner-pages">
         <h1 class="title"> Дополнительные услуги</h1>
         <ul class="breadcrumbs">
@@ -29,7 +35,7 @@
                             <div class="img-container">
                                 <img class="lozad"
                                     style="object-fit: cover;
-                                                                            height: 400px; max-width: 100%; margin: 0; width: 100%;"
+                                                                                height: 400px; max-width: 100%; margin: 0; width: 100%;"
                                     src="{!! $item->getImage('big') !!}" alt="">
                             </div>
                             <div class="description-section">
@@ -55,12 +61,12 @@
                                         </a>
                                     </div>
                                     <a style="
-                                                                                        position: absolute;
-                                                                                        left: 0;
-                                                                                        right: 0;
-                                                                                        top: 0;
-                                                                                        bottom: 0;
-                                                                                      "
+                                                                                            position: absolute;
+                                                                                            left: 0;
+                                                                                            right: 0;
+                                                                                            top: 0;
+                                                                                            bottom: 0;
+                                                                                          "
                                         href="{{ route(isset($ROUTE) ? $ROUTE : 'eventsdetail', $item->slug) }}"></a>
                                 </div>
                             </div>
