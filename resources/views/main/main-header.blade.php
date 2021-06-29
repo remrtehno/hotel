@@ -20,52 +20,21 @@
     {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" /> --}}
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-
-</head>
-
-<body class="loaded_hiding">
-    @include("lib.header")
-
-    <main>
-
-
-        @yield("slider")
-        @yield("userwrap")
-        @yield("content")
-    </main>
-
-    @include("lib.footerinput")
-
-    {{-- <div class="copyright" style="text-align: center; padding-bottom: 15px;">
-        2021 ® Все права защищены.
-       | Разработано в <a style="display: inline; color: black; letter-spacing: 1px;"
-            href="http://steepcoder.uz/site"><u>steepcoder.uz</u></a> 
-    </div> --}}
-
-    <script src="/js/jquery.min.js"></script>
-    <script src="/js/svg4everybody.min.js"></script>
-    <script src="/js/app.js"></script>
-    <script src="/js/slick.min.js"></script>
-    <script src="/js/parallax.min.js"></script>
-    {{-- <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-    <script src="/js/jquery.slicknav.js"></script>
-    <script src="/js/bloodhound.min.js"></script>
-    <script src="/js/typeahead.bundle.js"></script> --}}
-    {{-- <script src="/js/scripts.js"></script> --}}
-
     <script>
         var width = window.innerWidth;
         var count = 0;
 
         function styleBnovo() {
-            if (count > 40) {
+            if (count > 50) {
                 return;
             }
-            if (!document.querySelector('iframe')) {
+            if (!document.querySelector('iframe') || !document.querySelector('iframe').contentWindow.document.querySelector(
+                    '#from')) {
                 count++
-                setTimeout(() => styleBnovo(), 1000);
+                setTimeout(() => styleBnovo(), 1200);
                 return;
             }
+
             document.querySelector('#container-iframe').style.opacity = 1;
             var from = document.querySelector('iframe').contentWindow.document.querySelector('#from');
             var to = document.querySelector('iframe').contentWindow.document.querySelector('#to');
@@ -112,22 +81,22 @@
             padding-bottom:0;
         }
         ${width < 992 ? `
-                            .bnovo__field {
-                                text-align: center;
-                            }
-                            .bnovo__inputs {
-                                display: flex;
-                                flex-direction: column;
-                            }
-                            .bnovo__fields {
-                                display: flex;
-                                flex-direction: column;
-                                margin: auto;
-                                align-items: center;
-                                width: ${width};         
-                            }
+                                                .bnovo__field {
+                                                    text-align: center;
+                                                }
+                                                .bnovo__inputs {
+                                                    display: flex;
+                                                    flex-direction: column;
+                                                }
+                                                .bnovo__fields {
+                                                    display: flex;
+                                                    flex-direction: column;
+                                                    margin: auto;
+                                                    align-items: center;
+                                                    width: ${width};         
+                                                }
 
-                        ` : ''}
+                                            ` : ''}
 
         .bnovo__header {
             display: none;
@@ -176,11 +145,44 @@
     </style>`)
 
 
-
         }
+
 
         // }
     </script>
+</head>
+
+<body class="loaded_hiding">
+    @include("lib.header")
+
+    <main>
+
+
+        @yield("slider")
+        @yield("userwrap")
+        @yield("content")
+    </main>
+
+    @include("lib.footerinput")
+
+    {{-- <div class="copyright" style="text-align: center; padding-bottom: 15px;">
+        2021 ® Все права защищены.
+       | Разработано в <a style="display: inline; color: black; letter-spacing: 1px;"
+            href="http://steepcoder.uz/site"><u>steepcoder.uz</u></a> 
+    </div> --}}
+
+    <script src="/js/jquery.min.js"></script>
+    <script src="/js/svg4everybody.min.js"></script>
+    <script src="/js/app.js"></script>
+    <script src="/js/slick.min.js"></script>
+    <script src="/js/parallax.min.js"></script>
+    {{-- <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+    <script src="/js/jquery.slicknav.js"></script>
+    <script src="/js/bloodhound.min.js"></script>
+    <script src="/js/typeahead.bundle.js"></script> --}}
+    {{-- <script src="/js/scripts.js"></script> --}}
+
+
 
     <style>
         @media (max-width: 992px) {
