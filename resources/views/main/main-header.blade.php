@@ -19,6 +19,7 @@
     
     
     <link rel="stylesheet" href="/css/app.css">
+	<link rel="stylesheet" href="/css/custom.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
     <script>
         var width = window.innerWidth;
@@ -141,6 +142,24 @@
             text-align: left;
             padding-top: 38px;
         }
+		
+		.bnovo__service-item {
+			background: rgba(255,218,74,0) !important;
+		}
+
+		.bnovo__services {
+			width: 205px;
+			align-items: center;
+			display: inline-block;
+		}
+
+		.bnovo__container {
+			text-align: center;
+		}
+		
+		.book__container {
+			margin: auto auto 100px !important;
+		}
 
     </style>`)
 
@@ -248,7 +267,7 @@
                 Bnovo_Widget.init(function() {
                     Bnovo_Widget.open('_bn_widget_', {
                         type: "horizontal",
-                        uid: "0fec8561-59e3-49e7-84aa-40ea40e48643",
+                        uid: "f5349a31-3261-48c7-aceb-3e9a01b942d1",
                         lang: "ru",
                         width: "960",
                         background: "#ffda4a",
@@ -269,7 +288,13 @@
                         btn_textcolor: "#222222",
                         btn_textover: "#222222",
                         btn_bordcolor: "#cccccc",
-                        btn_bordhover: "#cccccc"
+                        btn_bordhover: "#cccccc",
+						visa: "on",
+						visa_url: "https://hotels-pro.ru/order/royal_plaza",
+						dop_background: "ffda4a00",
+                        dop_textcolor: "#fff",
+                        dop_height: "42",
+						url: "http://royal-plaza.tmweb.ru/booking"
                     });
                     setTimeout(() => styleBnovo(), 1000);
                 });
@@ -277,9 +302,9 @@
 
 
             
-            <a target="_blank" href="https://hotels-pro.ru/order/royal_plaza">
+           <!-- <a target="_blank" href="https://hotels-pro.ru/order/royal_plaza">
                 <h5>Визовая поддержка</h5>
-            </a>
+            </a> -->
         </div>
     </div>
 </section>

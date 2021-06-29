@@ -6,7 +6,7 @@
 
     <style>
         .inner-header {
-            background-image: url(/images/BG/restourants-bg.png), url(/images/inner-nd-bg.png);
+            background-image: url(/images/BG/restourants-bg.jpg);
         }
 
     </style>

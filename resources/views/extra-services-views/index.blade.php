@@ -3,7 +3,7 @@
 @section('content')
 <style>
     .inner-header {
-        background-image: url(/images/BG/spec-services-bg.png), url(/images/inner-nd-bg.png);
+        background-image: url(/images/BG/spec-services-bg.jpg);
     }
 
 </style>
