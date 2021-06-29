@@ -81,22 +81,22 @@
             padding-bottom:0;
         }
         ${width < 992 ? `
-                                                .bnovo__field {
-                                                    text-align: center;
-                                                }
-                                                .bnovo__inputs {
-                                                    display: flex;
-                                                    flex-direction: column;
-                                                }
-                                                .bnovo__fields {
-                                                    display: flex;
-                                                    flex-direction: column;
-                                                    margin: auto;
-                                                    align-items: center;
-                                                    width: ${width};         
-                                                }
+                                                        .bnovo__field {
+                                                            text-align: center;
+                                                        }
+                                                        .bnovo__inputs {
+                                                            display: flex;
+                                                            flex-direction: column;
+                                                        }
+                                                        .bnovo__fields {
+                                                            display: flex;
+                                                            flex-direction: column;
+                                                            margin: auto;
+                                                            align-items: center;
+                                                            width: ${width};         
+                                                        }
 
-                                            ` : ''}
+                                                    ` : ''}
 
         .bnovo__header {
             display: none;
@@ -172,6 +172,41 @@
     </div> --}}
 
     <script src="/js/jquery.min.js"></script>
+    <script src="//widget.reservationsteps.ru/js/bnovo.js"></script>
+    <script type="text/javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+
+            Bnovo_Widget.init(function() {
+                Bnovo_Widget.open('_bn_widget_', {
+                    type: "horizontal",
+                    uid: "0fec8561-59e3-49e7-84aa-40ea40e48643",
+                    lang: "ru",
+                    width: "960",
+                    background: "#ffda4a",
+                    bg_alpha: "0",
+                    padding: "20",
+                    border_radius: "4",
+                    font_type: "arial",
+                    font_size: "16",
+                    title: "&nbsp;",
+                    title_color: "#222222",
+                    title_size: "18",
+                    inp_color: "#222222",
+                    inp_bordhover: "#3796e5",
+                    inp_bordcolor: "#cccccc",
+                    inp_alpha: "100",
+                    btn_background: "#f8f8f8",
+                    btn_background_over: "#ffffff",
+                    btn_textcolor: "#222222",
+                    btn_textover: "#222222",
+                    btn_bordcolor: "#cccccc",
+                    btn_bordhover: "#cccccc"
+                });
+                setTimeout(() => styleBnovo(), 1000);
+            });
+        })
+    </script>
+
     <script src="/js/svg4everybody.min.js"></script>
     <script src="/js/app.js"></script>
     <script src="/js/slick.min.js"></script>
