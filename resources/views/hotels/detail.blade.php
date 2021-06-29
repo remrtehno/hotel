@@ -1,6 +1,12 @@
 @extends("main.main")
 
 @section('content')
+<style>
+    .inner-header {
+        background-image: url(/images/BG/hotels-bg.png), url(/images/inner-nd-bg.png);
+    }
+
+</style>
     <div class="hotel-detail-page">
         <div class="inner-pages">
             <h1 class="title">{{ $product->title }}</h1>
@@ -56,6 +62,16 @@
 >>>>>>> ec4436cf0461537f1327dfdf4054f892a78fdfa1
 
 
+=======
+                                        font-size: 18px;
+                                        font-style: normal;
+                                        font-weight: 400;
+                                        line-height: 32px;
+                                        letter-spacing: 0em;
+                                        text-align: left;
+                                        margin-top: -15px;
+                                        ">
+>>>>>>> 905a82691572616debbc0d8382ba53c1a6a20197
                                 @if ($product->area)
                                     <svg style="margin-right: 5px;" width="20" height="20" viewBox="0 0 20 20" fill="none"
                                         xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">

@@ -1,6 +1,12 @@
 @extends("main.main")
 
 @section('content')
+<style>
+    .inner-header {
+        background-image: url(/images/BG/events-bg.png), url(/images/inner-nd-bg.png);
+    }
+
+</style>
     <div class="hotel-detail-page">
         <div class="inner-pages">
             <h1 class="title">{{ $product->title }}</h1>

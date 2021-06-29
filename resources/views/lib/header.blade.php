@@ -13,7 +13,6 @@
             document.getElementById("mySidebar").style.width = "0";
             document.querySelector("main").style.marginLeft = "0";
         }
-
     </script>
 </div>
 
@@ -58,10 +57,51 @@
         </div>
     </div>
 
-    <div class="_container book__container">
-        <div class="book">
+    <div class="_container book__container" style="width: 100%;">
+        <div class="book" style="position: relative; ">
             <h3>Забронировать номер</h3>
-            <form class="order-form">
+            <div id="container-iframe"
+                style="position: relative; min-height: 90px;   display: flex; justify-content: center; transition: all .36s; opacity: 0;">
+                <div style="position: absolute; min-height: 90px;">
+                    <div class="left" id="_bn_widget_">
+
+                    </div>
+                </div>
+            </div>
+            <script src="//widget.reservationsteps.ru/js/bnovo.js"></script>
+            <script type="text/javascript">
+                Bnovo_Widget.init(function() {
+                    Bnovo_Widget.open('_bn_widget_', {
+                        type: "horizontal",
+                        uid: "0fec8561-59e3-49e7-84aa-40ea40e48643",
+                        lang: "ru",
+                        width: "960",
+                        background: "#ffda4a",
+                        bg_alpha: "0",
+                        padding: "20",
+                        border_radius: "4",
+                        font_type: "arial",
+                        font_size: "16",
+                        title: "&nbsp;",
+                        title_color: "#222222",
+                        title_size: "18",
+                        inp_color: "#222222",
+                        inp_bordhover: "#3796e5",
+                        inp_bordcolor: "#cccccc",
+                        inp_alpha: "100",
+                        btn_background: "#f8f8f8",
+                        btn_background_over: "#ffffff",
+                        btn_textcolor: "#222222",
+                        btn_textover: "#222222",
+                        btn_bordcolor: "#cccccc",
+                        btn_bordhover: "#cccccc"
+                    });
+                    setTimeout(() => styleBnovo(), 1000);
+                });
+            </script>
+
+
+            {{-- <form class="order-form" style="display: nne;">
                 <label>
                     <input type="text" class="datepicker">
                     Дата заезда
@@ -92,7 +132,7 @@
                 <button type="submit" class="btn find-hotel">
                     Найти номер
                 </button>
-            </form>
+            </form> --}}
             <a target="_blank" href="https://hotels-pro.ru/order/royal_plaza">
                 <h5>Визовая поддержка</h5>
             </a>
