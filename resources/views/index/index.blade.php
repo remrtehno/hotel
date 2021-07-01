@@ -380,7 +380,7 @@
             <h3 class="title-section text-center">Отзывы на Booking</h3>
             <div class="row">
                 <div class="col-xl-8 offset-xl-2">
-                    <img class="lazy" data-src="/img/booking.png" alt="" style="margin-bottom: 20px;">
+                    <a href="https://www.booking.com/hotel/ru/royal-plaza.ru.html#tab-reviews" target="blank"><img class="lazy" data-src="/img/booking.png" alt="" style="margin-bottom: 20px;"></a>
                     <div class="position-relative">
                         <button class="prev-btn">
 

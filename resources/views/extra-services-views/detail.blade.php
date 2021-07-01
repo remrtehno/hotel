@@ -22,8 +22,9 @@
 
             <div class="container">
                 <div class="items">
-                    <div class="description">
+                    <div class="description"> <strong>
                         {!! $items->anonce !!}
+						</strong>
                     </div>
                     <div class="img-container">
                         @foreach ($items->getMediaLibrary() as $item)
