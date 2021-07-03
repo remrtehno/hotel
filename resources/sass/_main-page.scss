@@ -266,3 +266,9 @@ $maxWidth: 1920;
     }
   }
 }
+
+.slider-bars {
+  .slick-track {
+    align-items: stretch;
+  }
+}

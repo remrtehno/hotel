@@ -190,7 +190,7 @@ $(function () {
       ]
     });
     $(value).on('afterChange', function (event, slick, breakpoint) {
-      var currentHeight = $(value).find('.slick-current.slick-active').height();
+      var currentHeight = $(value).not('.slider-bars').find('.slick-current.slick-active').height();
       $(value).height(currentHeight)
     });
     // $(value).on('breakpoint', function (event, slick, breakpoint) {
