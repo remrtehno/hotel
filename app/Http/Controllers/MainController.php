@@ -80,7 +80,7 @@ class MainController extends Controller
         $title = $this->title;
         $meta_desc = $this->meta_desc;
         $meta_key = $this->meta_key;
-        return view("thanks.index", compact('meta_key', 'meta_desc'));
+        return view("thanks.index", compact('title','meta_key', 'meta_desc'));
     }
 
     public function send_email(Request $request)

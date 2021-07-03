@@ -3,7 +3,7 @@
 @section('content')
     <style>
         .inner-header {
-            background-image: url(/images/BG/restourants-single-bg.png), url(/images/inner-nd-bg.png);
+            background-image: url(/images/BG/restourants-bg.jpg);
         }
 
     </style>
@@ -37,7 +37,7 @@
 
 
                             <h3>Режим работы и расположение</h3>
-                            <p>{{ $news->time }}</p>
+                            <p class="resttime">{{ $news->time }}</p>
                             <p>{{ $news->floor }}</p>
                             <br>
 
@@ -117,7 +117,7 @@
                             <ul class="slides">
                                 @foreach ($media_library_gallery as $val)
                                     <li>
-                                        <a data-fancybox="gallery" href="{{ $val->getImage('big') }}">
+                                        <a data-fancybox="gallery" href="{{ $val->getImage() }}">
                                             <img style="width: 100%; margin: auto; display: block;"
                                                 src="{{ $val->getImage() }}" alt="">
                                         </a>

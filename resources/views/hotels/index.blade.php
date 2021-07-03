@@ -3,7 +3,7 @@
 @section('content')
     <style>
         .inner-header {
-            background-image: url(/images/BG/hotels-bg.png), url(/images/inner-nd-bg.png);
+            background-image: url(/images/BG/hotels-bg.jpg);
         }
 
     </style>
@@ -64,7 +64,6 @@
 
                             <div class="bottom">
                                 {!! $item->cost !!}
-                                <pre>   </pre>
                                 <a href="{{ route('hotel-detail', $item->slug) }}" class="orange-btn small">Подробнее</a>
                             </div>
                         </div>

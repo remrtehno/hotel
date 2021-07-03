@@ -3,7 +3,7 @@
 @section('content')
 <style>
     .inner-header {
-        background-image: url(/images/BG/spec-services-bg.png), url(/images/inner-nd-bg.png);
+        background-image: url(/images/BG/spec-services-bg.jpg);
     }
 
 </style>
@@ -22,8 +22,9 @@
 
             <div class="container">
                 <div class="items">
-                    <div class="description">
+                    <div class="description"> <strong>
                         {!! $items->anonce !!}
+						</strong>
                     </div>
                     <div class="img-container">
                         @foreach ($items->getMediaLibrary() as $item)

@@ -66,7 +66,7 @@
                     <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <image xlink:href="/img/clothes-donation-1.png"></image>
                     </svg>
-                    <div>Услуги прачечной и химчистки - сухая и аквачистка одежды и обуви, в том числе деликатных тканей
+                    <div>Услуги прачечной и мелкий ремонт одежды
                     </div>
                 </div>
 
@@ -74,7 +74,7 @@
                     <svg width="80" height="80" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <image xlink:href="/img/parking-1.png"></image>
                     </svg>
-                    <div>Охраняемая парковка с круглосуточным контролем въезда и выезда
+                    <div>Охраняемая парковка с круглосуточным видеонаблюдением
                     </div>
                 </div>
 
@@ -205,8 +205,8 @@
             </div>
             <div style="clear: both"></div>
             <div class="row">
-                <div class="col-xl-5 text-content">
-                    <div class="events-dots events-dots-s"></div>
+           <div class="col-xl-6 text-content">
+                   <div class="events-dots events-dots-s"></div>
                     <div class="desc-contaiener">
                         {!! $services[0]->anonce !!}
 
@@ -217,7 +217,7 @@
                         onclick="this.closest('.row').querySelector('.slick-current.slick-active .detail').click(); return false;"
                         class="orange-btn">Подробнее</a>
                 </div>
-                <div class="col-xl-7">
+                <div class="col-xl-6">
                     <div class="slick" data-description-container=".desc-contaiener" data-prev-btn=".events .prev-btn"
                         data-next-btn=".events .next-btn" data-parent-dots=".events-dots-s">
                         @foreach ($services as $val)
@@ -261,13 +261,13 @@
                 @foreach ($suggestions as $val)
                     <div class="slide" data-title="{{ $val->title }}">
                         <div class="row">
-                            <div class="col-xl-7">
+                            <div class="col-xl-6">
                                 <a data-fancybox="SPEC" href="{{ $val->getImage('big') }}">
                                     <img style="max-width: 100%; margin: auto; display: block;" class="lazy"
                                         data-src="{{ $val->getImage('smaller') }}" alt="">
                                 </a>
                             </div>
-                            <div class="col-xl-5">
+                            <div class="col-xl-6">
                                 <div class="suggestions-dots events-dots dots"></div>
                                 {!! $val->anonce !!}
                                 <div class="slider-bars-overlay">
@@ -380,7 +380,7 @@
             <h3 class="title-section text-center">Отзывы на Booking</h3>
             <div class="row">
                 <div class="col-xl-8 offset-xl-2">
-                    <img class="lazy" data-src="/img/booking.png" alt="" style="margin-bottom: 20px;">
+                    <a href="https://www.booking.com/hotel/ru/royal-plaza.ru.html#tab-reviews" target="blank"><img class="lazy" data-src="/img/booking.png" alt="" style="margin-bottom: 20px;"></a>
                     <div class="position-relative">
                         <button class="prev-btn">
 
@@ -410,7 +410,7 @@
                                         <div class="stars">{{ $val->stars }}</div>
                                         <h6 class="title">{{ $val->title }}</h6>
                                         <div class="description"> {!! $val->description !!}</div>
-                                        <div class="date">{!! $val->created_at->format('M D Y') !!}</div>
+                                        <!-- <div class="date">{!! $val->created_at->format('M D Y') !!}</div> -->
                                     </div>
                                 </div>
                             @endforeach
