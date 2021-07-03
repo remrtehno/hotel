@@ -162,7 +162,7 @@ $(function () {
       swipe: false,
       fade: $(value).data('fade'),
       cssEase: 'linear',
-      speed: 400,
+      speed: 800,
       slidesToShow: $(value).data('per-slide') || 1,
       slidesToScroll: 1,
       autoplay: $(value).data('autoplay') || false,
@@ -200,8 +200,8 @@ $(function () {
     var container = $(value).data('description-container')
     $(value).on('beforeChange', function (event, slick, currentSlide) {
       if (container) {
-        $(container).fadeOut()
-        $(container).parent().find('.orange-btn').fadeOut()
+        $(container).fadeOut(200)
+        $(container).parent().find('.orange-btn').fadeOut(200)
       }
     });
     $(value).on('afterChange', function (event, slick, currentSlide) {
@@ -210,8 +210,8 @@ $(function () {
       if (container) {
         $(container).html(
           $(value).find('.slick-active').find('.desc').html()
-        ).fadeIn()
-        $(container).parent().find('.orange-btn').fadeIn()
+        ).fadeIn(200)
+        $(container).parent().find('.orange-btn').fadeIn(200)
       }
 
       $.each($(value).find('.dots'), function (_, val) {

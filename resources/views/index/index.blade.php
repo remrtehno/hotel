@@ -127,7 +127,8 @@
                             <a href="{{ route('hotel-detail', $val->slug) }}" class="orange-btn">Подробнее</a>
                         </div>
                         <div class="col-xl-6">
-                            <div class="flexslider {{ count($val->getMediaLibrary()) === 0 ? 'hide-nav' : '' }}">
+                            <div data-autoplay-disabled="true"
+                                class="flexslider  {{ count($val->getMediaLibrary()) === 0 ? 'hide-nav' : '' }}">
                                 <ul class="slides">
                                     @foreach ($val->getMediaLibrary() as $val2)
                                         <li>
@@ -205,8 +206,8 @@
             </div>
             <div style="clear: both"></div>
             <div class="row">
-           <div class="col-xl-6 text-content">
-                   <div class="events-dots events-dots-s"></div>
+                <div class="col-xl-6 text-content">
+                    <div class="events-dots events-dots-s"></div>
                     <div class="desc-contaiener">
                         {!! $services[0]->anonce !!}
 
@@ -218,8 +219,9 @@
                         class="orange-btn">Подробнее</a>
                 </div>
                 <div class="col-xl-6">
-                    <div class="slick" data-description-container=".desc-contaiener" data-prev-btn=".events .prev-btn"
-                        data-next-btn=".events .next-btn" data-parent-dots=".events-dots-s">
+                    <div class="slick" data-fade="true" data-description-container=".desc-contaiener"
+                        data-prev-btn=".events .prev-btn" data-next-btn=".events .next-btn"
+                        data-parent-dots=".events-dots-s">
                         @foreach ($services as $val)
                             <div class="slide" data-title="{{ $val->title }}">
                                 <div class="desc" style="display: none">
@@ -380,7 +382,8 @@
             <h3 class="title-section text-center">Отзывы на Booking</h3>
             <div class="row">
                 <div class="col-xl-8 offset-xl-2">
-                    <a href="https://www.booking.com/hotel/ru/royal-plaza.ru.html#tab-reviews" target="blank"><img class="lazy" data-src="/img/booking.png" alt="" style="margin-bottom: 20px;"></a>
+                    <a href="https://www.booking.com/hotel/ru/royal-plaza.ru.html#tab-reviews" target="blank"><img
+                            class="lazy" data-src="/img/booking.png" alt="" style="margin-bottom: 20px;"></a>
                     <div class="position-relative">
                         <button class="prev-btn">
 
