@@ -1,3 +1,36 @@
+b, strong {
+	    font-feature-settings: "pnum" on, "lnum" on;
+}
+
+.events {
+	background: #fff;
+}
+
+.main-page-form {
+	background: url(/images/form.jpg) center center/cover;
+}
+
+.slider-main-page {
+	background: #fff;
+}
+
+.footer {
+	background: #2b2927;
+}
+
+.inner-header {
+  background-image: url(/images/inner-bg1.jpg);
+  background-position: center;
+  background-size: cover;
+  min-height: 478px;
+}
+
+.hotel-detail-page .title-section {
+	font-family: Playfair Display;
+    font-weight: bold;
+    font-size: 30px;
+}
+
 .sidebar {
 	z-index: 999999;
 }
@@ -156,31 +189,6 @@ table {
     font-feature-settings: "pnum" on, "lnum" on;
 }
 
-@media (max-width: 992px) {
-  .events-page .title-section {
-    margin-top: 25px;
-    margin-bottom: 13px;
-    } 
-  .description h2 {
-      line-height: 1.7;
-    }
-  .events-page .description {
-    margin-bottom: 0px;
-  }
-  .bottom td {
-    padding: 0;
-  }
-  .bottom table tr td:first-child {
-    padding-right: 10px;
-  }
-}
-
-@media (min-width: 992px) {
-.hotel-wrapper .flex-prev {
-    margin-left: 0;
-}
-}
-
 .book__container {
 	margin: auto auto 100px !important;
 }
@@ -200,3 +208,85 @@ table {
 .pravila ul{
 	    margin: 0 0 0 20px;
 }
+
+.contacts__map img {
+	margin: 0 !important;
+}
+/*.modal {
+	padding-right: 0 !important;
+}*/
+
+/*thanks*/
+.thanks {
+	    font-feature-settings: "pnum" on, "lnum" on;
+	}
+.thanks h2 {
+	 padding-top: 200px;
+	}
+.thanks h3 {
+	    font-size: 24px;	
+    }
+.inst2 {
+	background: #4c172b;
+    border: 0;
+    color: #fff;
+    font-weight: 400;
+    padding: 12px 24px;
+    letter-spacing: 1px;
+    box-shadow: 0px 0px 15.8px 4.2px rgb(0 0 0 / 23%);
+    text-decoration: none;
+}
+.button-inst {
+	margin-top:45px;
+}
+.button-inst a {
+	padding: 0 40px 0 40px;
+}
+@media (max-width: 992px) {
+  .thanks h2 {
+	font-size: 30px;
+    margin-bottom: 20px;
+	padding-top:40px;
+	}
+	.thanks {
+    text-align: center;
+	}
+	.thanks img {
+    display: none;
+	}
+}
+/*end of thanks*/
+
+
+/*max-width: 992px*/
+@media (max-width: 992px) {
+  .events-page .title-section {
+    margin-top: 25px;
+    margin-bottom: 13px;
+    } 
+  .description h2 {
+      line-height: 1.7;
+    }
+  .events-page .description {
+    margin-bottom: 0px;
+  }
+  .bottom td {
+    padding: 0;
+  }
+  .bottom table tr td:first-child {
+    padding-right: 10px;
+  }
+  .header-contacts table a {
+	  margin-left: 2px;
+  }
+}
+/*end of max-width:992*/
+
+
+/*min-width: 992px*/
+@media (min-width: 992px) {
+.hotel-wrapper .flex-prev {
+    margin-left: 0;
+	}
+}
+/*end of min-width: 992px*/

@@ -103,7 +103,7 @@ class MainController extends Controller
         $msg = wordwrap($msg, 70);
 
         // send email
-        mail("someone@example.com", "Звонок с сайта", $msg);
+        mail("reservation@royal-plaza.ru", "Сообщение с сайта royal-plaza.ru", $msg);
 
         // return back()->with(['message' => 'Сообщение успешно отправлено.']);
         return $this->thanks();

@@ -31,7 +31,7 @@
                             <div></div>
                             <br>
                             Электронная почта: <br>
-                            <a class="links" href="mailto:info@royal-plaza.ru">info@royal-plaza.ru</a>
+                            <a class="links" href="mailto:reservation@royal-plaza.ru">reservation@royal-plaza.ru</a>
                             <div></div>
                         </div>
                         <div>
@@ -127,7 +127,7 @@
                                         }
 
                                         var map = new google.maps.Map(document.getElementById('map'), {
-                                            zoom: 14,
+                                            zoom: 17,
                                             center: uluru
                                         });
 

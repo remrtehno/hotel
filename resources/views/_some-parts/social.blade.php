@@ -1,4 +1,4 @@
-<a href="#">
+<a href="https://www.instagram.com/royalplazany/" target="blank">
   <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <rect opacity="0.1" x="0.5" y="0.5" width="47" height="47" rx="4.5" fill="white"
@@ -22,7 +22,7 @@
       </defs>
   </svg>
 </a>
-<a href="#">
+<!--<a href="#">
   <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <rect opacity="0.1" x="0.5" y="0.5" width="47" height="47" rx="4.5" fill="white"
@@ -41,8 +41,8 @@
   </svg>
 
 
-</a>
-<a href="">
+</a>-->
+<a href="https://vk.com/royal_plaza" target="blank">
   <svg width="48" height="48" viewBox="0 0 48 48" fill="none"
       xmlns="http://www.w3.org/2000/svg">
       <rect opacity="0.1" x="0.5" y="0.5" width="47" height="47" rx="4.5" fill="white"

@@ -46,7 +46,7 @@
     {{-- <div class="copyright" style="text-align: center; padding-bottom: 15px;">
         2021 ® Все права защищены.
        | Разработано в <a style="display: inline; color: black; letter-spacing: 1px;"
-            href="http://steepcoder.uz/site"><u>steepcoder.uz</u></a> 
+            href="http://steepcoder.uz/site"><u>omni-studio.ru</u></a> 
     </div> --}}
 
     <script src="/js/jquery.3.2.1.min.js"></script>

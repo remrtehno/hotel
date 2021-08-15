@@ -1,7 +1,7 @@
 <ul class="sidebar-menu">
-    <li class="header">MAIN NAVIGATION</li>
+    <li class="header">РАЗДЕЛЫ САЙТА</li>
 
-    <li><a href="{{ route('hotels.index') }}"><i class="fa fa-sticky-note-o"></i> <span>Отели</span></a></li>
+    <li><a href="{{ route('hotels.index') }}"><i class="fa fa-sticky-note-o"></i> <span>Номера</span></a></li>
     <li><a href="{{ route('news.index') }}"><i class="fa fa-tags"></i> <span>Рестораны и бары</span></a></li>
     <li><a href="{{ route('services.index') }}"><i class="fa fa-tags"></i> <span>Мероприятия </span></a></li>
     <li><a href="{{ route('reviews.index') }}"><i class="fa fa-tags"></i> <span>Отзывы </span></a></li>
@@ -11,7 +11,7 @@
         <li><a href="{{ route('dopuslugi.index') }}"><i class="fa fa-tags"></i> <span>Доп услуги</span></a>
     </li>
 
-    <li><a href="{{ route('about.index') }}"><i class="fa fa-users"></i> <span>О нас</span></a></li>
+    <li><a href="{{ route('about.index') }}"><i class="fa fa-users"></i> <span>Об отеле</span></a></li>
     <li><a href="{{ route('contact.index') }}"><i class="fa fa-users"></i> <span>Контакты</span></a></li>
     {{-- <li><a href="{{ route('video.index') }}"><i class="fa fa-users"></i> <span>Видео</span></a></li> --}}
     {{-- <li>

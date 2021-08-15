@@ -32,7 +32,7 @@
                     </div>
                 </div>
                 <div class="col-xl-6">
-                    <img class="lazy" data-src="/uploads/about-main.jpg" alt="">
+                    <img class="lazy" data-src="/img/about.jpg" alt="">
                 </div>
             </div>
         </div>
@@ -356,7 +356,7 @@
                                     }
 
                                     var map = new google.maps.Map(document.getElementById('map'), {
-                                        zoom: 14,
+                                        zoom: 17,
                                         center: uluru
                                     });
 

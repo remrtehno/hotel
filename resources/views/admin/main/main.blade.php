@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>AdminLTE 2 | Blank Page</title>
+    <title>AdminLTE 2 | Роял Плаза</title>
     <!-- Tell the browser to be responsive to screen width -->
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
     <!-- Bootstrap 3.3.6 -->
@@ -36,7 +36,7 @@
 
         <header class="main-header">
             <!-- Logo -->
-            <a href="/assets/../../index2.html" class="logo">
+            <a href="/admin" class="logo">
                 <!-- mini logo for sidebar mini 50x50 pixels -->
                 <span class="logo-mini"><b>A</b>LT</span>
                 <!-- logo for regular state and mobile devices -->
@@ -143,14 +143,14 @@
                         </li>
                         <!-- User Account: style can be found in dropdown.less -->
                         <li class="dropdown user user-menu">
-                            <a href="/assets/#" class="dropdown-toggle" data-toggle="dropdown">
+                           <!-- <a href="/assets/#" class="dropdown-toggle" data-toggle="dropdown">
                                 <img src="/assets/assets/dist/img/user2-160x160.jpg" class="user-image"
                                     alt="User Image">
                                 <span class="hidden-xs">Alexander Pierce</span>
-                            </a>
+                            </a>-->
                             <ul class="dropdown-menu">
                                 <!-- User image -->
-                                <li class="user-header">
+                                <!--<li class="user-header">
                                     <img src="/assets/assets/dist/img/user2-160x160.jpg" class="img-circle"
                                         alt="User Image">
 
@@ -158,10 +158,10 @@
                                         Alexander Pierce - Web Developer
                                         <small>Member since Nov. 2012</small>
                                     </p>
-                                </li>
+                                </li>-->
                                 <!-- Menu Body -->
                                 <li class="user-body">
-                                    <div class="row">
+                                    <!--<div class="row">
                                         <div class="col-xs-4 text-center">
                                             <a href="/assets/#">Followers</a>
                                         </div>
@@ -171,7 +171,7 @@
                                         <div class="col-xs-4 text-center">
                                             <a href="/assets/#">Friends</a>
                                         </div>
-                                    </div>
+                                    </div>-->
                                     <!-- /.row -->
                                 </li>
                                 <!-- Menu Footer-->
@@ -202,13 +202,13 @@
             <section class="sidebar">
                 <!-- Sidebar user panel -->
                 <div class="user-panel">
-                    <div class="pull-left image">
+                    <!--<div class="pull-left image">
                         <img src="/assets/assets/dist/img/user2-160x160.jpg" class="img-circle" alt="User Image">
                     </div>
                     <div class="pull-left info">
-                        <p>Alexander Pierce</p>
+                        <p>Администратор</p>
                         <a href="/assets/#"><i class="fa fa-circle text-success"></i> Online</a>
-                    </div>
+                    </div>-->
                 </div>
                 <!-- search form -->
                 <form action="#" method="get" class="sidebar-form">
@@ -238,8 +238,8 @@
             <div class="pull-right hidden-xs">
                 <b>Version</b> 2.3.7
             </div>
-            <strong>Copyright &copy; 2014-2016 <a href="/assets/http://almsaeedstudio.com/">Almsaeed
-                    Studio</a>.</strong> All rights
+            <strong>Copyright &copy; 2021 <a href="/" target="blank">royal-plaza.ru
+                    </a>.</strong> All rights
             reserved.
         </footer>
 

@@ -104,7 +104,7 @@
                                 <div class="cost">
                                     {!! $product->cost !!}
                                 </div>
-                                <a href="#" class="orange-btn big">Забронировать</a>
+                                <a href="http://royal-plaza.tmweb.ru/booking" class="orange-btn big">Забронировать</a>
                             </div>
                         </div>
                     

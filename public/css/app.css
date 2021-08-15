@@ -10833,14 +10833,14 @@ input.datepicker {
   color: #1e1e1e;
 }
 .event-detail-page .form input::-moz-placeholder, .event-detail-page .form textarea::-moz-placeholder {
-  opacity: 0.6;
+  opacity: 1;
 }
 .event-detail-page .form input:-ms-input-placeholder, .event-detail-page .form textarea:-ms-input-placeholder {
-  opacity: 0.6;
+  opacity: 1;
 }
 .event-detail-page .form input::placeholder,
 .event-detail-page .form textarea::placeholder {
-  opacity: 0.6;
+  opacity: 1;
 }
 
 .main-page-form {
@@ -11361,14 +11361,14 @@ input.datepicker {
   padding: 15px 0;
 }
 .form input::-moz-placeholder, .form textarea::-moz-placeholder {
-  opacity: 0.6;
+  opacity: 1;
 }
 .form input:-ms-input-placeholder, .form textarea:-ms-input-placeholder {
-  opacity: 0.6;
+  opacity: 1;
 }
 .form input::placeholder,
 .form textarea::placeholder {
-  opacity: 0.6;
+  opacity: 1;
 }
 .form textarea {
   resize: none;
@@ -11563,14 +11563,14 @@ main {
   color: #1e1e1e;
 }
 .inner-pages-form .form input::-moz-placeholder, .inner-pages-form .form textarea::-moz-placeholder {
-  opacity: 0.6;
+  opacity: 1;
 }
 .inner-pages-form .form input:-ms-input-placeholder, .inner-pages-form .form textarea:-ms-input-placeholder {
-  opacity: 0.6;
+  opacity: 1;
 }
 .inner-pages-form .form input::placeholder,
 .inner-pages-form .form textarea::placeholder {
-  opacity: 0.6;
+  opacity: 1;
 }
 
 .inner-pages-title {
@@ -11921,14 +11921,14 @@ main {
   color: #1e1e1e;
 }
 .hotel-detail-page .form input::-moz-placeholder, .hotel-detail-page .form textarea::-moz-placeholder {
-  opacity: 0.6;
+  opacity: 1;
 }
 .hotel-detail-page .form input:-ms-input-placeholder, .hotel-detail-page .form textarea:-ms-input-placeholder {
-  opacity: 0.6;
+  opacity: 1;
 }
 .hotel-detail-page .form input::placeholder,
 .hotel-detail-page .form textarea::placeholder {
-  opacity: 0.6;
+  opacity: 1;
 }
 .hotel-detail-page .title-section {
   text-align: center;

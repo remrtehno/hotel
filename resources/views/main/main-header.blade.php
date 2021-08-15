@@ -60,10 +60,10 @@
         .bnovo__button {
             width: 290px;
             height: 84px;
-            font-family: Arial;
+            font-family: "Raleway", sans-serif;
             font-style: normal;
             font-weight: 700;
-            font-size: 19px;
+            font-size: 18px;
             line-height: 22px;
             display: inline-flex;
             align-items: center;
@@ -77,6 +77,10 @@
             border: 0;
         }
 
+		#cookie-msg {
+			bottom: 67px !important;
+		}
+		
         .bnovo__fields {
             padding-top:0;
             padding-bottom:0;
